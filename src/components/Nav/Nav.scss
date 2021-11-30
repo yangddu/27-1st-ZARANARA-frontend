@@ -1,2 +1,84 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixin.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  color: #1e1e1e;
+  background: #f0f0f1;
+
+  .navLeftContainer {
+    padding-left: 20px;
+
+    .menuBar {
+      width: 26px;
+    }
+
+    h1 {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 30px;
+      letter-spacing: 10px;
+    }
+  }
+
+  .navCenterContainer {
+    .searchLink {
+      a {
+        font-weight: 500;
+        font-size: 18px;
+
+        .line {
+          display: inline-block;
+          width: 150px;
+          margin-right: 3px;
+          border-bottom: 1px solid #1e1e1e;
+        }
+      }
+    }
+  }
+
+  .navRightContainer {
+    display: flex;
+    background: #f0f0f1;
+    justify-content: space-between;
+    padding: 0 38px 0 4.05%;
+
+    .loginContainer {
+      display: flex;
+
+      > div {
+        margin-left: 20px;
+      }
+
+      .loginLink {
+        font-size: 12px;
+
+        img {
+          width: 18px;
+          margin-right: 3px;
+        }
+
+        .loginText {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 30px;
+        }
+      }
+
+      .cartLink {
+        font-size: 12px;
+
+        img {
+          width: 18px;
+        }
+      }
+    }
+  }
+}
