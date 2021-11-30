@@ -1,36 +1,38 @@
 import React from 'react';
 import './Nav.scss';
 
-const Nav = () => (
-  <header className="header">
-    <div className="navLeftContainer">
-      <img
-        className="menuBar"
-        src="/images/nav/hamburgerMenu.png"
-        alt="hamburgerMenuBar"
-      />
-      <h1>ZARANARA</h1>
-    </div>
-    <div className="navCenterContainer">
-      <div className="searchLink">
-        <a href="javascript:;">
-          검색
-          <span className="line"></span>
-        </a>
+const Nav = () => {
+  return (
+    <header className="header">
+      <div className="navLeftContainer">
+        <img
+          className="menuBar"
+          src="/images/nav/hamburgerMenu.png"
+          alt="hamburgerMenuBar"
+        />
+        <h1>ZARANARA</h1>
       </div>
-    </div>
-    <div className="navRightContainer">
-      <div className="loginContainer">
-        <div className="loginLink">
-          <img src="/images/nav/user.png" alt="user" />
-          로그인
-        </div>
-        <div className="cartLink">
-          <img src="/images/nav/user.png" alt="user" />0
+      <div className="navCenterContainer">
+        <div className="searchLink">
+          <a href="#">
+            검색
+            <span className="line" />
+          </a>
         </div>
       </div>
-    </div>
-  </header>
-);
+      <div className="navRightContainer">
+        <div className="loginContainer">
+          <div className="loginLink">
+            <img src="/images/nav/user.png" alt="user" />
+            로그인
+          </div>
+          <div className="cartLink">
+            <img src="/images/nav/user.png" alt="user" />0
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export default Nav;
