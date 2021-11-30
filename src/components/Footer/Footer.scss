@@ -1,2 +1,61 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixin.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+body {
+  height: 200vh;
+  position: relative;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #ddd;
+
+  .footerInner {
+    width: 85%;
+    padding: 30px;
+    margin: 0 auto;
+
+    > div {
+      padding: 16px 0 5px;
+    }
+
+    .asideWrap {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 16px;
+
+      .corpBox {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+
+        a {
+          font-size: 12px;
+          padding: 0 20px;
+        }
+      }
+
+      .telBox {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+
+        a {
+          font-size: 12px;
+          padding: 0 20px;
+        }
+      }
+
+      .snsArea {
+        .snsBox {
+          img {
+            width: 30px;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
