@@ -1,0 +1,132 @@
+@import '../../styles/variables.scss';
+
+.loginAndjoin {
+  display: flex;
+  background-color: gray;
+  height: 512px;
+  width: 735px;
+  padding: 8px;
+  border: 1px;
+
+  .login {
+    background-color: white;
+    width: 390px;
+    height: 475px;
+    margin: 8px;
+    padding: 8px;
+
+    .loginContainer {
+      span {
+        color: #1e1e1e;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 8px;
+      }
+
+      .loginInfo {
+        margin: 8px;
+        background-color: white;
+        width: 355px;
+        height: 99px;
+
+        .loginKoInfo {
+          color: #1e1e1e;
+          font-size: 14px;
+        }
+      }
+
+      .loginEnInfoGuide {
+        margin-top: 10px;
+        background-color: white;
+
+        .loginEnInfoComment {
+          color: #1e1e1e;
+          font-size: 14px;
+        }
+      }
+
+      .userIdPw {
+        background-color: white;
+        margin: 8px;
+
+        .inputEmail {
+          input {
+            width: 350px;
+            height: 50px;
+            border-bottom: 1px solid #1e1e1e;
+          }
+        }
+        .inputPassword {
+          input {
+            width: 350px;
+            height: 50px;
+            border-bottom: 1px solid #1e1e1e;
+          }
+        }
+        .showPassword {
+          padding-top: 20px;
+          margin-top: 40px;
+          background-color: white;
+          height: 80px;
+
+          .findPassword {
+            color: #898b8d;
+          }
+        }
+        .loginButtonWrapper {
+          background-color: red;
+
+          .loginButton {
+            background-color: white;
+            width: 360px;
+            height: 30px;
+            border: 1px solid #1e1e1e;
+            display: flex;
+            justify-content: center;
+
+            button {
+              background-color: transparent;
+              font-weight: bold;
+              width: 248px;
+              height: 30px;
+            }
+            button:hover {
+              color: white;
+            }
+          }
+          .loginButton:hover {
+            background: #1e1e1e;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .join {
+    background-color: white;
+    width: 290px;
+    height: 475px;
+    padding: 8px;
+    margin: 8px;
+
+    h2 {
+      padding-top: 8px;
+    }
+
+    .joinButton {
+      margin-top: 10px;
+
+      .createAccount {
+        border: 1px solid #1e1e1e;
+        width: 260px;
+        height: 30px;
+        font-size: 11px;
+      }
+      .createAccount:hover {
+        background-color: #1e1e1e;
+        color: white;
+      }
+    }
+  }
+}

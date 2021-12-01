@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './Router';
+// import JoinModal from './pages/JoinModal/JoinModal';
+import LoginModal from './pages/LoginModal/LoginModal';
+// import Router from './Router';
 
 import './styles/reset.scss';
 import './styles/common.scss';
 
-ReactDOM.render(<Router />, document.getElementById('root'));
+ReactDOM.render(<LoginModal />, document.getElementById('root'));
