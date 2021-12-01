@@ -1,6 +1,6 @@
 import React from 'react';
+import UserImformation from './UserImformation';
 import './LoginModal.scss';
-import Input from './Input';
 
 function LoginModal() {
   return (
@@ -20,14 +20,22 @@ function LoginModal() {
             </div>
           </div>
           <form className="userIdPw">
-            <Input className="inputEmail" type="email" placholder="이메일" />
-            <Input className="inputEmail" type="email" placholder="이메일" />
+            <UserImformation
+              className="inputEmail"
+              type="email"
+              placholder="이메일"
+            />
+            <UserImformation
+              className="inputEmail"
+              type="password"
+              placholder="비밀번호"
+            />
             <div className="showPassword">
               <span className="findPassword">비밀번호를 잊으셨습니까?</span>
             </div>
             <div className="loginButtonWrapper">
               <div className="loginButton">
-                <button>로그인</button>
+                <button type="button">로그인</button>
               </div>
             </div>
           </form>

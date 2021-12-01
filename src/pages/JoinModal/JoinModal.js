@@ -1,5 +1,6 @@
 import React from 'react';
 import './JoinModal.scss';
+import UserImformation from '../LoginModal/UserImformation';
 
 function JoinModal() {
   return (

@@ -2,25 +2,24 @@
 
 .loginAndjoin {
   display: flex;
-  background-color: gray;
   height: 512px;
   width: 735px;
   padding: 8px;
-  border: 1px;
-
+  border: 1px solid #1e1e1e;
+  background-color: white;
   .login {
-    background-color: white;
     width: 390px;
     height: 475px;
     margin: 8px;
     padding: 8px;
+    background-color: white;
 
     .loginContainer {
       span {
-        color: #1e1e1e;
         font-size: 14px;
         font-weight: bold;
         margin: 8px;
+        color: #1e1e1e;
       }
 
       .loginInfo {
@@ -46,8 +45,8 @@
       }
 
       .userIdPw {
-        background-color: white;
         margin: 8px;
+        background-color: white;
 
         .inputEmail {
           input {
@@ -64,10 +63,10 @@
           }
         }
         .showPassword {
+          height: 80px;
           padding-top: 20px;
           margin-top: 40px;
           background-color: white;
-          height: 80px;
 
           .findPassword {
             color: #898b8d;
@@ -77,18 +76,18 @@
           background-color: red;
 
           .loginButton {
-            background-color: white;
+            display: flex;
+            justify-content: center;
             width: 360px;
             height: 30px;
             border: 1px solid #1e1e1e;
-            display: flex;
-            justify-content: center;
+            background-color: white;
 
             button {
-              background-color: transparent;
-              font-weight: bold;
               width: 248px;
               height: 30px;
+              background-color: transparent;
+              font-weight: bold;
             }
             button:hover {
               color: white;
@@ -104,11 +103,11 @@
     }
   }
   .join {
-    background-color: white;
     width: 290px;
     height: 475px;
     padding: 8px;
     margin: 8px;
+    background-color: white;
 
     h2 {
       padding-top: 8px;
@@ -118,9 +117,9 @@
       margin-top: 10px;
 
       .createAccount {
-        border: 1px solid #1e1e1e;
         width: 260px;
         height: 30px;
+        border: 1px solid #1e1e1e;
         font-size: 11px;
       }
       .createAccount:hover {

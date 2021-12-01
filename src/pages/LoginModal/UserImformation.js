@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Input = props => {
-  console.log(props);
+const UserImformation = props => {
   return (
     <div className={props.className}>
       <input type={props.type} placeholder={props.placeholder} />
@@ -9,4 +8,4 @@ const Input = props => {
   );
 };
 
-export default Input;
+export default UserImformation;

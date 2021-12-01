@@ -1,19 +1,24 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
 
-.zarnaraCreateContainer {
-  background-color: white;
-  width: 650px;
-  height: 450px;
+gi.zarnaraCreateContainer {
   display: flex;
   justify-content: center;
+  width: 650px;
+  height: 450px;
+  background-color: white;
+  border: 1px solid #1e1e1e;
+
   .zaranaraCreateAccount {
-    background-color: white;
     width: 350px;
-    height: 450px;
+    height: 440px;
+    background-color: white;
+
     .createAccountContainer {
-      padding-top: 10px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      padding-top: 10px;
       margin-bottom: 5px;
       span {
         height: 30px;
@@ -21,29 +26,35 @@
         font-weight: bold;
       }
     }
+
     .choiceKindOfAccount {
-      width: 340px;
       display: flex;
       justify-content: center;
+      width: 340px;
+
       .common {
         span {
           font-size: 15px;
         }
       }
+
       .company {
         span {
           font-size: 15px;
         }
       }
     }
+
     .userPrivacyInput {
-      background-color: white;
       width: 325px;
       height: 90px;
+      background-color: white;
+
       .userName {
-        margin-bottom: 10px;
         width: 320px;
         height: 25px;
+        margin-bottom: 10px;
+
         .name {
           width: 320px;
           height: 50px;
@@ -51,19 +62,22 @@
         }
       }
       .userEmail {
-        margin-bottom: 10px;
         width: 320px;
         height: 25px;
+        margin-bottom: 10px;
+
         .email {
           width: 320px;
           height: 50px;
           border-bottom: 1px solid #1e1e1e;
         }
       }
+
       .userPassword {
-        margin-bottom: 10px;
         width: 320px;
         height: 25px;
+        margin-bottom: 10px;
+
         .password {
           width: 320px;
           height: 50px;
@@ -73,9 +87,10 @@
     }
     .userPrivacyCheckBox {
       margin-top: 60px;
+
       .checkContainer {
         input {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
         span {
           font-size: 13px;
@@ -83,7 +98,7 @@
       }
       .checkPrivacy {
         input {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
         span {
           font-size: 13px;
@@ -91,14 +106,14 @@
       }
       .checkAboard {
         input {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
         span {
           font-size: 13px;
         }
       }
       .checkSubscribe {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         input {
           margin-bottom: 25px;
         }
@@ -106,13 +121,14 @@
           font-size: 13px;
         }
       }
+
       .createAccount {
         display: flex;
         justify-content: center;
         button {
-          border: 1px solid #1e1e1e;
           width: 390px;
           height: 30px;
+          border: 1px solid #1e1e1e;
           font-size: 11px;
           font-weight: bold;
         }
