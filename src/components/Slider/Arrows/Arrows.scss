@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: #fff;
+  font-size: $font-large;
+  z-index: 999;
+  cursor: pointer;
+
+  .leftArrow path,
+  .rightArrow path {
+    stroke: $color-white;
+    stroke-width: 1.5px;
+  }
+}
+
+.next {
+  right: 0;
+}
