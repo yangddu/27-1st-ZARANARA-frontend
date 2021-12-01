@@ -12,40 +12,42 @@
   height: 100px;
   color: #1e1e1e;
 
-  .gnbMenuBar {
-    position: absolute;
-    left: -315px;
-    top: 0;
-    width: 315px;
-    padding: 125px 28px 28px 28px;
-    z-index: -1;
-  }
-
   .navLeftContainer {
-    padding-left: 20px;
+    display: flex;
 
     .menuBar {
-      width: 26px;
+      width: 38px;
+      margin-left: 20px;
     }
 
-    h1 {
-      display: inline-block;
-      margin-left: 20px;
-      font-size: 30px;
-      letter-spacing: 10px;
-      cursor: pointer;
-      z-index: 100;
+    .gnbMenuBar {
+      position: absolute;
+      transform: translateX(-320px);
+      transition: all 300ms linear;
+      height: 100vh;
+      width: 320px;
+      padding: 125px 28px 28px 28px;
+      z-index: -1;
+
+      .gnbMenuLi {
+        font-size: 18px;
+        letter-spacing: normal;
+        margin-bottom: 6px;
+        line-height: 26px;
+      }
+    }
+
+    .gnbMenuWrap {
+      display: flex;
 
       &:hover {
         .gnbMenuBar {
           display: block;
           position: absolute;
-          width: 315px;
+          width: 320px;
           height: 100vh;
-          left: 0;
-          background: #fff;
           overflow: hidden;
-          transition: 0.5s;
+          transform: translateX(0px);
 
           .gnbMenuLi {
             font-size: 18px;
@@ -54,6 +56,11 @@
             line-height: 26px;
           }
         }
+      }
+
+      .logo {
+        width: 260px;
+        cursor: pointer;
       }
     }
   }
@@ -88,14 +95,18 @@
 
       .loginLink {
         font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        img {
+        .loginIcon {
           width: 18px;
           margin-right: 3px;
+          margin-right: 4px;
         }
 
         .loginText {
-          font-weight: 600;
+          font-weight: 500;
           font-size: 12px;
           line-height: 30px;
         }
@@ -103,9 +114,19 @@
 
       .cartLink {
         font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        img {
+        .cartIcon {
           width: 18px;
+          margin-right: 4px;
+        }
+
+        .cartText {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 30px;
         }
       }
     }

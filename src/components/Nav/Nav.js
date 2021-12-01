@@ -2,22 +2,16 @@ import React, { useState } from 'react';
 import './Nav.scss';
 
 const Nav = () => {
-  // const [isOpen, setMenu] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setMenu(isOpen => !isOpen);
-  // };
-
   return (
     <header className="header">
       <div className="navLeftContainer">
-        <img
-          className="menuBar"
-          src="/images/nav/hamburgerMenu.png"
-          alt="hamburgerMenuBar"
-        />
-        <h1>
-          ZARANARA
+        <div className="gnbMenuWrap">
+          <img
+            className="menuBar"
+            src="/images/icon/hamberger.svg"
+            alt="hamburgerMenuBar"
+          />
+          <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
           <ul className="gnbMenuBar">
             <li className="gnbMenuLi">신상품</li>
             <li className="gnbMenuLi">인기상품</li>
@@ -28,7 +22,7 @@ const Nav = () => {
             <li className="gnbMenuLi">욕실</li>
             <li className="gnbMenuLi">선물 아이디어</li>
           </ul>
-        </h1>
+        </div>
       </div>
       <div className="navCenterContainer">
         <div className="searchLink">
@@ -41,11 +35,16 @@ const Nav = () => {
       <div className="navRightContainer">
         <div className="loginContainer">
           <div className="loginLink">
-            <img src="/images/nav/user.png" alt="user" />
-            로그인
+            <img
+              className="loginIcon"
+              src="/images/icon/profile.svg"
+              alt="profile"
+            />
+            <div className="loginTxt">로그인</div>
           </div>
           <div className="cartLink">
-            <img src="/images/nav/user.png" alt="user" />0
+            <img className="cartIcon" src="/images/icon/cart.svg" alt="cart" />
+            <div className="carTxt">0</div>
           </div>
         </div>
       </div>
