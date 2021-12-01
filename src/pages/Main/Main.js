@@ -1,6 +1,7 @@
 import React from 'react';
+import Product from '../../components/Product/Product';
 import './Main.scss';
 
-const Main = () => <h1>Main</h1>;
+const Main = () => <Product />;
 
 export default Main;
