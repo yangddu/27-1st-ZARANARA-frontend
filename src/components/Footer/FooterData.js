@@ -9,7 +9,11 @@ export const asideData = [
 ];
 
 export const FooterImg = [
-  { id: 1, src: 'https://cdn-icons-png.flaticon.com/512/20/20837.png' },
-  { id: 2, src: 'https://cdn-icons-png.flaticon.com/512/87/87390.png' },
-  { id: 3, src: 'https://cdn-icons-png.flaticon.com/512/2111/2111496.png' },
+  { id: 1, src: '/images/icon/kakao.svg' },
+  { id: 2, src: '/images/icon/facebook.svg' },
+  { id: 3, src: '/images/icon/instagram.svg' },
+  { id: 4, src: '/images/icon/pinterest.svg' },
+  { id: 5, src: '/images/icon/youtube.svg' },
+  { id: 6, src: '/images/icon/twitter.svg' },
+  { id: 7, src: '/images/icon/spotify.svg' },
 ];
