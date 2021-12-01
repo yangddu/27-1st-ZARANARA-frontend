@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { navData } from './NavData';
+
 import './Nav.scss';
 
 const Nav = () => {
   return (
-    <header className="header">
+    <nav className="nav">
       <div className="navLeftContainer">
         <div className="gnbMenuWrap">
           <img
@@ -13,14 +15,9 @@ const Nav = () => {
           />
           <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
           <ul className="gnbMenuBar">
-            <li className="gnbMenuLi">신상품</li>
-            <li className="gnbMenuLi">인기상품</li>
-            <li className="gnbMenuLi">크리스마스</li>
-            <li className="gnbMenuLi">의류</li>
-            <li className="gnbMenuLi">가구 데코 침실</li>
-            <li className="gnbMenuLi">맘마</li>
-            <li className="gnbMenuLi">욕실</li>
-            <li className="gnbMenuLi">선물 아이디어</li>
+            {navData.map(el => (
+              <li className="gnbMenuLi">{el.title}</li>
+            ))}
           </ul>
         </div>
       </div>
@@ -48,7 +45,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 

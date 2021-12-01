@@ -8,9 +8,9 @@ const Router = () => (
   <BrowserRouter>
     <Nav />
     <Routes>
-      <Route path="/detail" element={<Main />} />
+      <Route path="/" element={<Main />} />
     </Routes>
-    {/* <Footer /> */}
+    <Footer />
   </BrowserRouter>
 );
 
