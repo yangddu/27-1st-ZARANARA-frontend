@@ -1,6 +1,5 @@
 import React from 'react';
-import { asideData, FooterImg } from './FooterData';
-
+import { ASIDE_DATA, FOOTER_IMG } from './FooterData';
 import './Footer.scss';
 const Footer = () => {
   return (
@@ -8,16 +7,15 @@ const Footer = () => {
       <div className="footerInner">
         <div className="asideWrap">
           <div className="asideArea">
-            {asideData.map(el => {
+            {ASIDE_DATA.map(el => {
               return (
                 <div className="asideBox" key={el.id}>
                   <h3 className="asideTitle">{el.title}</h3>
-                  {el.content &&
-                    el.content.map(content => (
-                      <a className="asideContent" href="#">
-                        {content}
-                      </a>
-                    ))}
+                  {el.content?.map(content => (
+                    <a className="asideContent" href="#">
+                      {content}
+                    </a>
+                  ))}
                 </div>
               );
             })}
@@ -25,7 +23,7 @@ const Footer = () => {
 
           <div className="snsArea">
             <div className="snsBox">
-              {FooterImg.map(el => (
+              {FOOTER_IMG.map(el => (
                 <img key={el.id} src={el.src} alt={el.alt} />
               ))}
             </div>

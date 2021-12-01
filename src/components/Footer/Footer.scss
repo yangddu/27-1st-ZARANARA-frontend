@@ -18,13 +18,11 @@
     }
 
     .asideWrap {
-      display: flex;
-      justify-content: space-between;
+      @include flexSpaceBetweenCenter;
       margin-bottom: 16px;
 
       .asideBox {
         display: flex;
-        align-items: center;
         margin-top: 10px;
 
         .asideContent {

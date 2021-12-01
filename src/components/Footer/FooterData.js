@@ -1,4 +1,4 @@
-export const asideData = [
+export const ASIDE_DATA = [
   { id: 1, title: '공지사항' },
   { id: 2, title: 'Developers', content: ['Team ZARANARA'] },
   {
@@ -8,7 +8,7 @@ export const asideData = [
   },
 ];
 
-export const FooterImg = [
+export const FOOTER_IMG = [
   { id: 1, src: '/images/icon/kakao.svg' },
   { id: 2, src: '/images/icon/facebook.svg' },
   { id: 3, src: '/images/icon/instagram.svg' },
