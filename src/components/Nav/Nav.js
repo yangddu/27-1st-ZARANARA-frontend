@@ -1,11 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_DATA } from './NavData';
+import LoginModal from '../../pages/LoginModal/LoginModal';
 import './Nav.scss';
 import { useState } from 'react/cjs/react.development';
 
 const Nav = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen);
+    console.log(isModalOpen);
+  };
+  // const closeModal = () => {
+  //   setIsModalOpen(handleModal);
+  // }
 
   return (
     <nav className="nav">
@@ -41,8 +50,12 @@ const Nav = () => {
               className="loginIcon"
               src="/images/icon/profile.svg"
               alt="profile"
+              onClick={handleModal}
             />
-            <div className="loginTxt">로그인</div>
+            <div className="loginTxt" onClick={handleModal}>
+              로그인
+            </div>
+            {/* {isModalOpen && <LoginModal />} */}
           </div>
           <div className="cartLink">
             <img className="cartIcon" src="/images/icon/cart.svg" alt="cart" />
@@ -50,6 +63,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
+      {isModalOpen && <LoginModal />}
     </nav>
   );
 };
