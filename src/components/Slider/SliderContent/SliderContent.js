@@ -3,7 +3,12 @@ import './SliderContent.scss';
 
 const SliderContent = ({ sliderImagesData }) => {
   return sliderImagesData.map((slide, i) => (
-    <img key={i} className="slideImage" src={slide.url} alt={slide.title} />
+    <div
+      key={i}
+      className="slideImage"
+      style={{ backgroundImage: `url(${slide.url})` }}
+      alt={slide.title}
+    />
   ));
 };
 
