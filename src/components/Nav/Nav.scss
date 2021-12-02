@@ -1,2 +1,126 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixin.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.nav {
+  @include flexSpaceBetweenCenter;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  color: #1e1e1e;
+
+  .navLeftContainer {
+    display: flex;
+
+    .menuBar {
+      width: 38px;
+      margin-left: 20px;
+    }
+
+    .gnbMenuBar {
+      position: absolute;
+      width: 320px;
+      height: 100vh;
+      padding: 125px 28px 28px 28px;
+      transform: translateX(-320px);
+      transition: all 300ms linear;
+      z-index: -1;
+
+      .gnbMenuLi {
+        margin-bottom: 6px;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: normal;
+      }
+    }
+
+    .gnbMenuWrap {
+      display: flex;
+
+      &:hover {
+        .gnbMenuBar {
+          position: absolute;
+          display: block;
+          width: 320px;
+          height: 100vh;
+          transform: translateX(0px);
+          overflow: hidden;
+
+          .gnbMenuLi {
+            margin-bottom: 6px;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: normal;
+          }
+        }
+      }
+
+      .logo {
+        width: 260px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navCenterContainer {
+    .searchLink {
+      a {
+        font-size: 18px;
+        font-weight: 500;
+
+        .line {
+          display: inline-block;
+          width: 150px;
+          margin-right: 3px;
+          border-bottom: 1px solid #1e1e1e;
+        }
+      }
+    }
+  }
+
+  .navRightContainer {
+    @include flexSpaceBetweenCenter;
+    padding: 0 38px 0 4.05%;
+
+    .loginContainer {
+      display: flex;
+
+      > div {
+        margin-left: 20px;
+      }
+
+      .loginLink {
+        @include flexCenter;
+        font-size: 12px;
+
+        .loginIcon {
+          width: 18px;
+          margin-right: 4px;
+        }
+
+        .loginText {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 30px;
+        }
+      }
+
+      .cartLink {
+        @include flexCenter;
+        font-size: 12px;
+
+        .cartIcon {
+          width: 18px;
+          margin-right: 4px;
+        }
+
+        .cartText {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
