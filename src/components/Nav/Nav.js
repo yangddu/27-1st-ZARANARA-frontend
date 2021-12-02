@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_DATA } from './NavData';
 import './Nav.scss';
+import { useState } from 'react/cjs/react.development';
 
 const Nav = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <nav className="nav">
       <div className="navLeftContainer">

@@ -1,17 +1,17 @@
-import React { useState } from 'react';
+import React, { useState } from 'react';
+import LoginModal from '../LoginModal/LoginModal';
 import './Login.scss';
 
 function Login() {
-  const [loginModal, setloginModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [userEmail, setuserEmail] = useState('');
 
-  const isModalOpen = e => {
-    if (setloginModal === false) {
-      setloginModal(true);
-    }
-    if (setloginModal === true) {
-      setloginModal(false);
-    }
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(isModalOpen);
   };
 
   const handleEmail = e => {
@@ -20,7 +20,8 @@ function Login() {
 
   return (
     <div className="loginEmail">
-      <button onClick={isModalOpen}>로그인</button>
+      <button onClick={handleModal}>로그인</button>
+      {isModalOpen && <LoginModal />}
     </div>
   );
 }

@@ -1,9 +1,8 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
 
-gi.zarnaraCreateContainer {
-  display: flex;
-  justify-content: center;
+.zarnaraCreateContainer {
+  @include flexCenter;
   width: 650px;
   height: 450px;
   background-color: white;
@@ -12,36 +11,16 @@ gi.zarnaraCreateContainer {
   .zaranaraCreateAccount {
     width: 350px;
     height: 440px;
+    padding-bottom: 20px;
     background-color: white;
 
     .createAccountContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexCenter;
       padding-top: 10px;
-      margin-bottom: 5px;
       span {
         height: 30px;
         font-size: 12px;
         font-weight: bold;
-      }
-    }
-
-    .choiceKindOfAccount {
-      display: flex;
-      justify-content: center;
-      width: 340px;
-
-      .common {
-        span {
-          font-size: 15px;
-        }
-      }
-
-      .company {
-        span {
-          font-size: 15px;
-        }
       }
     }
 
@@ -86,7 +65,7 @@ gi.zarnaraCreateContainer {
       }
     }
     .userPrivacyCheckBox {
-      margin-top: 60px;
+      margin-top: 20px;
 
       .checkContainer {
         input {
@@ -109,7 +88,7 @@ gi.zarnaraCreateContainer {
           margin-bottom: 20px;
         }
         span {
-          font-size: 13px;
+          font-size: 12px;
         }
       }
       .checkSubscribe {
@@ -123,8 +102,7 @@ gi.zarnaraCreateContainer {
       }
 
       .createAccount {
-        display: flex;
-        justify-content: center;
+        @include flexCenter;
         button {
           width: 390px;
           height: 30px;

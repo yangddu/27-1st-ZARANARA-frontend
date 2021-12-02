@@ -1,43 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserImformation from './UserImformation';
+import Userinput from './Userinput';
+import Button from './Button';
 import './LoginModal.scss';
 
 function LoginModal() {
+  const [inputUserEmail, setInputUserEmail] = useState('');
+  const [inputUserPassword, setInputUserPassword] = useState('');
+
+  const handleEmailInput = e => {
+    setInputUserEmail(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <div className="loginAndjoin">
       <div className="login">
         <div className="loginContainer">
-          <span>로그인</span>
+          <h2>로그인</h2>
           <div className="loginInfo">
             <span className="loginKoInfo">
               신속한 결제 진행을 위해 필요한 정보를 요청할 수 있습니다.
             </span>
             <div className="loginEnInfoGuide">
               <span className="loginEnInfoComment">
-                Can’t find your order? You might have purchased as a guest.
-                Click and we’ll tell you how to find it.
+                We will ask you for the information we need to speed up the
+                purchase process.
               </span>
             </div>
           </div>
           <form className="userIdPw">
-            <UserImformation
-              className="inputEmail"
-              type="email"
-              placholder="이메일"
-            />
-            <UserImformation
-              className="inputEmail"
-              type="password"
-              placholder="비밀번호"
-            />
+            <Userinput onChange={handleEmailInput} />
             <div className="showPassword">
               <span className="findPassword">비밀번호를 잊으셨습니까?</span>
             </div>
-            <div className="loginButtonWrapper">
-              <div className="loginButton">
-                <button type="button">로그인</button>
-              </div>
-            </div>
+            <Button />
           </form>
         </div>
       </div>
