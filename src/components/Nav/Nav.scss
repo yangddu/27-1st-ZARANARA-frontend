@@ -2,13 +2,10 @@
 @import '../../styles/mixin.scss';
 
 .nav {
+  @include flexSpaceBetweenCenter;
   position: fixed;
   left: 0;
   top: 0;
-  @include flexSpaceBetweenCenter;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100vw;
   height: 100px;
   color: #1e1e1e;

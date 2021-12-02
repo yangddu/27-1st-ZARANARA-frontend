@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { navData } from './NavData';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { NAV_DATA } from './NavData';
 import './Nav.scss';
 
 const Nav = () => {
@@ -15,18 +15,20 @@ const Nav = () => {
           />
           <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
           <ul className="gnbMenuBar">
-            {navData.map(el => (
-              <li className="gnbMenuLi">{el.title}</li>
+            {NAV_DATA.map(el => (
+              <li key={el.id} className="gnbMenuLi">
+                {el.title}
+              </li>
             ))}
           </ul>
         </div>
       </div>
       <div className="navCenterContainer">
         <div className="searchLink">
-          <a href="#">
+          <Link to="/">
             검색
             <span className="line" />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="navRightContainer">
