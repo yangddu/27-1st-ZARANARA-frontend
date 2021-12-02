@@ -1,11 +1,12 @@
 [
   {
+    "id": 1,
     "alt": "제품 이미지 별모양 쿠키틀",
     "url": "/images/main/productList_cookietool.jpg",
     "spotdatas": [
       {
         "id": 1,
-        "new": true,
+        "isNew": true,
         "title": "별모양 쿠키틀",
         "description": "베이킹 도구",
         "price": "12,000원",
@@ -14,7 +15,7 @@
       },
       {
         "id": 2,
-        "new": false,
+        "isNew": false,
         "title": "나무 쿠키틀",
         "description": "베이킹 도구",
         "price": "14,000원",
@@ -24,12 +25,13 @@
     ]
   },
   {
+    "id": 2,
     "alt": "제품 이미지 트리 장식 용품",
     "url": "/images/main/productList_tree.jpg",
     "spotdatas": [
       {
         "id": 1,
-        "new": false,
+        "isNew": false,
         "title": "트리장식 볼",
         "description": "줄무늬 빨간색볼",
         "price": "3,000원",
