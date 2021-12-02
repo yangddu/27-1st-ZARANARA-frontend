@@ -1,2 +1,37 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
+
+  .footerInner {
+    @include flexSpaceBetweenCenter;
+    margin: 0 auto 16px;
+    padding: 45px 150px;
+
+    .asideBox {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      .asideContent {
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+
+    .snsArea {
+      margin-top: 10px;
+
+      .snsBox {
+        img {
+          width: 30px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
