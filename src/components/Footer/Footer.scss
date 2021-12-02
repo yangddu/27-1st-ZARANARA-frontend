@@ -5,40 +5,31 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
   border-top: 1px solid #ddd;
 
   .footerInner {
-    width: 85%;
-    padding: 30px;
-    margin: 0 auto;
+    @include flexSpaceBetweenCenter;
+    margin: 0 auto 16px;
+    padding: 45px 150px;
 
-    > div {
-      padding: 16px 0 5px;
+    .asideBox {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      .asideContent {
+        font-size: 12px;
+        margin-left: 10px;
+      }
     }
 
-    .asideWrap {
-      @include flexSpaceBetweenCenter;
-      margin-bottom: 16px;
+    .snsArea {
+      margin-top: 10px;
 
-      .asideBox {
-        display: flex;
-        margin-top: 10px;
-
-        .asideContent {
-          font-size: 12px;
+      .snsBox {
+        img {
+          width: 30px;
           margin-left: 10px;
-        }
-      }
-
-      .snsArea {
-        margin-top: 10px;
-
-        .snsBox {
-          img {
-            width: 30px;
-            margin-left: 10px;
-          }
         }
       }
     }
