@@ -1,9 +1,13 @@
 import React from 'react';
 import './Button.scss';
 
-function Button({ title, handleClick }) {
+function Button({ title, handleClick, format, handleJoinClick }) {
   return (
-    <button className="Button" type="button" onClick={handleClick}>
+    <button
+      className={`button ${format ? format : ''}`}
+      type="button"
+      onClick={handleClick}
+    >
       {title}
     </button>
   );

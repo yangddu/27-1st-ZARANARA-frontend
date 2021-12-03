@@ -4,17 +4,13 @@ import UserImformation from '../LoginModal/UserImformation';
 import './JoinModal.scss';
 import Userinput from '../LoginModal/Userinput';
 
-function JoinModal() {
+function JoinModal({ handleJoinClick }) {
   // const checkbox = ([checkbox, setCheckbox] = useState([]);
   const [userInput, setUserInput] = useState('');
 
   const handleInput = e => {
     setUserInput(e.target.value);
     console.log(e.target.value);
-  };
-
-  const goToMain = () => {
-    alert('로그인 성공!');
   };
 
   return (
@@ -24,8 +20,7 @@ function JoinModal() {
           <span>자라홈 계정 만들기</span>
         </div>
         <div className="choiceKindOfAccount" />
-
-        <Userinput handleInput={handleInput} signup />
+        <Userinput signup />
 
         <form className="userPrivacyCheckBox">
           <div className="checkContainer">
@@ -47,7 +42,11 @@ function JoinModal() {
             </span>
           </div>
 
-          <Button title="회원가입" handleClick={goToMain} />
+          <Button
+            title="회원가입"
+            handleJoinClick={handleJoinClick}
+            format="signup"
+          />
         </form>
       </div>
     </div>

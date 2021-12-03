@@ -1,70 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NAV_DATA } from './NavData';
 import LoginModal from '../../pages/LoginModal/LoginModal';
+import JoinModal from '../../pages/JoinModal/JoinModal';
+import { NAV_DATA } from './NavData';
 import './Nav.scss';
-import { useState } from 'react/cjs/react.development';
 
 const Nav = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
 
-  const handleModal = () => {
-    setIsModalOpen(!isModalOpen);
-    console.log(isModalOpen);
+  const handleLoginModal = () => {
+    setIsLogin(!isLogin);
   };
-  // const closeModal = () => {
-  //   setIsModalOpen(handleModal);
-  // }
+
+  const handleSignupModal = () => {
+    setIsSignup(true);
+    setIsLogin(false);
+  };
+
+  const handleJoinClick = () => {
+    setIsSignup(false);
+    setIsLogin(false);
+  };
 
   return (
-    <nav className="nav">
-      <div className="navLeftContainer">
-        <div className="gnbMenuWrap">
-          <img
-            className="menuBar"
-            src="/images/icon/hamberger.svg"
-            alt="hamburgerMenuBar"
-          />
-          <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
-          <ul className="gnbMenuBar">
-            {NAV_DATA.map(el => (
-              <li key={el.id} className="gnbMenuLi">
-                {el.title}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="navCenterContainer">
-        <div className="searchLink">
-          <Link to="/">
-            검색
-            <span className="line" />
-          </Link>
-        </div>
-      </div>
-      <div className="navRightContainer">
-        <div className="loginContainer">
-          <div className="loginLink">
+    <>
+      <nav className="nav">
+        <div className="navLeftContainer">
+          <div className="gnbMenuWrap">
             <img
-              className="loginIcon"
-              src="/images/icon/profile.svg"
-              alt="profile"
-              onClick={handleModal}
+              className="menuBar"
+              src="/images/icon/hamberger.svg"
+              alt="hamburgerMenuBar"
             />
-            <div className="loginTxt" onClick={handleModal}>
-              로그인
-            </div>
-            {/* {isModalOpen && <LoginModal />} */}
-          </div>
-          <div className="cartLink">
-            <img className="cartIcon" src="/images/icon/cart.svg" alt="cart" />
-            <div className="carTxt">0</div>
+            <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
+            <ul className="gnbMenuBar">
+              {NAV_DATA.map(el => (
+                <li key={el.id} className="gnbMenuLi">
+                  {el.title}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
-      {isModalOpen && <LoginModal />}
-    </nav>
+        <div className="navCenterContainer">
+          <div className="searchLink">
+            <Link to="/">
+              검색
+              <span className="line" />
+            </Link>
+          </div>
+        </div>
+        <div className="navRightContainer">
+          <div className="loginContainer">
+            <div className="loginLink">
+              <img
+                className="loginIcon"
+                src="/images/icon/profile.svg"
+                alt="profile"
+                onClick={handleLoginModal}
+              />
+              <div className="loginTxt" onClick={handleLoginModal}>
+                로그인
+              </div>
+            </div>
+            <div className="cartLink">
+              <img
+                className="cartIcon"
+                src="/images/icon/cart.svg"
+                alt="cart"
+              />
+              <div className="carTxt">0</div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {isLogin && <LoginModal handleSignupModal={handleSignupModal} />}
+      {isSignup && <JoinModal handleJoinClick={handleJoinClick} />}
+    </>
   );
 };
 

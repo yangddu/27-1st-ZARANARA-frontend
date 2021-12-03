@@ -31,30 +31,3 @@ function Userinput({ handleInput, signup }) {
 }
 
 export default Userinput;
-
-// function Userinput({ handleInput }) {
-//   return (
-//     <div className="userImformationContainer">
-//       <input
-//         className="usermail"
-//         type="text"
-//         name="usermail"
-//         placeholder="*이메일"
-//         onChange={handleInput}
-//       >
-//         <label for="usermail">*이메일</label>
-//       </input>
-//       <input
-//         className="usermail"
-//         type="text"
-//         name="usermail"
-//         placeholder="*패스워드"
-//         onChange={handleInput}
-//       >
-//         <label for="usermail">*이메일</label>
-//       </input>
-//     </div>
-//   );
-// }
-
-// export default Userinput;
