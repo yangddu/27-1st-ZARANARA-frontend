@@ -4,6 +4,15 @@
 .detail {
   display: flex;
 
+  .dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
   .leftContainer {
     width: 55%;
     height: 1000px;
@@ -25,7 +34,7 @@
       .productTitle {
         font-size: 24px;
         font-weight: 600;
-        margin: 12px 0 7px 0;
+        margin: 10px 0 7px 0;
       }
 
       .productPrice {
@@ -46,7 +55,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 28px;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
       }
 
       .productInfoTable {
@@ -69,7 +78,7 @@
 
           .productInfoValue {
             width: 20%;
-            padding: 10px 0;
+            padding: 8px 0;
             padding-left: 5px;
             border-top: 1px solid #86868a;
             border-bottom: 1px solid #86868a;
@@ -84,7 +93,7 @@
             align-items: center;
             flex-grow: 2;
             width: 20%;
-            padding: 10px 5px 10px 0;
+            padding: 8px 5px 10px 0;
             border-top: 1px solid #86868a;
             border-bottom: 1px solid #86868a;
 
@@ -113,12 +122,47 @@
       }
 
       .productDetailInfo {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
 
         .productDetailContents {
           margin-bottom: 8px;
           font-size: 14px;
           cursor: pointer;
+        }
+      }
+
+      .productRelatedContainer {
+        .productRelatedHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          .productRelatedTxt {
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+
+          .productRelatedArrow {
+            button {
+              width: 30px;
+              height: 24px;
+              background: yellowgreen;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .productRelatedCons {
+          display: flex;
+
+          .productRelatedImg {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-right: 10px;
+          }
         }
       }
     }

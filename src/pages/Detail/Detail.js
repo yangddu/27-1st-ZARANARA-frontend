@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DetailModal from '../../components/DetailModal/DetailModal';
 import './Detail.scss';
 
 const Detail = () => {
   const [number, setNumber] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false); //기본값 : 닫혀져 있음
+  const [isModalOpen, setIsModalOpen] = useState(false); //모달 상태 관리 : 기본값 - 닫힘
+  const dimmerRef = useRef();
+
+  useEffect(() => {
+    // dimmerRef.current.style;
+    // dimmerRef.current.style.display = 'block';
+  }, [isModalOpen]); // 의존, 뭘 의존하냐? 예슬님이 주는 커피 / 조건 /
 
   const increaseAmount = () => {
     setNumber(number + 1);
@@ -12,21 +18,22 @@ const Detail = () => {
 
   const decreaseAmount = () => {
     if (number === 0) return;
-
     setNumber(number - 1);
   };
 
-  const handleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const openModal = () => {
+    setIsModalOpen(true); //true
     // 열림 닫힘 반복할 수 있음
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    // setIsModalOpen(false); //false
+    if (isModalOpen == true) return setIsModalOpen(false);
   };
 
   return (
-    <div className="detail" onClick={handleModal}>
+    <div className="detail" onClick={closeModal}>
+      {isModalOpen && <div className="dimmer" ref={dimmerRef}></div>}
       <div className="leftContainer">
         <img
           src="https://static.zarahome.net/8/photos4/2021/I/4/1/p/9336/060/250/9336060250_2_7_3.jpg?t=1636044789265"
@@ -65,15 +72,46 @@ const Detail = () => {
                 </div>
               </span>
             </div>
+            <div className="productInfoCons">
+              <span className="productInfoValue">14cm</span>
+              <span className="productInfoValue">10cm</span>
+              <span className="productInfoValue">10cm</span>
+              <span className="productInfoLikes">
+                <div className="likes">좋아염</div>
+                <div className="amount">
+                  <button onClick={decreaseAmount}>-</button>
+                  <div className="amountNumber">{number}</div>
+                  <button onClick={increaseAmount}>+</button>
+                </div>
+              </span>
+            </div>
           </div>
+          {isModalOpen && (
+            <DetailModal openModal={openModal} className="modal" />
+          )}
           <div className="productDetailInfo">
-            {isModalOpen && <DetailModal handleModal={handleModal} />}
-            <div className="productDetailContents" onClick={handleModal}>
+            <div className="productDetailContents" onClick={openModal}>
               제품 상세정보
             </div>
-            <div className="productDetailContents" onClick={handleModal}>
+            <div className="productDetailContents" onClick={openModal}>
               배송 및 반품
             </div>
+          </div>
+          <div className="productRelatedContainer">
+            <div className="productRelatedHeader">
+              <div className="productRelatedTxt">룩 완성하기</div>
+              <ul className="productRelatedArrow">
+                <button>왼</button>
+                <button>오</button>
+              </ul>
+            </div>
+            <ul className="productRelatedCons">
+              <li className="productRelatedImg"></li>
+              <li className="productRelatedImg"></li>
+              <li className="productRelatedImg"></li>
+              <li className="productRelatedImg"></li>
+              <li className="productRelatedImg"></li>
+            </ul>
           </div>
         </div>
         <div className="relatedProducts" />

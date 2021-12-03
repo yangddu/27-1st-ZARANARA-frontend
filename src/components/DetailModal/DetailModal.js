@@ -1,27 +1,24 @@
 import React from 'react';
 import './DetailModal.scss';
 
-const DetailModal = ({ handleModal }) => (
+const DetailModal = ({ openModal }) => (
   <div>
     <div className="detailModal">
       <div className="modalContainer">
         <div className="wrapper">
-          <button className="modalButton" onClick={handleModal}>
+          <button className="modalButton" onClick={openModal}>
             X
           </button>
           <ul className="modalCon">
-            <li>
-              <div className="modalConHeader">크기</div>
+            <li className="modalConHeader">크기</li>
+            <li className="modalContents">
+              <span>가로 : </span>
+              <span>30.50cm</span>
             </li>
-            <li>
-              <div>높이 : </div>
-              <div>31.50cm</div>
+            <li className="modalContents">
+              <span>세로 : </span>
+              <span>18.50cm</span>
             </li>
-            <li>
-              <div>가로 폭 : </div>
-              <div>18.50cm</div>
-            </li>
-            <li />
           </ul>
         </div>
       </div>
