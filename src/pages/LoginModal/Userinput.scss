@@ -6,4 +6,41 @@
     height: 50px;
     border-bottom: 1px solid #1e1e1e;
   }
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.userImformationContainer {
+  position: relative;
+  margin: 10px 0;
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0px 5px 0px;
+    font-size: 14px;
+    width: 100%;
+  }
+  input::placeholder {
+    color: transparent;
+  }
+  input:placeholder-shown + label {
+    color: #aaa;
+
+    font-size: 14px;
+    top: 15px;
+  }
+  input: focus + label, label {
+    color: #1e1e1e;
+    font-size: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+  }
 }
