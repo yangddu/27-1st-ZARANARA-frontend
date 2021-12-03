@@ -3,7 +3,7 @@ import './Button.scss';
 
 function Button({ title, handleClick }) {
   return (
-    <button className="Button" type="button" onClick={handleClick}>
+    <button className="button" type="button" onClick={handleClick}>
       {title}
     </button>
   );
