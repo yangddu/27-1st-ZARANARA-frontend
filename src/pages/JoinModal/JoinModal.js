@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from '../LoginModal/Button';
-import UserImformation from '../LoginModal/UserImformation';
 import './JoinModal.scss';
 import Userinput from '../LoginModal/Userinput';
 

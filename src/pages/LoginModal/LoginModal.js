@@ -34,7 +34,7 @@ function LoginModal({ handleSignupModal }) {
             <div className="showPassword">
               <span className="findPassword">비밀번호를 잊으셨습니까?</span>
             </div>
-            <Button title="로그인" format="big" />
+            <Button title="로그인" format="midium" />
           </form>
         </div>
       </div>

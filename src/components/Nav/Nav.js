@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoginModal from '../../pages/LoginModal/LoginModal';
 import JoinModal from '../../pages/JoinModal/JoinModal';
+import Userinput from '../../pages/LoginModal/Userinput';
 import { NAV_DATA } from './NavData';
 import './Nav.scss';
 
@@ -20,8 +21,17 @@ const Nav = () => {
 
   const handleJoinClick = () => {
     setIsSignup(false);
-    setIsLogin(false);
   };
+
+  // const goMain= () => {
+  //   fetch('API') , {
+  //     method: 'POST',
+  //     body : JSON.stringify({
+  //       email: Userinput.usereamil=
+  //       password: Userpassword.userpassword=
+  //     })
+  //   }
+  // }
 
   return (
     <>
