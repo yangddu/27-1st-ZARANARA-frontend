@@ -13,6 +13,25 @@ function LoginModal({ handleSignupModal }) {
     console.log(e.target.value);
   };
 
+  // const goMain = () => {
+  //   fetch('http://10.58.2.207:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: inputUserEmail,
+  //       password: inputUserEmail,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if ('access_token' in data) {
+  //         // alert(data.access_token);
+  //         navigate('/main-seul');
+  //       } else {
+  //         console.log(data.message);
+  //       }
+  //     });
+  // };
+
   return (
     <div className="loginModal">
       <div className="login">
@@ -41,7 +60,7 @@ function LoginModal({ handleSignupModal }) {
       <div className="join">
         <h2>회원가입</h2>
         <Button
-          title="회원가입"
+          title="계정 만들기"
           handleClick={handleSignupModal}
           format="small"
         />

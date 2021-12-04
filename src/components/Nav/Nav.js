@@ -21,7 +21,6 @@ const Nav = () => {
   const handleJoinClick = () => {
     setIsSignup(false);
   };
-
   // const goMain= () => {
   //   fetch('API') , {
   //     method: 'POST',

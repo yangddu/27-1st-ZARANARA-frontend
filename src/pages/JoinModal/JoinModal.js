@@ -41,7 +41,7 @@ function JoinModal({ handleJoinClick }) {
           </div>
 
           <Button
-            title="회원가입"
+            title="계정만들기"
             handleClick={handleJoinClick}
             format="signup"
           />
