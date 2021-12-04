@@ -4,7 +4,6 @@ import './JoinModal.scss';
 import Userinput from '../LoginModal/Userinput';
 
 function JoinModal({ handleJoinClick }) {
-  // const checkbox = ([checkbox, setCheckbox] = useState([]);
   const [userInput, setUserInput] = useState('');
 
   const handleInput = e => {
@@ -43,7 +42,7 @@ function JoinModal({ handleJoinClick }) {
 
           <Button
             title="회원가입"
-            handleJoinClick={handleJoinClick}
+            handleClick={handleJoinClick}
             format="signup"
           />
         </form>
