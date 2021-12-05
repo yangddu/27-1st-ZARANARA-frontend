@@ -2,12 +2,12 @@ import React from 'react';
 import './SliderContent.scss';
 
 const SliderContent = ({ sliderImagesData }) => {
-  return sliderImagesData.map((slide, i) => (
+  return sliderImagesData.map(slide => (
     <div
-      key={i}
+      key={slide.slide_id}
       className="slideImage"
-      style={{ backgroundImage: `url(${slide.url})` }}
-      alt={slide.title}
+      style={{ backgroundImage: `url(${slide.slide_image})` }}
+      alt={slide.alt}
     />
   ));
 };

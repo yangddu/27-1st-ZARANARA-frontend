@@ -1,14 +1,17 @@
 [
   {
-    "title": "크리스마스 트리 전구",
-    "url": "./images/main/slider_image_lightball.jpg"
+    "slide_id": 1,
+    "title": "크리스마스 장식 볼",
+    "slide_image": "https://url.kr/npyj74"
   },
   {
-    "title": "크리스마스 쿠키 틀",
-    "url": "./images/main/slider_image_cookieTool.jpg"
+    "slide_id": 2,
+    "title": "벽걸이 양말",
+    "slide_image": "https://url.kr/d7gumw"
   },
   {
-    "title": "크리스마스 불빛 트리",
-    "url": "./images/main/slider_image_treeToy.jpg"
+    "slide_id": 3,
+    "title": "선물 네임택",
+    "slide_image": "https://url.kr/z4tx7d"
   }
 ]
