@@ -17,7 +17,7 @@ const ProductList = ({ productImages }) => {
       </div>
       <ul className="productImages">
         {productImages.map(product => (
-          <ProductContent key={product.id} product={product} />
+          <ProductContent key={product.set_id} product={product} />
         ))}
       </ul>
     </section>

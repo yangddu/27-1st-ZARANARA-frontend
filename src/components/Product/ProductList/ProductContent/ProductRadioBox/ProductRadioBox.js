@@ -4,7 +4,7 @@ import Spot from './Spot/Spot';
 import ProductInfo from './ProductInfo/ProductInfo';
 import './ProductRadioBox.scss';
 
-const ProductRadioBox = ({ spotdata, position }) => {
+const ProductRadioBox = ({ spotdata }) => {
   const radioBoxRef = useRef();
   const [isMouseSpotEnter, setIsMouseSpotEnter] = useState(false);
   const [isMouseInfoEnter, setIsMouseInfoEnter] = useState(false);
@@ -27,14 +27,13 @@ const ProductRadioBox = ({ spotdata, position }) => {
   };
 
   useEffect(() => {
-    radioBoxRef.current.style.top = position.top;
-    radioBoxRef.current.style.left = position.left;
+    radioBoxRef.current.style.top = `${spotdata.x_position}%`;
+    radioBoxRef.current.style.left = `${spotdata.y_position}%`;
   }, []);
 
   return (
     <div className="productRadioBox" ref={radioBoxRef}>
       <Spot
-        spotdata={spotdata}
         handleSpotMouseEnter={handleSpotMouseEnter}
         handleSpotMouseLeave={handleSpotMouseLeave}
       />

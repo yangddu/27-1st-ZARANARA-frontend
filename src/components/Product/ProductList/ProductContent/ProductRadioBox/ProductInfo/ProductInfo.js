@@ -4,28 +4,28 @@ import { ReactComponent as RigthArrow } from '../../../../../../assets/icon/arro
 import './ProductInfo.scss';
 
 const ProductInfo = ({
-  spotdata: { isNew, title, description, price, url, alt },
+  spotdata,
   isRadioActive,
   handleInfoMouseEnter,
   handleInfoMouseLeave,
 }) => {
   return (
     <Link
-      to={url}
-      alt={alt}
+      to="http://"
+      alt={spotdata.alt}
       className={isRadioActive ? 'container active' : 'container'}
       onMouseOver={handleInfoMouseEnter}
       onMouseLeave={handleInfoMouseLeave}
     >
       <div className="header">
         <div className="inner">
-          {isNew ? <span className="new">New</span> : null}
-          <h3 className="title">{title}</h3>
-          <p className="description">{description}</p>
+          {true ? <span className="new">New</span> : null}
+          <h3 className="title">{spotdata.name}</h3>
+          <p className="description">{spotdata.keyword}</p>
         </div>
         <RigthArrow className="rigthArrow" />
       </div>
-      <span className="price">{price}</span>
+      <span className="price">{spotdata.price}</span>
     </Link>
   );
 };

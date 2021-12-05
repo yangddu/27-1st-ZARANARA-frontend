@@ -5,17 +5,14 @@ import ProductRadioBox from './ProductRadioBox/ProductRadioBox';
 import './ProductContent.scss';
 
 const ProductContent = ({ product }) => {
+  console.log(product);
   return (
     <li className="productImage">
-      {product.spotdatas.map(spotdata => (
-        <ProductRadioBox
-          key={spotdata.id}
-          spotdata={spotdata}
-          position={SPOTSPOSTION[spotdata.title]}
-        />
+      {product.set_item.map(spotdata => (
+        <ProductRadioBox key={spotdata.id} spotdata={spotdata} />
       ))}
       <Link to="/gift/">
-        <img alt={product.alt} src={product.url} />
+        <img alt={product.set_alt} src={product.set_image} />
       </Link>
     </li>
   );
