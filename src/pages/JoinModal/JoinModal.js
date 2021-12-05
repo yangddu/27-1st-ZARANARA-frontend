@@ -18,7 +18,7 @@ function JoinModal({ handleJoinClick }) {
           <span>자라홈 계정 만들기</span>
         </div>
         <div className="choiceKindOfAccount" />
-        <Userinput signup />
+        <Userinput signup handleInput={handleInput} />
 
         <form className="userPrivacyCheckBox">
           <div className="checkContainer">
