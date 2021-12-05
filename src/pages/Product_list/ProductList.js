@@ -3,20 +3,23 @@ import './ProductList.scss';
 
 function ProductList() {
   return (
-    <div className="jb-wrap">
-      <img className="jb-image" alt="kidtop" src="img/velvet.jpg" />
-      <div className="jb-text">
-        <p>장바구니에 담기</p>
-      </div>
-
-      <div className="productInfo">
-        <div className="productName">
-          <span>리버서블 벨벳 차렵이불</span>
-        </div>
-        <div className="price">
-          <span>190,000원</span>
-        </div>
-      </div>
+    <div className="galleylist">
+      <ul>
+        <li>
+          <a href="">
+            <div className="screen">
+              <div className="top">자라나라</div>
+              <div className="botton">
+                <span>장바구니에 담기</span>
+              </div>
+              <img src="img/velvet.jpg" alt="velvet" />
+            </div>
+            <div>
+              <h3>벨벳 크리오스 이불세트</h3>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }

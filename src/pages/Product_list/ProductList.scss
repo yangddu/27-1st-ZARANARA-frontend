@@ -1,22 +1,69 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
 
-.jb-wrap {
-  width: 40%;
-  margin: 10px auto;
-  border: 1px solid #000000;
-}
-.jb-wrap img {
+.gallerylist {
+  max-width: 1200px;
   width: 100%;
-  vertical-align: middle;
-  cursor: pointer;
+  margin: 0 auto;
 }
-.jb-text {
-  padding: 5px 10px;
-  background-color: #1e1e1e;
-  text-align: center;
+
+ul {
+  font-size: 0;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3%;
+    a {
+      display: block;
+      width: auto;
+      text-decoration: none;
+      margin: 5px;
+      .screen {
+        position: relative;
+        overflow: hidden;
+        .top {
+          position: absolute;
+          bottom: 150%;
+          left: 30px;
+          z-index: 2;
+          color: aqua;
+          font-size: 26px;
+          font-weight: 900;
+          transition: all 0.35s;
+        }
+        .botton {
+          width: 327px;
+          text-align: center;
+          background-color: yellow;
+          position: absolute;
+          top: 150%;
+          // left: 25%;
+          z-index: 2;
+          color: black;
+          font-size: 14px;
+          transition: all 0.35s;
+          align-items: center;
+          span {
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+      h3 {
+        font-size: 14px;
+        // text-align: center;
+        padding: 20px;
+        color: blue;
+      }
+    }
+  }
 }
-.jb-text :hover {
-  background-color: #1e1e1e;
-  color: white;
+
+// ul > li > a:hover .top {
+//   bottom: 52%;
+// }
+
+ul > li > a:hover .botton {
+  top: 90%;
 }

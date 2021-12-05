@@ -9,14 +9,14 @@ import ProductList from './pages/Product_list/ProductList';
 
 const Router = () => (
   <BrowserRouter>
-    <Nav />
+    {/* <Nav /> */}
     <Routes>
       <Route path="/product" element={<ProductList />} />
       <Route path="/join" element={<JoinModal />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Main />} />
     </Routes>
-    <Footer />
+    {/* <Footer /> */}
   </BrowserRouter>
 );
 
