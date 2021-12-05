@@ -214,66 +214,74 @@
 
     .slideWrapper {
       display: flex;
+      overflow: hidden;
 
-      // margin: 0 auto;
-      // height: 200px;
-      background: blue;
-      // overflow: hidden;
-      .testContainer {
-        width: 200px;
+      // .slideHiddenWrap {
+      //   overflow: hidden;
 
-        height: 200px;
+      .slideConWrap {
+        display: flex;
+        // margin: 0 auto;
+        // height: 200px;
+        background: blue;
+        // overflow: hidden;
+        .slideContainer {
+          width: 200px;
 
-        overflow: hidden;
+          height: 200px;
+          margin-right: 20px;
+          overflow: hidden;
 
-        .productRelatedImg {
-          position: relative;
-
-          .productRelatedInsideArrow {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: 100px;
-            width: 200px;
-
-            padding: 0 20px;
-            z-index: 20;
-
-            button {
-              width: 20px;
-              height: 20px;
-              background: red;
-            }
-          }
-        }
-
-        .slideWrapperTest {
-          display: flex;
-
-          .productRelatedSlideWrap {
-            display: flex;
+          .productRelatedImg {
             position: relative;
 
-            .productRelatedSlider {
-              // position: absolute;
-              width: 200px;
-              height: 200px;
-              background: pink;
-            }
-
-            .productRelatedImg {
+            .productRelatedInsideArrow {
+              display: flex;
+              justify-content: space-between;
               position: absolute;
-              top: 90px;
-              left: 0;
+              top: 100px;
               width: 200px;
-              margin-right: 10px;
-              background: blue;
 
-              // overflow: hidden;
+              padding: 0 20px;
+              z-index: 20;
+
+              button {
+                width: 20px;
+                height: 20px;
+                background: red;
+              }
+            }
+          }
+
+          .slideWrapperTest {
+            display: flex;
+
+            .productRelatedSlideWrap {
+              display: flex;
+              position: relative;
+
+              .productRelatedSlider {
+                // position: absolute;
+                width: 200px;
+                height: 200px;
+                background: pink;
+              }
+
+              .productRelatedImg {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 200px;
+                margin-right: 10px;
+                background: blue;
+
+                // overflow: hidden;
+              }
             }
           }
         }
       }
+      //}
     }
 
     .relatedProducts {

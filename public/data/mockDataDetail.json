@@ -32,21 +32,30 @@
       "theme_products": [
         {
           "id": 1,
-          "image_url": ["", ""],
-          "name": "글리터 베어 프린트",
-          "price": "49000.00"
+          "image_url": [
+            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0699/073/500/0699073500_2_7_2.jpg?t=1633087481049",
+            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0699/073/500/0699073500_1_1_2.jpg?t=1632994898566"
+          ],
+          "name": "깅엄 체크 시트 키즈용 체어",
+          "price": "169000.00"
         },
         {
           "id": 2,
-          "image_url": ["", ""],
-          "name": "엘리펀트 자수 후드",
-          "price": "69000.00"
+          "image_url": [
+            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0660/080/500/0660080500_2_7_2.jpg?t=1633446910285",
+            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0660/080/500/0660080500_1_1_2.jpg?t=1633425968144"
+          ],
+          "name": "메탈릭 스쿨 락커",
+          "price": "179000.00"
         },
         {
           "id": 3,
-          "image_url": ["", ""],
-          "name": "",
-          "price": "59000.00"
+          "image_url": [
+            "https://static.zarahome.net/8/photos4/2021/I/4/1/p/4670/080/745/4670080745_2_7_2.jpg?t=1630483219381",
+            "https://static.zarahome.net/8/photos4/2021/I/4/1/p/4670/080/745/4670080745_1_1_2.jpg?t=1621850137886"
+          ],
+          "name": "메탈릭 벽 선반",
+          "price": "55000.00"
         }
       ],
       "users_like": true
