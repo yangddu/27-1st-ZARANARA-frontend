@@ -1,7 +1,101 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
 
-.gallerylist {
+// .list {
+//   max-width: 1200px;
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// ul {
+//   font-size: 0;
+
+//   li {
+//     display: inline-block;
+//     vertical-align: top;
+//     width: 33.3%;
+
+//     a {
+//       display: block;
+//       width: auto;
+//       text-decoration: none;
+//       margin: 5px;
+
+//       .screen {
+//         position: relative;
+//         overflow: hidden;
+
+//         .top {
+//           position: absolute;
+//           bottom: 150%;
+//           left: 60px;
+//           z-index: 2;
+//           color: white;
+//           font-size: 16px;
+//           font-weight: 600;
+//           font-style: italic;
+//           transition: all 0.35s;
+//         }
+//         .botton {
+//           width: 100%;
+//           text-align: center;
+//           position: absolute;
+//           top: 150%;
+//           // left: 25%;
+//           z-index: 2;
+//           color: black;
+//           font-size: 14px;
+//           transition: all 0.35s;
+//           opacity: 0.7;
+//           align-items: center;
+
+//           & :hover {
+//             background-color: #1e1e1e;
+//             color: white;
+//           }
+
+//           .bottonlist {
+//             background-color: white;
+
+//             & :hover {
+//               background-color: #1e1e1e;
+//               color: white;
+//             }
+
+//             span {
+//               font-size: 15px;
+//               width: 100%;
+
+//               & :hover {
+//                 background-color: #1e1e1e;
+//                 color: white;
+//               }
+//             }
+//           }
+//         }
+//         img {
+//           width: 100%;
+//         }
+//       }
+//       h3 {
+//         font-size: 14px;
+//         text-align: center;
+//         padding: 20px;
+//         color: black;
+//       }
+//     }
+//   }
+// }
+
+// ul > li > a:hover .top {
+//   bottom: 82%;
+// }
+
+// ul > li > a:hover .botton {
+//   top: 92%;
+// }
+
+.list {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -9,41 +103,65 @@
 
 ul {
   font-size: 0;
+
   li {
     display: inline-block;
     vertical-align: top;
     width: 33.3%;
+
     a {
       display: block;
       width: auto;
       text-decoration: none;
       margin: 5px;
+
       .screen {
         position: relative;
         overflow: hidden;
+
         .top {
           position: absolute;
           bottom: 150%;
-          left: 30px;
+          left: 60px;
           z-index: 2;
-          color: aqua;
-          font-size: 26px;
-          font-weight: 900;
+          color: white;
+          font-size: 15px;
+          font-weight: 600;
+          font-style: italic;
           transition: all 0.35s;
         }
         .botton {
-          width: 327px;
+          width: 100%;
+          height: 100%;
           text-align: center;
-          background-color: yellow;
           position: absolute;
           top: 150%;
           // left: 25%;
           z-index: 2;
+          background-color: white;
           color: black;
           font-size: 14px;
           transition: all 0.35s;
+          opacity: 0.7;
           align-items: center;
-          span {
+
+          & :hover {
+            background-color: #1e1e1e;
+            color: white;
+            height: 100%;
+          }
+
+          .bottonlist {
+            span {
+              font-size: 14px;
+              width: 100%;
+              padding-top: 20%;
+
+              & :hover {
+                background-color: #1e1e1e;
+                color: white;
+              }
+            }
           }
         }
         img {
@@ -52,18 +170,18 @@ ul {
       }
       h3 {
         font-size: 14px;
-        // text-align: center;
+        text-align: center;
         padding: 20px;
-        color: blue;
+        color: black;
       }
     }
   }
 }
 
-// ul > li > a:hover .top {
-//   bottom: 52%;
-// }
+ul > li > a:hover .top {
+  bottom: 82%;
+}
 
 ul > li > a:hover .botton {
-  top: 90%;
+  top: 92%;
 }
