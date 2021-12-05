@@ -132,6 +132,9 @@
       }
 
       .productRelatedContainer {
+        width: 100%;
+        margin: 0 auto;
+
         .productRelatedHeader {
           display: flex;
           justify-content: space-between;
@@ -153,15 +156,104 @@
           }
         }
 
-        .productRelatedCons {
+        .productRelatedSlideWrap {
           display: flex;
+          margin: 0 auto;
+          width: 200px;
+          // position: relative;
 
-          .productRelatedImg {
+          // .productRelatedSlider {
+          //   // position: absolute;
+          //   width: 200px;
+          //   height: 200px;
+          //   background: skyblue;
+          // }
+        }
+      }
+
+      // .productRelatedContents {
+      //   position: relative;
+      //   display: flex;
+      //   width: 420px;
+      //   height: 100px;
+      //   background: blue;
+      //   overflow: hidden;
+
+      // .productRelatedCons {
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      //   display: flex;
+      //   width: 100%; /* 슬라이드할 사진과 마진 총 넓이 */
+      //   transition: left 0.5s ease-out;
+
+      // .productRelatedImgArrow {
+      //   position: absolute;
+      //   z-index: 400;
+      //   display: flex;
+      //   justify-content: space-between;
+      //   background: green;
+      // }
+
+      // .productRelatedImg {
+      //   position: relative;
+      //   display: flex;
+      //   width: 100%;
+      //   height: 100px;
+      //   background: red;
+      //   margin-right: 10px;
+
+      //   .productConsRelatedImg {
+      //     position: absolute;
+      //     width: 100px;
+      //     height: 100px;
+      //   }
+      // }
+      //}
+    }
+
+    .slideWrapper {
+      display: flex;
+      width: 100%;
+      // margin: 0 auto;
+      height: 200px;
+      background: blue;
+      overflow: hidden;
+
+      .productRelatedSlideWrap {
+        // display: flex;
+        position: relative;
+
+        .productRelatedSlider {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          background: pink;
+        }
+
+        .productRelatedImg {
+          position: relative;
+          width: 200px;
+          margin-right: 10px;
+          background: blue;
+
+          // overflow: hidden;
+
+          .productRelatedInsideArrow {
             display: flex;
-            width: 100px;
-            height: 100px;
-            background: red;
-            margin-right: 10px;
+            justify-content: space-between;
+            position: absolute;
+            width: 200px;
+            top: 90px;
+            left: 0;
+            padding: 0 20px;
+            z-index: 20;
+
+            button {
+              width: 20px;
+              height: 20px;
+              background: red;
+            }
           }
         }
       }
