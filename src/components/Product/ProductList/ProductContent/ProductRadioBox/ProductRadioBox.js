@@ -27,8 +27,8 @@ const ProductRadioBox = ({ spotdata }) => {
   };
 
   useEffect(() => {
-    radioBoxRef.current.style.top = `${spotdata.x_position}%`;
-    radioBoxRef.current.style.left = `${spotdata.y_position}%`;
+    radioBoxRef.current.style.top = `${spotdata.y_position}%`;
+    radioBoxRef.current.style.left = `${spotdata.x_position}%`;
   }, []);
 
   return (

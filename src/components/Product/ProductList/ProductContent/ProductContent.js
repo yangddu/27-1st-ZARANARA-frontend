@@ -5,7 +5,6 @@ import ProductRadioBox from './ProductRadioBox/ProductRadioBox';
 import './ProductContent.scss';
 
 const ProductContent = ({ product }) => {
-  console.log(product);
   return (
     <li className="productImage">
       {product.set_item.map(spotdata => (

@@ -12,7 +12,7 @@ const ProductInfo = ({
   return (
     <Link
       to="http://"
-      alt={spotdata.alt}
+      alt={spotdata.item_alt}
       className={isRadioActive ? 'container active' : 'container'}
       onMouseOver={handleInfoMouseEnter}
       onMouseLeave={handleInfoMouseLeave}
