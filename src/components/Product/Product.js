@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductList from './ProductList/ProductList';
-import './Product.scss';
-import { useEffect } from 'react/cjs/react.development';
 import { GET_PRODUCT_API } from '../../config';
+import './Product.scss';
 
 const Product = () => {
   const [productImages, setProductImages] = useState([]);

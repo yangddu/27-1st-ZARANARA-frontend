@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useRef, useState, useEffect } from 'react';
 import Spot from './Spot/Spot';
 import ProductInfo from './ProductInfo/ProductInfo';
 import './ProductRadioBox.scss';
@@ -39,7 +38,7 @@ const ProductRadioBox = ({ spotdata }) => {
       />
       <ProductInfo
         spotdata={spotdata}
-        isRadioActive={isMouseSpotEnter || isMouseInfoEnter ? true : false}
+        isRadioActive={isMouseSpotEnter || isMouseInfoEnter}
         handleInfoMouseEnter={handleInfoMouseEnter}
         handleInfoMouseLeave={handleInfoMouseLeave}
       />

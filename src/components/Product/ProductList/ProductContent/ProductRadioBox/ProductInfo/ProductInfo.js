@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as RigthArrow } from '../../../../../../assets/icon/arrow_right.svg';
+import { MdArrowForwardIos } from 'react-icons/md';
 import './ProductInfo.scss';
 
 const ProductInfo = ({
@@ -9,23 +9,24 @@ const ProductInfo = ({
   handleInfoMouseEnter,
   handleInfoMouseLeave,
 }) => {
+  const { item_alt, name, keyword, price } = spotdata;
   return (
     <Link
       to="http://"
-      alt={spotdata.item_alt}
-      className={isRadioActive ? 'container active' : 'container'}
+      alt={item_alt}
+      className={`container${isRadioActive ? ' active' : ''}`}
       onMouseOver={handleInfoMouseEnter}
       onMouseLeave={handleInfoMouseLeave}
     >
       <div className="header">
         <div className="inner">
-          {true ? <span className="new">New</span> : null}
-          <h3 className="title">{spotdata.name}</h3>
-          <p className="description">{spotdata.keyword}</p>
+          <span className="new">New</span>
+          <h3 className="title">{name}</h3>
+          <p className="description">{keyword}</p>
         </div>
-        <RigthArrow className="rigthArrow" />
+        <MdArrowForwardIos className="rigthArrow" />
       </div>
-      <span className="price">{spotdata.price}</span>
+      <span className="price">{price}</span>
     </Link>
   );
 };

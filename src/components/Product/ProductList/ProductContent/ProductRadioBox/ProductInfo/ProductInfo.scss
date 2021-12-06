@@ -3,6 +3,7 @@
 
 .container {
   display: none;
+
   &::before {
     content: '';
     display: inline-block;
@@ -10,10 +11,11 @@
     height: 100%;
     background-color: yellow;
   }
+
   &.active {
-    position: absolute;
     display: flex;
     flex-direction: column;
+    position: absolute;
     bottom: 0;
     min-width: 150px;
     transform: translate(-50%, -24px);
@@ -54,11 +56,6 @@
         width: 24px;
         height: 32px;
         margin-left: 12px;
-
-        & path {
-          stroke: $color-black;
-          stroke-width: 3px;
-        }
       }
     }
 
