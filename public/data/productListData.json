@@ -1,16 +1,16 @@
-{
-  "id": 0,
-  "title": "벨벳 크리오스 이불세트",
-  "price": "119,000",
-  "url": "http://",
-  "alt": "벨벳 크리오스 이불세트 이미지"
-}
-
-{
-  "id": 1,
-  "title": "키즈 니트 top",
-  "price": "58,000",
-  "url": "http://",
-  "alt": "키즈 니트 상의 이미지"
-}
-
+[
+  {
+    "id": 0,
+    "title": "벨벳 크리오스 이불세트",
+    "price": "119,000",
+    "url": "/images/listpage/velvet.jpg",
+    "alt": "벨벳 크리오스 이불세트 이미지"
+  },
+  {
+    "id": 1,
+    "title": "키즈 니트 top",
+    "price": "58,000",
+    "url": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  }
+]
