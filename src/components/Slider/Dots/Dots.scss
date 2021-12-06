@@ -1,0 +1,24 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 92%;
+  width: 100%;
+  z-index: 999;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: rgba($color: $color-white, $alpha: 0.3);
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba($color: $color-white, $alpha: 1);
+    }
+  }
+}
