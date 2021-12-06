@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
 
+.productList {
+  margin-top: 13%;
+}
 .list {
   display: flex;
   max-width: 1200px;

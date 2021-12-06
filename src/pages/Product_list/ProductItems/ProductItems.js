@@ -4,11 +4,13 @@ import './ProductItems.scss';
 
 function ProductItems({ productList }) {
   return (
-    <ul className="productItems">
-      {productList.map(product => (
-        <Product productInfo={product} />
-      ))}
-    </ul>
+    <div className="productIremsContainer">
+      <ul className="productItems">
+        {productList.map(product => (
+          <Product productInfo={product} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
