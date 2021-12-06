@@ -2,9 +2,9 @@
 @import '../../../styles/mixin.scss';
 
 .dots {
-  position: absolute;
   display: flex;
   justify-content: center;
+  position: absolute;
   top: 92%;
   width: 100%;
   z-index: 999;

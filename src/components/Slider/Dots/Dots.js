@@ -1,11 +1,7 @@
 import React from 'react';
 import './Dots.scss';
 
-const Dots = ({ activeIndex, onClick, sliderImagesData }) => {
-  const handleClickDots = index => {
-    onClick(index);
-  };
-
+const Dots = ({ activeIndex, handleClickDots, sliderImagesData }) => {
   return (
     <div className="dots">
       {sliderImagesData.map((slide, index) => (

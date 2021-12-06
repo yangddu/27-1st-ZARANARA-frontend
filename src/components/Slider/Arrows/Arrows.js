@@ -1,16 +1,16 @@
 import React from 'react';
 import './Arrows.scss';
-import { ReactComponent as LeftArrow } from '../../../assets/icon/arrow_left.svg';
-import { ReactComponent as RightArrow } from '../../../assets/icon/arrow_right.svg';
+import { MdArrowBackIos } from 'react-icons/md';
+import { MdArrowForwardIos } from 'react-icons/md';
 
 const Arrows = ({ handlePrevSlide, handleNextSlide }) => {
   return (
     <div className="arrows">
       <span className="prev" onClick={handlePrevSlide}>
-        <LeftArrow className="leftArrow" />
+        <MdArrowBackIos className="leftArrow" />
       </span>
       <span className="next" onClick={handleNextSlide}>
-        <RightArrow className="rightArrow" />
+        <MdArrowForwardIos className="rightArrow" />
       </span>
     </div>
   );

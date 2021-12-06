@@ -59,7 +59,7 @@ const Slider = () => {
       <Dots
         activeIndex={activeIndex}
         sliderImagesData={sliderImagesData}
-        onClick={handleClickDots}
+        handleClickDots={handleClickDots}
       />
     </div>
   );
