@@ -18,8 +18,8 @@ function Userinput({ handleInput, signup }) {
       )}
       <div className="input-box">
         <input
-          className="useremail"
-          type="email"
+          className="email"
+          type="useremail"
           name="username"
           placeholder="아이디"
           onChange={handleInput}

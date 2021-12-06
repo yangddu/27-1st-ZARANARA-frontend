@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UserImformation from './UserImformation';
+import { useNavigate } from 'react-router-dom';
 import Userinput from './Userinput';
 import Button from './Button';
 import './LoginModal.scss';
@@ -12,25 +13,27 @@ function LoginModal({ handleSignupModal }) {
     setInputUserEmail(e.target.value);
     console.log(e.target.value);
   };
+  const navigate = useNavigate();
 
-  // const goMain = () => {
-  //   fetch('http://10.58.2.207:8000/users/signin', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: inputUserEmail,
-  //       password: inputUserEmail,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       if ('access_token' in data) {
-  //         // alert(data.access_token);
-  //         navigate('/main-seul');
-  //       } else {
-  //         console.log(data.message);
-  //       }
-  //     });
-  // };
+  const goMain = () => {
+    fetch('http://10.58.3.154:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputUserEmail,
+        password: inputUserPassword,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if ('SUCCESS' === data) {
+          alert(data.SUCCESS);
+          navigate('/');
+        } else {
+          console.log(data.message);
+        }
+      });
+  };
 
   return (
     <div className="loginModal">
@@ -53,7 +56,7 @@ function LoginModal({ handleSignupModal }) {
             <div className="showPassword">
               <span className="findPassword">비밀번호를 잊으셨습니까?</span>
             </div>
-            <Button title="로그인" format="midium" />
+            <Button title="로그인" format="midium" handleClick={goMain} />
           </form>
         </div>
       </div>

@@ -1,14 +1,38 @@
 import React, { useState } from 'react';
 import Button from '../LoginModal/Button';
 import './JoinModal.scss';
+import { useNavigate } from 'react-router-dom';
 import Userinput from '../LoginModal/Userinput';
 
 function JoinModal({ handleJoinClick }) {
   const [userInput, setUserInput] = useState('');
+  const [isJoinModal, setIsJoinModal] = useState(false);
 
   const handleInput = e => {
     setUserInput(e.target.value);
     console.log(e.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const goMain = () => {
+    fetch('http://10.58.3.154:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: userInput,
+        email: userInput,
+        password: userInput,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if ('SUCCESS' === data.MESSAGE) {
+          console.log(data);
+          alert(data.SUCCESS);
+          navigate('/');
+        }
+      });
   };
 
   return (
@@ -40,11 +64,7 @@ function JoinModal({ handleJoinClick }) {
             </span>
           </div>
 
-          <Button
-            title="계정만들기"
-            handleClick={handleJoinClick}
-            format="signup"
-          />
+          <Button title="계정만들기" format="signup" handleClick={goMain} />
         </form>
       </div>
     </div>
