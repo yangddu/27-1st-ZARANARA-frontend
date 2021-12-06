@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
-function Button({ title, handleClick, format, handleJoinClick }) {
+function Button({ title, handleClick, format }) {
   return (
     <button
       className={`button ${format ? format : ''}`}
