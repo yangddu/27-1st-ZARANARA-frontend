@@ -94,6 +94,7 @@ const Detail = () => {
 
   return (
     <div className="detail" onClick={closeModal}>
+      {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
       <div className="leftContainer">
         <img
           src="https://static.zarahome.net/8/photos4/2021/I/4/1/p/9336/060/250/9336060250_2_7_3.jpg?t=1636044789265"
