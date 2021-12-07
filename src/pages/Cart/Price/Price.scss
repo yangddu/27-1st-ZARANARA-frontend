@@ -1,0 +1,54 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.cartContentRight {
+  position: fixed;
+  top: 170px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  margin: 0 0 8px 4px;
+
+  .totalCount {
+    padding-bottom: 12px;
+    border-bottom: 1px solid $color-light-gray;
+    font-size: 18px;
+    font-weight: $weight-semi-bold;
+  }
+
+  .totalPriceWrapper {
+    @include flexSpaceBetweenCenter;
+    padding: 24px 0;
+
+    .totalText {
+      font-size: $font-regular;
+      font-weight: $weight-semi-bold;
+    }
+
+    .totalPrice {
+      font-size: $font-regular;
+      font-weight: $weight-semi-bold;
+    }
+  }
+
+  .promotionInfo {
+    padding-top: 24px;
+    font-size: $font-micro;
+    color: $color-gray;
+  }
+
+  .orderButton {
+    width: 100%;
+    margin-top: 16px;
+    padding: 8px 0;
+    font-size: $font-micro;
+    line-height: 1.6;
+    color: $color-white;
+    background-color: $color-black;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

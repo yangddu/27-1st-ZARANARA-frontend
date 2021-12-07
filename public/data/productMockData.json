@@ -1,0 +1,27 @@
+[
+  {
+    "set_alt": "세트 이미지였던것",
+    "set_id": 6,
+    "set_image": "https://url.kr/jyn1wu",
+    "set_item": [
+      {
+        "id": 7,
+        "item_alt": "아이템 이미지였던것",
+        "keyword": "선물세트 01의 첫번째 아이템",
+        "name": "선물세트 01에 맞는 아이템 01",
+        "price": "39000.00",
+        "x_position": 20,
+        "y_position": 20
+      },
+      {
+        "id": 8,
+        "item_alt": "아이템 이미지였던것",
+        "keyword": "선물세트 02의 첫번째 아이템",
+        "name": "선물세트 01에 맞는 아이템 02",
+        "price": "39000.00",
+        "x_position": 20,
+        "y_position": 70
+      }
+    ]
+  }
+]
