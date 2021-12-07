@@ -11,9 +11,11 @@ function FilterAside({
   return (
     <aside className={isFilterOn ? 'filterAside active' : 'filterAside'}>
       <div className="header">
-        <span className="title">필터</span>
+        <div className="titleWrapper">
+          <span className="titlename">필터</span>
+        </div>
         <button className="closeButton" onClick={() => handleFilter()}>
-          <IoCloseSharp />
+          {/* <IoCloseSharp className="close" /> */}
         </button>
         <form className="buttonContainer">
           <div>
