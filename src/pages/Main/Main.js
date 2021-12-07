@@ -1,6 +1,7 @@
 import React from 'react';
+import Slider from '../../components/Slider/Slider';
 import './Main.scss';
 
-const Main = () => <h1>Main</h1>;
+const Main = () => <Slider />;
 
 export default Main;
