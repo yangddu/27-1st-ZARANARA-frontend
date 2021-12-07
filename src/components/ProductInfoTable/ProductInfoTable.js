@@ -1,11 +1,11 @@
 import React from 'react';
-import './ProductInfoTable.scss';
 import ProductInfoValue from './ProductInfoValue/ProductInfoValue';
+import './ProductInfoTable.scss';
 
 const ProductInfoTable = ({
   increaseAmount,
   decreaseAmount,
-  number,
+  productAmount,
   detailContents,
 }) => (
   <div className="productInfoTable">
@@ -13,13 +13,14 @@ const ProductInfoTable = ({
       <span className="productValue">가로</span>
       <span className="productValue">세로</span>
       <span className="productValue">높이</span>
+      <span className="productValue">무게</span>
     </div>
     <ul className="productInfoCons">
       <ProductInfoValue
         detailContents={detailContents}
         increaseAmount={increaseAmount}
         decreaseAmount={decreaseAmount}
-        number={number}
+        productAmount={productAmount}
       />
     </ul>
   </div>

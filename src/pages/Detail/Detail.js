@@ -1,17 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import DetailModal from '../../components/DetailModal/DetailModal';
 import ProductInfoTable from '../../components/ProductInfoTable/ProductInfoTable';
 import ProductRelatedItmes from '../../components/ProductRelatedItems/ProductRelatedItems';
-import './Detail.scss';
+import Button from '../../components/Button/Button';
 import DetailContent from './DetailContent';
-import { useParams } from 'react-router-dom';
+import './Detail.scss';
 
 const Detail = () => {
   const [detailContents, setDetailContents] = useState([]);
-  const [number, setNumber] = useState(0);
+  const [productAmount, setProductAmount] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideWrap, setCurrentSlideWrap] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [likes, setLikes] = useState();
   const dimmerRef = useRef();
   const slideRef = useRef();
   const slideWrapRef = useRef();
@@ -21,8 +23,25 @@ const Detail = () => {
   const TOTAL_SLIDES_WRAP = 2;
   const PRODUCT_INFO_TABLE = detailContents.product_option?.[0].size.split(',');
   const PRODUCT_RELATED_IMG = detailContents.theme_products;
+  const PRODUCT_MATERIAL_CAUTION = detailContents.material_caution;
+  const PRODUCT_MATERIAL_NAME = detailContents.material_name;
 
-  console.log(detailContents.detail_image);
+  const clickOrder = () => {
+    // fetch('/data/mock.json')
+    //   .then(response => response.json())
+    //   .then(result => setDetailContents(result.result[0]));
+
+    fetch('/data/mock.json', {
+      method: 'POST',
+      body: JSON.stringify({
+        price: detailContents.price?.split('.')[0],
+        number: productAmount,
+        //producTid, price, 갯수, 사이즈, 컬러
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
 
   useEffect(() => {
     fetch('/data/mock.json')
@@ -31,12 +50,12 @@ const Detail = () => {
   }, []);
 
   const increaseAmount = () => {
-    setNumber(number + 1);
+    setProductAmount(productAmount => productAmount + 1);
   };
 
   const decreaseAmount = () => {
-    if (number === 0) return;
-    setNumber(number - 1);
+    if (productAmount === 1) return;
+    setProductAmount(productAmount => productAmount - 1);
   };
 
   const handlePrevSlide = () => {
@@ -81,7 +100,7 @@ const Detail = () => {
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentSlide * 2}00px)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
+    slideRef.current.style.transform = `translateX(-${currentSlide * 2}00px)`;
   }, [currentSlide]);
 
   useEffect(() => {
@@ -93,35 +112,46 @@ const Detail = () => {
 
   return (
     <div className="detail" onClick={closeModal}>
-      {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
-      <div className="leftContainer">
-        {detailContents.detail_image.map(imgItem => (
-          <img src={imgItem.url} alt={imgItem.alt} />
-        ))}
-      </div>
+      {/* {isModalOpen && <div className="dimmer" ref={dimmerRef} />} */}
+      <DetailContent detailContents={detailContents} />
       <div className="rightContainer">
         <div className="rightContainerInner">
           <div className="productTitle">{detailContents.name}</div>
           <div className="productPrice">
-            {detailContents.price?.split('.')[0]}원
+            {Number(detailContents.price?.split('.')[0]).toLocaleString()}원
           </div>
           <div className="productText">{detailContents.information}</div>
           <ProductInfoTable
             detailContents={PRODUCT_INFO_TABLE}
             increaseAmount={increaseAmount}
             decreaseAmount={decreaseAmount}
-            number={number}
+            productAmount={productAmount}
+            // likesClick={likesClick}
           />
           {isModalOpen && (
-            <DetailModal openModal={openModal} className="modal" />
+            <DetailModal
+              productMaterialCaution={PRODUCT_MATERIAL_CAUTION}
+              productMaterialName={PRODUCT_MATERIAL_NAME}
+              openModal={openModal}
+              className="modal"
+            />
           )}
           <div className="productDetailInfo">
-            <div className="productDetailContents" onClick={openModal}>
-              제품 상세정보
-            </div>
             {/* <div className="productDetailContents" onClick={openModal}>
               배송 및 반품
             </div> */}
+            <Button
+              handleClick={clickOrder}
+              format="bigger"
+              type="button"
+              title={`장바구니에 담기 (${Number(
+                productAmount * detailContents.price?.split('.')[0]
+              ).toLocaleString()} 원)`}
+            />
+            {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
+            <div className="productDetailContents" onClick={openModal}>
+              제품 상세정보
+            </div>
           </div>
           <ProductRelatedItmes
             detailContents={PRODUCT_RELATED_IMG}

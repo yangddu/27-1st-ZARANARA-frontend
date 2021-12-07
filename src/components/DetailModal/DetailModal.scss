@@ -8,26 +8,30 @@
   .modalContainer {
     position: absolute;
     width: 300px;
-    height: 300px;
+    height: 320px;
     left: 20%;
     padding: 15px;
     background: #fff;
-    border: 1px solid #333;
+    border-bottom: 30px solid #fff;
+    overflow-y: auto;
     z-index: 300;
 
     .wrapper {
       position: relative;
+      padding: 20px;
 
       .modalButton {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10px;
         padding: 5px;
+
+        .modalCloseButton {
+          position: fixed;
+        }
       }
 
       .modalCon {
-        padding: 16px;
-
         .modalConHeader {
           margin: 20px 0 15px 0;
           padding: 10px 0;
@@ -37,9 +41,13 @@
         }
 
         .modalContents {
-          @include flexSpaceBetweenCenter;
           font-size: 14px;
           margin-bottom: 10px;
+
+          .modalProductMaterialName {
+            display: block;
+            margin-bottom: 6px;
+          }
         }
       }
     }

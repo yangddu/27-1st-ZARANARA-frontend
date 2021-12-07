@@ -16,6 +16,10 @@
   .leftContainer {
     width: 55%;
     height: 1000px;
+
+    img {
+      display: block;
+    }
   }
 
   .rightContainer {
@@ -55,114 +59,27 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 28px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
       }
 
       .productDetailInfo {
         margin-bottom: 50px;
 
         .productDetailContents {
+          margin-top: 15px;
           margin-bottom: 10px;
           font-size: 14px;
           cursor: pointer;
         }
       }
-
-      .productRelatedContainer {
-        width: 100%;
-        margin: 0 auto;
-
-        .productRelatedHeader {
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-
-          .productRelatedTxt {
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 20px;
-          }
-
-          .productRelatedArrow {
-            button {
-              width: 30px;
-              height: 24px;
-              margin-left: 5px;
-              background: #1e1e1e;
-              color: #fff;
-            }
-          }
-        }
-
-        .productRelatedSlideWrap {
-          display: flex;
-          margin: 0 auto;
-          width: 220px;
-          // position: relative;
-
-          // .productRelatedSlider {
-          //   // position: absolute;
-          //   width: 220px;
-          //   height: 220px;
-          //   background: skyblue;
-          // }
-        }
-      }
-
-      // .productRelatedContents {
-      //   position: relative;
-      //   display: flex;
-      //   width: 420px;
-      //   height: 100px;
-      //   background: blue;
-      //   overflow: hidden;
-
-      // .productRelatedCons {
-      //   position: absolute;
-      //   left: 0;
-      //   top: 0;
-      //   display: flex;
-      //   width: 100%; /* 슬라이드할 사진과 마진 총 넓이 */
-      //   transition: left 0.5s ease-out;
-
-      // .productRelatedImgArrow {
-      //   position: absolute;
-      //   z-index: 400;
-      //   display: flex;
-      //   justify-content: space-between;
-      //   background: green;
-      // }
-
-      // .productRelatedImg {
-      //   position: relative;
-      //   display: flex;
-      //   width: 100%;
-      //   height: 100px;
-      //   background: red;
-      //   margin-right: 10px;
-
-      //   .productConsRelatedImg {
-      //     position: absolute;
-      //     width: 100px;
-      //     height: 100px;
-      //   }
-      // }
-      //}
     }
 
     .slideWrapper {
       display: flex;
       overflow: hidden;
 
-      // .slideHiddenWrap {
-      //   overflow: hidden;
-
       .slideConWrap {
         display: flex;
-        // margin: 0 auto;
-        // height: 220px;
-        // background: blue;
-        // overflow: hidden;
         .slideContainer {
           width: 220px;
 
@@ -198,7 +115,6 @@
               position: relative;
 
               .productRelatedSlider {
-                // position: absolute;
                 width: 220px;
                 height: 260px;
               }
@@ -210,14 +126,11 @@
                 width: 220px;
                 margin-right: 10px;
                 background: blue;
-
-                // overflow: hidden;
               }
             }
           }
         }
       }
-      //}
     }
 
     .relatedProducts {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import './ProductRelatedItems.scss';
 
 const ProductRelatedItmes = ({
   slideWrapRef,
@@ -9,8 +10,8 @@ const ProductRelatedItmes = ({
   handleNextSlideWrap,
   detailContents,
 }) => (
-  <div>
-    <div className="productRelatedContainer">
+  <>
+    <div className="productRelatedItems">
       <div className="productRelatedHeader">
         <div className="productRelatedTxt">룩 완성하기</div>
         <div className="productRelatedArrow">
@@ -24,7 +25,6 @@ const ProductRelatedItmes = ({
       </div>
     </div>
     <div className="slideWrapper">
-      {/* <div className="slideHiddenWrap"> */}
       <div className="slideConWrap" ref={slideWrapRef}>
         <div className="slideContainer">
           <div className="productRelatedImg">
@@ -106,7 +106,7 @@ const ProductRelatedItmes = ({
         </div>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default ProductRelatedItmes;

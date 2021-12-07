@@ -1,12 +1,12 @@
 import React from 'react';
-import './ProductInfoValue.scss';
 import { FiHeart } from 'react-icons/fi';
-import { HiOutlineMinusSm, HiOutlinePlus } from 'react-icons/hi';
+import { HiMinus, HiPlus } from 'react-icons/hi';
+import './ProductInfoValue.scss';
 
 const ProductInfoValue = ({
   increaseAmount,
   decreaseAmount,
-  number,
+  productAmount,
   detailContents,
 }) => {
   return (
@@ -22,11 +22,11 @@ const ProductInfoValue = ({
         </div>
         <div className="amount">
           <button onClick={decreaseAmount}>
-            <HiOutlineMinusSm />
+            <HiMinus />
           </button>
-          <div className="amountNumber">{number}</div>
+          <div className="productAmount">{productAmount}</div>
           <button onClick={increaseAmount}>
-            <HiOutlinePlus />
+            <HiPlus />
           </button>
         </div>
       </span>
