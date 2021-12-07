@@ -1,28 +1,28 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixin.scss';
 
-// .productList {
-//   margin-top: 20%;
-//   display: flex;
-//   max-width: 1200px;
-//   width: 100%;
-//   margin: 0 auto;
-// }
-
-// .list {
-//   display: flex;
-//   max-width: 800px;
-//   width: 100%;
-//   margin: 0 auto;
-// }
+.productList {
+  margin-top: 20%;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 140px 40px;
+  background: white;
+  .filterContainer {
+    span {
+    }
+  }
+}
 
 ul {
   font-size: 0;
+  width: 100%;
 
   li {
     display: inline-block;
     vertical-align: top;
-    width: 33.3%;
+    width: 49%;
 
     a {
       display: block;
@@ -68,7 +68,7 @@ ul {
 
           .bottonlist {
             span {
-              font-size: 14px;
+              font-size: 11px;
               width: 100%;
 
               & :hover {
@@ -84,7 +84,7 @@ ul {
       }
       .productinfo {
         h3 {
-          font-size: 14px;
+          font-size: 12px;
           text-align: center;
           padding: 10px;
           color: black;

@@ -8,13 +8,21 @@
   margin: 0 auto;
 }
 
+.productList {
+  padding: 0 40px;
+}
+
+// .productItems {
+//   padding: 0 40px;
+// }
+
 ul {
   font-size: 0;
 
   li {
     display: inline-block;
     vertical-align: top;
-    width: 33.3%;
+    width: 49%;
 
     a {
       display: block;
