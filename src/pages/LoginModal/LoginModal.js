@@ -9,28 +9,37 @@ function LoginModal({ handleSignupModal }) {
   const [inputUserEmail, setInputUserEmail] = useState('');
   const [inputUserPassword, setInputUserPassword] = useState('');
 
-  const handleInput = e => {
-    setInputUserEmail(e.target.value);
-    console.log(e.target.value);
-  };
+  const [userInput, setUserInput] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+
   const navigate = useNavigate();
 
+  const handleInput = e => {
+    const { name, value } = e.target;
+    console.log(e.target);
+  };
+
+  console.log(userInput);
+
   const goMain = () => {
-    fetch('http://10.58.3.154:8000/users/login', {
+    const { email, password } = userInput;
+
+    fetch('http://10.58.4.145:8000/users/login', {
       method: 'POST',
       body: JSON.stringify({
-        email: inputUserEmail,
-        password: inputUserPassword,
+        email: email,
+        password: password,
       }),
     })
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if ('SUCCESS' === data) {
+        if ('SUCCESS' === data.MESSAGE) {
           alert(data.SUCCESS);
           navigate('/');
-        } else {
-          console.log(data.message);
         }
       });
   };

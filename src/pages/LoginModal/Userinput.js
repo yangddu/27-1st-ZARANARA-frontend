@@ -8,8 +8,8 @@ function Userinput({ handleInput, signup }) {
         <div className="input-box">
           <input
             className="username"
-            type="name"
-            name="username"
+            type="text"
+            name="name"
             placeholder="*이름"
             onChange={handleInput}
           />
@@ -19,8 +19,8 @@ function Userinput({ handleInput, signup }) {
       <div className="input-box">
         <input
           className="email"
-          type="useremail"
-          name="username"
+          type="email"
+          name="email"
           placeholder="아이디"
           onChange={handleInput}
         />

@@ -1,27 +1,37 @@
 import React, { useState } from 'react';
-import Button from '../LoginModal/Button';
-import './JoinModal.scss';
 import { useNavigate } from 'react-router-dom';
+import Button from '../LoginModal/Button';
 import Userinput from '../LoginModal/Userinput';
+import { BASE_URL } from '../../config';
+import './JoinModal.scss';
 
 function JoinModal({ handleJoinClick }) {
-  const [userInput, setUserInput] = useState('');
-  const [isJoinModal, setIsJoinModal] = useState(false);
-
-  const handleInput = e => {
-    setUserInput(e.target.value);
-    console.log(e.target.value);
-  };
+  const [userInput, setUserInput] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   const navigate = useNavigate();
 
+  const handleInput = e => {
+    const { name, value } = e.target;
+    // const newInput = { ...userInput, [name]: value };
+    // setUserInput(newInput);
+    setUserInput(prev => ({ ...prev, [name]: value }));
+  };
+
+  console.log(userInput);
+
   const goMain = () => {
-    fetch('http://10.58.3.154:8000/users/signup', {
+    const { name, email, password } = userInput;
+
+    fetch(`${BASE_URL}/users/signup`, {
       method: 'POST',
       body: JSON.stringify({
-        name: userInput,
-        email: userInput,
-        password: userInput,
+        name: name,
+        email: email,
+        password: password,
       }),
     })
       .then(res => res.json())
