@@ -1,0 +1,40 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.productListContainer {
+  .info {
+    @include flexSpaceBetweenCenter;
+
+    .title {
+      margin-bottom: 8px;
+      font-size: $font-medium;
+      font-weight: $weight-bold;
+    }
+
+    .desctiption {
+      margin-bottom: 24px;
+      font-size: $font-regular;
+      color: $color-dark-gray;
+    }
+
+    .linkToGiftPage {
+      padding: 12px 16px;
+      border: 1px solid $color-light-gray;
+      border-radius: 32px;
+      color: $color-black;
+      font-size: $font-small;
+      font-weight: $weight-semi-bold;
+
+      &:hover {
+        border-color: $color-black;
+      }
+    }
+  }
+
+  .productImages {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
