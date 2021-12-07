@@ -10,7 +10,6 @@ function LoginModal({ handleSignupModal }) {
   const [inputUserPassword, setInputUserPassword] = useState('');
 
   const [userInput, setUserInput] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -19,7 +18,7 @@ function LoginModal({ handleSignupModal }) {
 
   const handleInput = e => {
     const { name, value } = e.target;
-    console.log(e.target);
+    setUserInput(prev => ({ ...prev, [name]: value }));
   };
 
   console.log(userInput);

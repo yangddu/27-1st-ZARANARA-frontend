@@ -38,7 +38,6 @@ function JoinModal({ handleJoinClick }) {
       .then(data => {
         console.log(data);
         if ('SUCCESS' === data.MESSAGE) {
-          console.log(data);
           alert(data.SUCCESS);
           navigate('/');
         }
