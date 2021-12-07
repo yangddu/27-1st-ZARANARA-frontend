@@ -4,6 +4,7 @@ import ProductInfoTable from '../../components/ProductInfoTable/ProductInfoTable
 import ProductRelatedItmes from '../../components/ProductRelatedItems/ProductRelatedItems';
 import './Detail.scss';
 import DetailContent from './DetailContent';
+import { useParams } from 'react-router-dom';
 
 const Detail = () => {
   const [detailContents, setDetailContents] = useState([]);
@@ -14,11 +15,14 @@ const Detail = () => {
   const dimmerRef = useRef();
   const slideRef = useRef();
   const slideWrapRef = useRef();
+  const params = useParams();
 
   const TOTAL_SLIDES = 1;
   const TOTAL_SLIDES_WRAP = 2;
   const PRODUCT_INFO_TABLE = detailContents.product_option?.[0].size.split(',');
   const PRODUCT_RELATED_IMG = detailContents.theme_products;
+
+  console.log(detailContents.detail_image);
 
   useEffect(() => {
     fetch('/data/mock.json')
@@ -87,12 +91,14 @@ const Detail = () => {
     }00px)`;
   }, [currentSlideWrap]);
 
-  console.log(detailContents.detail_image);
-
   return (
     <div className="detail" onClick={closeModal}>
       {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
-      <DetailContent detailContents={detailContents} />
+      <div className="leftContainer">
+        {detailContents.detail_image.map(imgItem => (
+          <img src={imgItem.url} alt={imgItem.alt} />
+        ))}
+      </div>
       <div className="rightContainer">
         <div className="rightContainerInner">
           <div className="productTitle">{detailContents.name}</div>
