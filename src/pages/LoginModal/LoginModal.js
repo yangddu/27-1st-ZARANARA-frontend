@@ -5,7 +5,7 @@ import Userinput from './Userinput';
 import Button from './Button';
 import './LoginModal.scss';
 
-function LoginModal({ handleSignupModal }) {
+function LoginModal({ handleSignupModal, handleLoginModal }) {
   const [inputUserEmail, setInputUserEmail] = useState('');
   const [inputUserPassword, setInputUserPassword] = useState('');
 
@@ -39,6 +39,7 @@ function LoginModal({ handleSignupModal }) {
         if ('SUCCESS' === data.MESSAGE) {
           alert(data.SUCCESS);
           navigate('/');
+          handleLoginModal(false);
         }
       });
   };

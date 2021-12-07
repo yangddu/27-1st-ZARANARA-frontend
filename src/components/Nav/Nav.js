@@ -83,8 +83,18 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      {isLogin && <LoginModal handleSignupModal={handleSignupModal} />}
-      {isSignup && <JoinModal handleJoinClick={handleJoinClick} />}
+      {isLogin && (
+        <LoginModal
+          handleSignupModal={handleSignupModal}
+          handleLoginModal={handleLoginModal}
+        />
+      )}
+      {isSignup && (
+        <JoinModal
+          handleJoinClick={handleJoinClick}
+          setIsSignup={setIsSignup}
+        />
+      )}
     </>
   );
 };

@@ -5,7 +5,7 @@ import Userinput from '../LoginModal/Userinput';
 import { BASE_URL } from '../../config';
 import './JoinModal.scss';
 
-function JoinModal({ handleJoinClick }) {
+function JoinModal({ handleJoinClick, setIsSignup }) {
   const [userInput, setUserInput] = useState({
     name: '',
     email: '',
@@ -40,6 +40,7 @@ function JoinModal({ handleJoinClick }) {
         if ('SUCCESS' === data.MESSAGE) {
           alert(data.SUCCESS);
           navigate('/');
+          setIsSignup(false);
         }
       });
   };
