@@ -4,7 +4,7 @@ import './ProductItems.scss';
 
 function ProductItems({ productList }) {
   return (
-    <div className="productIremsContainer">
+    <div className="productItemsContainer">
       <ul className="productItems">
         {productList.map(product => (
           <Product productInfo={product} />
