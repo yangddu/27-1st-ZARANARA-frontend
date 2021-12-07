@@ -1,0 +1,64 @@
+{
+  "result": [
+    {
+      "category": "가구&데코&침실",
+      "detail_image": [
+        {
+          "alt": "베어 프린트 이불커버 이미지 01",
+          "url": "https://images.unsplash.com/photo-1607110217074-f70b1947a9e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+        },
+        {
+          "alt": "베어 프린트 이불커버 이미지 02",
+          "url": "https://images.unsplash.com/photo-1543346242-2b8e41fb91ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+        }
+      ],
+      "id": 1,
+      "information": "곰 프린트와 글리터 별 디테일이 매치된 180TC 퍼케일 면 소재 이불 커버.",
+      "keyword": "따뜻한 이불",
+      "material_caution": [
+        "미지근한 물에서 세탁하는 것을 권장합니다. 오염에 약한 소재이니 오염되면 즉시 물로 오염을 지워주세요.",
+        "찬물에서 세탁하는 것을 권장합니다. 오염에 강한 소재이니 티슈로 오염을 닦아내고 나중에 세탁하셔도 됩니다."
+      ],
+      "material_name": ["면", "폴리에스터"],
+      "name": "글리터 베어 프린트 이불커버",
+      "price": "69000.00",
+      "product_option": [
+        {
+          "color": "엘리스블루",
+          "size": "12cm,15cm,40cm,100g",
+          "stock": 190
+        }
+      ],
+      "theme_products": [
+        {
+          "id": 1,
+          "image_url": [
+            "https://images.unsplash.com/photo-1607110217074-f70b1947a9e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1543346242-2b8e41fb91ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+          ],
+          "name": "글리터 베어 프린트 이불커버",
+          "price": "69000.00"
+        },
+        {
+          "id": 2,
+          "image_url": [
+            "https://images.unsplash.com/photo-1608959202013-2627dfa2ebd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1512475190635-3b6f26557377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+          ],
+          "name": "엘리펀트 자수 후드 타월",
+          "price": "49000.00"
+        },
+        {
+          "id": 4,
+          "image_url": [
+            "https://images.unsplash.com/photo-1607877342097-d5431c3542fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+            "https://images.unsplash.com/photo-1607877742574-a483ae272995?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2475&q=80"
+          ],
+          "name": "강아지 쉐이프 실리콘 머그",
+          "price": "9000.00"
+        }
+      ],
+      "users_like": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+// @import '../../styles/variables.scss';
+// @import '../../styles/mixin.scss';
+
+.productInfoTable {
+  margin-bottom: 24px;
+
+  .productInfoHeader {
+    display: flex;
+
+    .productValue {
+      width: 20%;
+      padding: 15px 0 15px 5px;
+      color: #86868a;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  .productInfoCons {
+    display: flex;
+
+    .productInfoValueLi {
+      display: flex;
+      width: 100%;
+    }
+  }
+}

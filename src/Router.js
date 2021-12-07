@@ -10,7 +10,7 @@ const Router = () => (
   <BrowserRouter>
     <Nav />
     <Routes>
-      <Route path="/gift" element={<Gift />} />
+      <Route path="/detail" element={<Detail />} />
     </Routes>
     <Footer />
   </BrowserRouter>
