@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 100px 0;
+  padding: 0 40px;
+
+  .filterContainer {
+    .filterWrapper {
+      text-align: right;
+
+      .productCount,
+      .productFilter {
+        margin-left: 8px;
+        font-size: $font-micro;
+        font-weight: $weight-semi-bold;
+      }
+    }
+  }
+}

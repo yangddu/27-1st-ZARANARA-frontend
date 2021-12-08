@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+import LoginModal from '../../pages/LoginModal/LoginModal';
+import JoinModal from '../../pages/JoinModal/JoinModal';
+import { NAV_DATA } from './NavData';
+
+import useScroll from './useScroll';
 import { API } from '../../config';
 
-import { NAV_DATA } from './NavData';
 import { IoIosMenu } from 'react-icons/io';
 import { CgProfile } from 'react-icons/cg';
 import { BsCart3 } from 'react-icons/bs';
@@ -13,7 +18,14 @@ import './Nav.scss';
 const MOCK_API = '/data/cartMockData.json';
 
 const Nav = () => {
+  const [isLogin, setIsLogin] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
+  const [isUserLogin, setIsUserLogin] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const { pathname } = useLocation();
+  const scrollY = useScroll();
+
+  const navClassName = `nav ${pathname === '/' ? 'white' : ''}`;
 
   useEffect(() => {
     fetch(MOCK_API, {
@@ -26,46 +38,88 @@ const Nav = () => {
       .then(result => setCartItems(result));
   }, []);
 
+  const handleLoginModal = () => {
+    setIsLogin(!isLogin);
+  };
+
+  const handleSignupModal = () => {
+    setIsSignup(true);
+    setIsLogin(false);
+  };
+
+  const handleJoinClick = () => {
+    setIsSignup(false);
+  };
+
+  const handleLogoutClick = () => {
+    setIsUserLogin(false);
+    localStorage.clear();
+  };
+
   return (
-    <nav className="nav">
-      <div className="navLeftContainer">
-        <div className="gnbMenuWrap">
-          <div className="gnbAndLogo">
-            <IoIosMenu className="menuBarIcon" alt="메뉴버튼" />
-            <Link to="/">
-              <Logo className="zaranaraLogo" alt="자라나라 로고" />
+    <>
+      <nav className={`${navClassName} ${scrollY > 100 ? 'active' : ''}`}>
+        <div className="navLeftContainer">
+          <div className="gnbMenuWrap">
+            <div className="gnbAndLogo">
+              <IoIosMenu className="menuBarIcon" alt="메뉴버튼" />
+              <Link to="/">
+                <Logo className="zaranaraLogo" alt="자라나라 로고" />
+              </Link>
+            </div>
+            <ul className="gnbMenuBar">
+              {NAV_DATA.map(el => (
+                <li key={el.id} className="gnbMenuLi">
+                  <Link to="">{el.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="navCenterContainer">
+          <div className="searchLink">
+            <Link to="/search">
+              검색
+              <span className="line" />
             </Link>
           </div>
-          <ul className="gnbMenuBar">
-            {NAV_DATA.map(el => (
-              <li key={el.id} className="gnbMenuLi">
-                <Link to="">{el.title}</Link>
-              </li>
-            ))}
-          </ul>
         </div>
-      </div>
-      <div className="navCenterContainer">
-        <div className="searchLink">
-          <Link to="/search">
-            검색
-            <span className="line" />
-          </Link>
-        </div>
-      </div>
-      <div className="navRightContainer">
-        <div className="loginContainer">
-          <div className="loginLink">
-            <CgProfile className="loginIcon" alt="profile" />
-            <div className="loginTxt">로그인</div>
-          </div>
-          <div className="cartLink">
-            <BsCart3 className="cartIcon" alt="cart" />
-            <div className="carTxt">{cartItems.length}</div>
+        <div className="navRightContainer">
+          <div className="loginContainer">
+            <div className="loginLink">
+              <CgProfile
+                className="loginIcon"
+                alt="profile"
+                onClick={isUserLogin ? handleLogoutClick : handleLoginModal}
+              />
+              <div
+                className="loginTxt"
+                onClick={isUserLogin ? handleLogoutClick : handleLoginModal}
+              >
+                {isUserLogin ? '로그아웃' : '로그인'}
+              </div>
+            </div>
+            <div className="cartLink">
+              <BsCart3 className="cartIcon" alt="cart" />
+              <div className="carTxt">{cartItems.length}</div>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      {isLogin && (
+        <LoginModal
+          handleSignupModal={handleSignupModal}
+          handleLoginModal={handleLoginModal}
+          setIsUserLogin={setIsUserLogin}
+        />
+      )}
+      {isSignup && (
+        <JoinModal
+          handleJoinClick={handleJoinClick}
+          setIsSignup={setIsSignup}
+        />
+      )}
+    </>
   );
 };
 
