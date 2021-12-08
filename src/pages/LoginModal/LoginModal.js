@@ -6,7 +6,7 @@ import Button from './Button';
 import { API } from '../../config';
 import './LoginModal.scss';
 
-function LoginModal({ handleSignupModal, handleLoginModal }) {
+function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
   const [inputUserEmail, setInputUserEmail] = useState('');
   const [inputUserPassword, setInputUserPassword] = useState('');
 
@@ -41,6 +41,7 @@ function LoginModal({ handleSignupModal, handleLoginModal }) {
           localStorage.setItem('token', data.ACCESS_TOKEN);
           navigate('/');
           handleLoginModal(false);
+          setIsUserLogin(true);
         } else if ('PASSWORD_INVAILD_USER' === data.MESSAGE) {
           alert('올바르지 않은 패스워드 형식 입니다.');
         } else if ('KEY_ERROR' === data.MESSAGE) {
@@ -50,6 +51,15 @@ function LoginModal({ handleSignupModal, handleLoginModal }) {
         }
       });
   };
+
+  // <div>
+  //   <a href="#" onClick={logout()}>LOGOUT</a>
+  // </div>
+
+  // logout() {
+  //   localStorage.clear();
+  //   window.location.href ='/localhost:3001';
+  // }
 
   return (
     <div className="loginModal">

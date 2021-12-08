@@ -8,6 +8,8 @@ import './Nav.scss';
 const Nav = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const [isUserLogin, setIsUserLogin] = useState(false); // 로그인 했는지 안했는지 상태 여부 확인 (안함)
+  console.log(isUserLogin);
 
   const handleLoginModal = () => {
     setIsLogin(!isLogin);
@@ -21,15 +23,6 @@ const Nav = () => {
   const handleJoinClick = () => {
     setIsSignup(false);
   };
-  // const goMain= () => {
-  //   fetch('API') , {
-  //     method: 'POST',
-  //     body : JSON.stringify({
-  //       email: Userinput.usereamil=
-  //       password: Userpassword.userpassword=
-  //     })
-  //   }
-  // }
 
   return (
     <>
@@ -69,7 +62,7 @@ const Nav = () => {
                 onClick={handleLoginModal}
               />
               <div className="loginTxt" onClick={handleLoginModal}>
-                로그인
+                {/* {isUserLogin&& } */}
               </div>
             </div>
             <div className="cartLink">
@@ -87,6 +80,7 @@ const Nav = () => {
         <LoginModal
           handleSignupModal={handleSignupModal}
           handleLoginModal={handleLoginModal}
+          setIsUserLogin={setIsUserLogin}
         />
       )}
       {isSignup && (
