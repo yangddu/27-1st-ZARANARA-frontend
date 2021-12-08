@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import CartList from './CartList/CartList';
-import LaterShop from './LaterShop/LaterShop';
-
+import CartList from '../../components/Cart/CartList/CartList';
+import LaterShop from '../../components/Cart/LaterShop/LaterShop';
+import { API } from '../../config';
 import './Cart.scss';
 
 const MOCK_API = '/data/cartMockData.json';
@@ -11,14 +11,16 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [empty, setEmpty] = useState(true);
 
-  const totalCount = cartItems.reduce((a, c) => (a += c.amount), 0);
-  const totalPrice = cartItems.reduce((a, c) => (a += c.price * c.amount), 0);
+  const totalCount = cartItems.reduce((a, c) => (a += c.quantity), 0);
+  const totalPrice = cartItems.reduce((a, c) => (a += c.price * c.quantity), 0);
 
+  // 백엔드용
   useEffect(() => {
-    fetch(MOCK_API, {
-      method: 'get',
+    fetch(`${API.USER}/cart`, {
+      method: 'GET',
       headers: {
-        Authorization: 'Bearer token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
       },
     })
       .then(res => res.json())
@@ -27,14 +29,33 @@ const Cart = () => {
           setEmpty(true);
         } else {
           setEmpty(false);
-          setCartItems(result);
+          setCartItems(result.result);
         }
       });
   }, []);
 
+  // // mockdata 용
+  // useEffect(() => {
+  //   fetch(MOCK_API, {
+  //     method: 'get',
+  //     headers: {
+  //       Authorization: 'Bearer token',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => {
+  //       if (result.length === 0) {
+  //         setEmpty(true);
+  //       } else {
+  //         setEmpty(false);
+  //         setCartItems(result);
+  //       }
+  //     });
+  // }, []);
+
   const handleDeleteItem = cartItem => {
     setCartItems(cartItems =>
-      cartItems.filter(item => item.id !== cartItem.id)
+      cartItems.filter(item => item.cart_id !== cartItem.cart_id)
     );
   };
 
@@ -46,8 +67,8 @@ const Cart = () => {
   const handleIncreaseCartItem = cartItem => {
     setCartItems(cartItems =>
       cartItems.map(item => {
-        if (item.id === cartItem.id) {
-          return { ...cartItem, count: cartItem.count + 1 };
+        if (item.cart_id === cartItem.cart_id) {
+          return { ...cartItem, quantity: cartItem.quantity + 1 };
         }
         return item;
       })
@@ -57,9 +78,9 @@ const Cart = () => {
   const handleDecreaseCartItem = cartItem => {
     setCartItems(cartItems =>
       cartItems.map(item => {
-        if (item.id === cartItem.id) {
-          const count = cartItem.count - 1;
-          return { ...cartItem, count: count < 0 ? 0 : count };
+        if (item.cart_id === cartItem.cart_id) {
+          const quantity = cartItem.quantity - 1;
+          return { ...cartItem, quantity: quantity < 0 ? 0 : quantity };
         }
         return item;
       })
@@ -99,7 +120,7 @@ const Cart = () => {
               onResetItem={handleResetItem}
               onIncreaseCartItem={handleIncreaseCartItem}
               onDecreaseCartItem={handleDecreaseCartItem}
-              API={MOCK_API}
+              api={API}
               totalCount={totalCount}
               totalPrice={totalPrice}
             />

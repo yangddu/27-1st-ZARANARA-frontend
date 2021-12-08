@@ -11,7 +11,7 @@ const CartList = ({
   onResetItem,
   onIncreaseCartItem,
   onDecreaseCartItem,
-  API,
+  api,
   totalCount,
   totalPrice,
 }) => {
@@ -25,7 +25,7 @@ const CartList = ({
         onResetItem={onResetItem}
         onIncreaseCartItem={onIncreaseCartItem}
         onDecreaseCartItem={onDecreaseCartItem}
-        API={API}
+        api={api}
       />
       <Price totalCount={totalCount} totalPrice={totalPrice} />
     </>
