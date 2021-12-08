@@ -26,22 +26,23 @@ const Detail = () => {
   const PRODUCT_MATERIAL_CAUTION = detailContents.material_cautions;
   const PRODUCT_MATERIAL_NAME = detailContents.material_names;
 
-  // const clickOrder = () => {
-  //   // fetch('/data/mock.json')
-  //   //   .then(response => response.json())
-  //   //   .then(result => setDetailContents(result.result[0]));
+  const clickOrder = () => {
+    // fetch('/data/mock.json')
+    //   .then(response => response.json())
+    //   .then(result => setDetailContents(result.result[0]));
 
-  //   fetch('/data/mock.json', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       price: detailContents.price?.split('.')[0],
-  //       number: productAmount,
-  //       //producTid, price, 갯수, 사이즈, 컬러
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(result => console.log('결과: ', result));
-  // };
+    fetch('http://10.58.4.145:8000/users/cart', {
+      method: 'POST',
+      body: JSON.stringify({
+        // price: detailContents.price?.split('.')[0],
+        id: detailContents.id,
+        quantity: productAmount,
+        //producTid, price, 갯수, 사이즈, 컬러
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
 
   useEffect(() => {
     fetch('/data/mockDataDetail.json')
