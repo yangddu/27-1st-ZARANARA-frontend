@@ -3,6 +3,7 @@ import UserImformation from './UserImformation';
 import { useNavigate } from 'react-router-dom';
 import Userinput from './Userinput';
 import Button from './Button';
+import { API } from '../../config';
 import './LoginModal.scss';
 
 function LoginModal({ handleSignupModal, handleLoginModal }) {
@@ -26,7 +27,7 @@ function LoginModal({ handleSignupModal, handleLoginModal }) {
   const goMain = () => {
     const { email, password } = userInput;
 
-    fetch('http://10.58.4.145:8000/users/login', {
+    fetch(`${API.USER}/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -37,9 +38,15 @@ function LoginModal({ handleSignupModal, handleLoginModal }) {
       .then(data => {
         console.log(data);
         if ('SUCCESS' === data.MESSAGE) {
-          alert(data.SUCCESS);
+          localStorage.setItem('token', data.ACCESS_TOKEN);
           navigate('/');
           handleLoginModal(false);
+        } else if ('PASSWORD_INVAILD_USER' === data.MESSAGE) {
+          alert('올바르지 않은 패스워드 형식 입니다.');
+        } else if ('KEY_ERROR' === data.MESSAGE) {
+          alert('올바르지 않은 형식 입니다.');
+        } else if ('EMAIL_INVALD_USER' === data.MESSAGE) {
+          alert('존재하지 않는 유저 입니다.');
         }
       });
   };

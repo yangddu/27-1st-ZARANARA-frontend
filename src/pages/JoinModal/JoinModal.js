@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../LoginModal/Button';
 import Userinput from '../LoginModal/Userinput';
-import { BASE_URL } from '../../config';
+import { API } from '../../config';
 import './JoinModal.scss';
 
 function JoinModal({ handleJoinClick, setIsSignup }) {
@@ -26,7 +26,7 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
   const goMain = () => {
     const { name, email, password } = userInput;
 
-    fetch(`${BASE_URL}/users/signup`, {
+    fetch(`${API.USER}/signup`, {
       method: 'POST',
       body: JSON.stringify({
         name: name,
@@ -38,9 +38,14 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
       .then(data => {
         console.log(data);
         if ('SUCCESS' === data.MESSAGE) {
-          alert(data.SUCCESS);
           navigate('/');
           setIsSignup(false);
+        } else if ('EMAIL_ALLEADY_EXIST' === data.MESSAGE) {
+          alert('동일한 이메일이 이미 존재합니다.');
+        } else if ('KEY_ERROR' === data.MESSAGE) {
+          alert('모든 입력값이 형식에 올바르지 않습니다.');
+        } else {
+          alert('이메일과 패스워드가 올바르지 않는 형식입니다.');
         }
       });
   };
