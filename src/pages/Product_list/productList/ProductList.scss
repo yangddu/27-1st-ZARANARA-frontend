@@ -2,26 +2,21 @@
 @import '../../../styles/mixin.scss';
 
 .productList {
-  margin-top: 20%;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 140px 40px;
-  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 100px 0;
+  padding: 0 40px;
 
   .filterContainer {
-    display: flex;
-    margin-left: 90%;
-
     .filterWrapper {
-      display: flex;
-      align-items: center;
+      text-align: right;
 
       .productCount,
       .productFilter {
         margin-left: 8px;
         font-size: $font-micro;
-        font-weight: $weight-bold;
+        font-weight: $weight-semi-bold;
       }
     }
   }

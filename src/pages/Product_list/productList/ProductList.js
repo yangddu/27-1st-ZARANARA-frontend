@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ProductItems from '../ProductItems/ProductItems';
+import FilterAside from '../FilterAside/FilterAside';
+import { API } from '../../../config';
 
 import './ProductList.scss';
-import FilterAside from '../FilterAside/FilterAside';
 
 function ProductList() {
   const [productList, setProductList] = useState([]);
@@ -14,7 +15,32 @@ function ProductList() {
       .then(result => setProductList(result));
   }, []);
 
-  const handleFilter = () => {
+  // useEffect(() => {
+  //   fetch(`${API.PRODUCT}\?categoryId\=${6}`)
+  //     .then(res => res.json())
+  //     .then(result => setProductList(result.results));
+  // }, []);
+
+  const handleAddCart = productInfo => {
+    fetch(`${API.USER}/cart`, {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
+      },
+      body: JSON.stringify({
+        id: productInfo.id,
+      }),
+    })
+      .then(res => res.json())
+      .then(
+        result =>
+          (result.MESSAGE = 'SUCCESS' && alert('장바구니에 담겼습니다.'))
+      )
+      .catch(error => alert(error));
+  };
+
+  const handleOpenFilterAside = () => {
     setIsFilterOn(!isFilterOn);
   };
 
@@ -33,17 +59,17 @@ function ProductList() {
       <section className="filterContainer">
         <div className="filterWrapper">
           <span className="productCount">{productList.length}제품</span>
-          <button className="productFilter" onClick={handleFilter}>
+          <button className="productFilter" onClick={handleOpenFilterAside}>
             + 필터
           </button>
         </div>
       </section>
       <section className="productContainer">
-        <ProductItems productList={productList} />
+        <ProductItems productList={productList} handleAddCart={handleAddCart} />
       </section>
       <FilterAside
         isFilterOn={isFilterOn}
-        handleFilter={handleFilter}
+        handleOpenFilterAside={handleOpenFilterAside}
         handleFilterLowerPrice={handleFilterLowerPrice}
         handleFilterTopPrice={handleFilterTopPrice}
       />

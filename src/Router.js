@@ -11,7 +11,7 @@ import Cart from './pages/Cart/Cart';
 
 const Router = () => (
   <BrowserRouter>
-    {/* <Nav /> */}
+    <Nav />
     <Routes>
       <Route path="/detail" element={<Detail />} />
       <Route path="/product" element={<ProductList />} />
@@ -20,7 +20,7 @@ const Router = () => (
       <Route path="/search" element={<Search />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
-    {/* <Footer /> */}
+    <Footer />
   </BrowserRouter>
 );
 
