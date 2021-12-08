@@ -12,7 +12,7 @@ const ProductInfo = ({
   const { item_alt, name, keyword, price } = spotdata;
   return (
     <Link
-      to="http://"
+      to={`/detail/${spotdata.id}`}
       alt={item_alt}
       className={`container${isRadioActive ? ' active' : ''}`}
       onMouseOver={handleInfoMouseEnter}

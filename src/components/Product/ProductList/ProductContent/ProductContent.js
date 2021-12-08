@@ -10,9 +10,7 @@ const ProductContent = ({ product }) => {
       {set_item.map(spotdata => (
         <ProductRadioBox key={spotdata.id} spotdata={spotdata} />
       ))}
-      <Link to="/gift/">
-        <img alt={set_alt} src={set_image} />
-      </Link>
+      <img alt={set_alt} src={set_image} />
     </li>
   );
 };

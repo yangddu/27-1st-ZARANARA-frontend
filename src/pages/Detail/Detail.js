@@ -6,6 +6,7 @@ import ProductRelatedItmes from '../../components/ProductRelatedItems/ProductRel
 import Button from '../../components/Button/Button';
 import DetailContent from './DetailContent';
 import './Detail.scss';
+import { API } from '../../config';
 
 const Detail = () => {
   const [detailContents, setDetailContents] = useState({});
@@ -17,6 +18,7 @@ const Detail = () => {
   const dimmerRef = useRef();
   const slideRef = useRef();
   const slideWrapRef = useRef();
+
   const params = useParams();
 
   const TOTAL_SLIDES = 1;
@@ -44,6 +46,15 @@ const Detail = () => {
       .then(result => console.log('결과: ', result));
   };
 
+  // 백엔드 데이터용
+  // useEffect(() => {
+  //   const productId = params.id;
+  //   fetch(`${API.PRODUCT}/${productId}`)
+  //     .then(response => response.json())
+  //     .then(data => setDetailContents(data.result));
+  // }, []);
+
+  // mock 데이터용
   useEffect(() => {
     fetch('/data/mockDataDetail.json')
       .then(response => response.json())

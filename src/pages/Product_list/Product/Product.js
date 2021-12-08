@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import './Product.scss';
 
 function Product({ productInfo, handleAddCart }) {
+  const navigate = useNavigate();
+
+  const goToDetail = id => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <li className="productItem">
       <div className="wrapper">
@@ -12,9 +19,11 @@ function Product({ productInfo, handleAddCart }) {
           >
             장바구니에 담기
           </button>
-          <Link to="/" className="link">
-            <img src={productInfo.image} alt="velvet" />
-          </Link>
+          <img
+            src={productInfo.image}
+            alt="velvet"
+            onClick={() => goToDetail(productInfo.id)}
+          />
         </div>
       </div>
       <div className="productinfo">

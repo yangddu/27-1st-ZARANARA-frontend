@@ -37,7 +37,7 @@ function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
           localStorage.setItem('token', data.ACCESS_TOKEN);
           navigate('/');
           handleLoginModal(false);
-          setIsUserLogin(!false);
+          setIsUserLogin(true);
         } else if ('PASSWORD_INVAILD_USER' === data.MESSAGE) {
           alert('올바르지 않은 패스워드 형식 입니다.');
         } else if ('KEY_ERROR' === data.MESSAGE) {

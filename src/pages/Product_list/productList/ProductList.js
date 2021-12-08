@@ -4,8 +4,11 @@ import FilterAside from '../FilterAside/FilterAside';
 import { API } from '../../../config';
 
 import './ProductList.scss';
+import { useParams } from 'react-router';
 
 function ProductList() {
+  const params = useParams();
+
   const [productList, setProductList] = useState([]);
   const [isFilterOn, setIsFilterOn] = useState(false);
 
@@ -16,7 +19,7 @@ function ProductList() {
   }, []);
 
   // useEffect(() => {
-  //   fetch(`${API.PRODUCT}\?categoryId\=${6}`)
+  //   fetch(`${API.PRODUCT}\?categoryId\=${params.id}`)
   //     .then(res => res.json())
   //     .then(result => setProductList(result.results));
   // }, []);

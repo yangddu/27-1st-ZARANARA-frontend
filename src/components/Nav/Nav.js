@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import LoginModal from '../../pages/LoginModal/LoginModal';
 import JoinModal from '../../pages/JoinModal/JoinModal';
@@ -23,7 +23,10 @@ const Nav = () => {
   const [isUserLogin, setIsUserLogin] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const { pathname } = useLocation();
+
   const scrollY = useScroll();
+
+  const navigate = useNavigate();
 
   const navClassName = `nav ${pathname === '/' ? 'white' : ''}`;
 
@@ -56,6 +59,10 @@ const Nav = () => {
     localStorage.clear();
   };
 
+  const goToCategoryList = id => {
+    navigate(`/category/${id}`);
+  };
+
   return (
     <>
       <nav className={`${navClassName} ${scrollY > 100 ? 'active' : ''}`}>
@@ -69,8 +76,12 @@ const Nav = () => {
             </div>
             <ul className="gnbMenuBar">
               {NAV_DATA.map(el => (
-                <li key={el.id} className="gnbMenuLi">
-                  <Link to="">{el.title}</Link>
+                <li
+                  key={el.id}
+                  className="gnbMenuLi"
+                  onClick={() => goToCategoryList(el.id)}
+                >
+                  {el.title}
                 </li>
               ))}
             </ul>
@@ -99,10 +110,12 @@ const Nav = () => {
                 {isUserLogin ? '로그아웃' : '로그인'}
               </div>
             </div>
-            <div className="cartLink">
-              <BsCart3 className="cartIcon" alt="cart" />
-              <div className="carTxt">{cartItems.length}</div>
-            </div>
+            <Link to="/cart">
+              <div className="cartLink">
+                <BsCart3 className="cartIcon" alt="cart" />
+                <div className="carTxt">{cartItems.length}</div>
+              </div>
+            </Link>
           </div>
         </div>
       </nav>
