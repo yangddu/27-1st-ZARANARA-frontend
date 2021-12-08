@@ -8,7 +8,8 @@
   top: 0;
   width: 100vw;
   height: 100px;
-  color: $color-white;
+  color: $color-black;
+  transition: all 300ms ease-in-out;
   z-index: 999;
 
   .navLeftContainer {
@@ -25,13 +26,16 @@
           width: 36px;
           height: 36px;
           margin-left: 20px;
-          color: $color-white;
+          color: $color-black;
         }
 
         .zaranaraLogo {
-          z-index: 9999;
           cursor: pointer;
           transition: all 300ms ease-in-out;
+
+          & path {
+            fill: $color-black;
+          }
         }
       }
 
@@ -61,6 +65,7 @@
       &:hover {
         .gnbAndLogo {
           .menuBarIcon {
+            visibility: hidden;
           }
           .zaranaraLogo {
             transform: translateX(-40px);
@@ -147,6 +152,100 @@
           font-size: 12px;
           font-weight: 500;
           line-height: 30px;
+        }
+      }
+    }
+  }
+
+  &.white {
+    color: $color-white;
+
+    .navLeftContainer {
+      .gnbMenuWrap {
+        .gnbAndLogo {
+          .menuBarIcon {
+            color: $color-white;
+          }
+
+          .zaranaraLogo {
+            & path {
+              fill: $color-white;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .gnbAndLogo {
+          .zaranaraLogo {
+            & path {
+              fill: $color-black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    height: 60px;
+    color: $color-black;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: $color-white;
+
+    .navLeftContainer {
+      .gnbMenuWrap {
+        .gnbAndLogo {
+          .menuBarIcon {
+            width: 36px;
+            height: 36px;
+            margin-left: 20px;
+            color: $color-black;
+          }
+
+          .zaranaraLogo {
+            & path {
+              fill: $color-black;
+            }
+          }
+        }
+      }
+    }
+
+    .navCenterContainer {
+      .searchLink {
+        a {
+          font-size: $font-regular;
+
+          .line {
+            width: 120px;
+            border-bottom: 1px solid $color-black;
+          }
+        }
+      }
+    }
+
+    .navRightContainer {
+      padding: 0 42px 0 4.05%;
+      .loginContainer {
+        .loginLink {
+          .loginIcon {
+            font-size: 20px;
+          }
+
+          .loginTxt {
+            font-size: $font-small;
+          }
+        }
+
+        .cartLink {
+          .cartIcon {
+            font-size: 20px;
+          }
+
+          .carTxt {
+            font-size: $font-small;
+          }
         }
       }
     }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { API } from '../../config';
+
+import useScroll from './useScroll';
 
 import { NAV_DATA } from './NavData';
 import { IoIosMenu } from 'react-icons/io';
@@ -14,6 +16,10 @@ const MOCK_API = '/data/cartMockData.json';
 
 const Nav = () => {
   const [cartItems, setCartItems] = useState([]);
+  const { pathname } = useLocation();
+  const scrollY = useScroll();
+
+  const navClassName = `nav ${pathname === '/' ? 'white' : ''}`;
 
   useEffect(() => {
     fetch(MOCK_API, {
@@ -27,7 +33,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="nav">
+    <nav className={`${navClassName} ${scrollY > 100 ? 'active' : ''}`}>
       <div className="navLeftContainer">
         <div className="gnbMenuWrap">
           <div className="gnbAndLogo">
