@@ -1,17 +1,32 @@
 [
   {
-    "slide_id": 1,
-    "slide_alt": "크리스마스 장식 볼",
-    "slide_image": "https://url.kr/npyj74"
+    "id": 1,
+    "alt": "크리스마스 장식 볼",
+    "image": "https://url.kr/npyj74"
   },
   {
-    "slide_id": 2,
-    "slide_alt": "벽걸이 양말",
-    "slide_image": "https://url.kr/d7gumw"
+    "id": 2,
+    "alt": "벽걸이 양말",
+    "image": "https://url.kr/d7gumw"
   },
   {
-    "slide_id": 3,
-    "slide_alt": "선물 네임택",
-    "slide_image": "https://url.kr/z4tx7d"
+    "id": 3,
+    "alt": "선물 네임택",
+    "image": "https://url.kr/z4tx7d"
+  },
+  {
+    "id": 4,
+    "alt": "크리스마스 장식 볼",
+    "image": "https://url.kr/npyj74"
+  },
+  {
+    "id": 5,
+    "alt": "벽걸이 양말",
+    "image": "https://url.kr/d7gumw"
+  },
+  {
+    "id": 6,
+    "alt": "선물 네임택",
+    "image": "https://url.kr/z4tx7d"
   }
 ]
