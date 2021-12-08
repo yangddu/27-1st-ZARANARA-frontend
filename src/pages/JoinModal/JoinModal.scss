@@ -1,0 +1,120 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.zarnaraCreateContainer {
+  @include flexCenter;
+  width: 650px;
+  height: 450px;
+  background-color: white;
+  border: 1px solid #1e1e1e;
+
+  .zaranaraCreateAccount {
+    width: 350px;
+    height: 440px;
+    padding-bottom: 20px;
+    background-color: white;
+
+    .createAccountContainer {
+      @include flexCenter;
+      padding-top: 10px;
+      span {
+        height: 30px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .userPrivacyInput {
+      width: 325px;
+      height: 90px;
+      background-color: white;
+
+      .userName {
+        width: 320px;
+        height: 25px;
+        margin-bottom: 10px;
+
+        .name {
+          width: 320px;
+          height: 50px;
+          border-bottom: 1px solid #1e1e1e;
+        }
+      }
+      .userEmail {
+        width: 320px;
+        height: 25px;
+        margin-bottom: 10px;
+
+        .email {
+          width: 320px;
+          height: 50px;
+          border-bottom: 1px solid #1e1e1e;
+        }
+      }
+
+      .userPassword {
+        width: 320px;
+        height: 25px;
+        margin-bottom: 10px;
+
+        .password {
+          width: 320px;
+          height: 50px;
+          border-bottom: 1px solid #1e1e1e;
+        }
+      }
+    }
+    .userPrivacyCheckBox {
+      margin-top: 20px;
+
+      .checkContainer {
+        input {
+          margin-bottom: 20px;
+        }
+        span {
+          font-size: 13px;
+        }
+      }
+      .checkPrivacy {
+        input {
+          margin-bottom: 20px;
+        }
+        span {
+          font-size: 13px;
+        }
+      }
+      .checkAboard {
+        input {
+          margin-bottom: 20px;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+      .checkSubscribe {
+        margin-bottom: 20px;
+        input {
+          margin-bottom: 25px;
+        }
+        span {
+          font-size: 13px;
+        }
+      }
+
+      .createAccount {
+        @include flexCenter;
+        button {
+          width: 390px;
+          height: 30px;
+          border: 1px solid #1e1e1e;
+          font-size: 11px;
+          font-weight: bold;
+        }
+        button:hover {
+          background-color: #1e1e1e;
+          color: white;
+        }
+      }
+    }
+  }
+}
