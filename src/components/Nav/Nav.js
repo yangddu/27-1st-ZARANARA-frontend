@@ -9,9 +9,10 @@ const Nav = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [isUserLogin, setIsUserLogin] = useState(false); // 로그인 했는지 안했는지 상태 여부 확인 (안함)
-  console.log(isUserLogin);
+  console.log('isUserLogin', isUserLogin);
 
   const handleLoginModal = () => {
+    console.log('handleLoginModal');
     setIsLogin(!isLogin);
   };
 
@@ -22,6 +23,12 @@ const Nav = () => {
 
   const handleJoinClick = () => {
     setIsSignup(false);
+  };
+
+  const handleLogoutClick = () => {
+    console.log('handleLogOutClick');
+    setIsUserLogin(false);
+    localStorage.clear();
   };
 
   return (
@@ -59,10 +66,13 @@ const Nav = () => {
                 className="loginIcon"
                 src="/images/icon/profile.svg"
                 alt="profile"
-                onClick={handleLoginModal}
+                onClick={isUserLogin ? handleLogoutClick : handleLoginModal}
               />
-              <div className="loginTxt" onClick={handleLoginModal}>
-                {/* {isUserLogin&& } */}
+              <div
+                className="loginTxt"
+                onClick={isUserLogin ? handleLogoutClick : handleLoginModal}
+              >
+                {isUserLogin ? '로그아웃' : '로그인'}
               </div>
             </div>
             <div className="cartLink">
