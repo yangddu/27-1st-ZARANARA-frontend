@@ -1,20 +1,51 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
-import UserImformation from '../LoginModal/UserImformation';
 import Userinput from '../LoginModal/Userinput';
+import UserImformation from '../LoginModal/UserImformation';
+import { API } from '../../config';
 import './JoinModal.scss';
 
-function JoinModal() {
-  // const checkbox = ([checkbox, setCheckbox] = useState([]);
-  const [userInput, setUserInput] = useState('');
+function JoinModal({ handleJoinClick, setIsSignup }) {
+  const [userInput, setUserInput] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+  const navigate = useNavigate();
 
   const handleInput = e => {
-    setUserInput(e.target.value);
-    console.log(e.target.value);
+    const { name, value } = e.target;
+    // const newInput = { ...userInput, [name]: value };
+    // setUserInput(newInput);
+    setUserInput(prev => ({ ...prev, [name]: value }));
   };
 
-  const goToMain = () => {
-    alert('로그인 성공!');
+  const goMain = () => {
+    const { name, email, password } = userInput;
+
+    fetch(`${API.USER}/signup`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if ('SUCCESS' === data.MESSAGE) {
+          navigate('/');
+          setIsSignup(false);
+        } else if ('EMAIL_ALLEADY_EXIST' === data.MESSAGE) {
+          alert('동일한 이메일이 이미 존재합니다.');
+        } else if ('KEY_ERROR' === data.MESSAGE) {
+          alert('모든 입력값이 형식에 올바르지 않습니다.');
+        } else {
+          alert('이메일과 패스워드가 올바르지 않는 형식입니다.');
+        }
+      });
   };
 
   return (
@@ -24,8 +55,7 @@ function JoinModal() {
           <span>자라홈 계정 만들기</span>
         </div>
         <div className="choiceKindOfAccount" />
-
-        <Userinput handleInput={handleInput} signup />
+        <Userinput signup handleInput={handleInput} />
 
         <form className="userPrivacyCheckBox">
           <div className="checkContainer">
@@ -47,7 +77,7 @@ function JoinModal() {
             </span>
           </div>
 
-          <Button title="회원가입" handleClick={goToMain} />
+          <Button title="계정만들기" format="signup" handleClick={goMain} />
         </form>
       </div>
     </div>
