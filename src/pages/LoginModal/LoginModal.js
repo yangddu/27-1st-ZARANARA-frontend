@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UserImformation from './UserImformation';
 import { useNavigate } from 'react-router-dom';
 import Userinput from './Userinput';
-import Button from './Button';
+import Button from '../../components/Button/Button';
 import { API } from '../../config';
 import './LoginModal.scss';
 

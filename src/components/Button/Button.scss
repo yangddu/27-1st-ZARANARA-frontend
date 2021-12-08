@@ -1,15 +1,53 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixin.scss';
 
+<<<<<<< HEAD
 .loginButton {
+=======
+.button {
+>>>>>>> master
   @include flexCenter;
   width: 360px;
   height: 30px;
   border: 1px solid #1e1e1e;
+<<<<<<< HEAD
   background-color: white;
+=======
+<<<<<<<< HEAD:src/components/Button/Button.scss
+========
+  background-color: white;
+>>>>>>>> master:src/pages/LoginModal/Button.scss
+
+  .buttonChange {
+    width: 100px;
+  }
+>>>>>>> master
 
   &:hover {
     background-color: #1e1e1e;
     color: white;
   }
+<<<<<<< HEAD
+=======
+
+  &.small {
+    width: 250px;
+  }
+
+  &.medium {
+    width: 350px;
+  }
+
+  &.big {
+    width: 460px;
+  }
+<<<<<<<< HEAD:src/components/Button/Button.scss
+
+  &.bigger {
+    width: 100%;
+    padding: 16px 0;
+  }
+========
+>>>>>>>> master:src/pages/LoginModal/Button.scss
+>>>>>>> master
 }

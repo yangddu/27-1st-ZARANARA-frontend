@@ -1,6 +1,18 @@
 import React from 'react';
 import { ASIDE_DATA, FOOTER_IMG } from './FooterData';
+
+import {
+  RiKakaoTalkFill,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiPinterestLine,
+  RiYoutubeLine,
+  RiTwitterFill,
+  RiSpotifyFill,
+} from 'react-icons/ri';
+
 import './Footer.scss';
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -11,21 +23,21 @@ const Footer = () => {
               <div className="asideBox" key={el.id}>
                 <h3 className="asideTitle">{el.title}</h3>
                 {el.content?.map((content, idx) => (
-                  <a key={idx} className="asideContent" href="#">
-                    {content}
+                  <a className="asideContent" key={idx} href={content.href}>
+                    {content.role}
                   </a>
                 ))}
               </div>
             );
           })}
         </div>
-
         <div className="snsArea">
-          <div className="snsBox">
+          <span className="snsDesc">자라나라의 새로운 소식을 들어보세요</span>
+          <ul className="snsBox">
             {FOOTER_IMG.map(el => (
-              <img key={el.id} src={el.src} alt={el.alt} />
+              <li key={el.id}>{el.icon}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </footer>

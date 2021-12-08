@@ -1,0 +1,101 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.cartItem {
+  width: 33%;
+  padding: 10px 6px;
+
+  .photoWrapper {
+    position: relative;
+    margin-bottom: 8px;
+    overflow: hidden;
+
+    .itemAction {
+      @include flexSpaceBetweenCenter;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 14px 10px;
+      transform: translateY(-150%);
+      transition: all 500ms ease-in-out;
+      color: $color-white;
+      font-size: $font-small;
+      background-color: $color-black;
+      opacity: 0.8;
+
+      .actionRight {
+        display: inline-block;
+
+        .actionButton {
+          .deleteButton {
+            color: $color-white;
+          }
+        }
+      }
+    }
+
+    &:hover .itemAction {
+      transform: translateY(0%);
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+
+    .name {
+      margin-bottom: 12px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .priceQuantity {
+      display: flex;
+      justify-content: space-between;
+
+      .totalPrice {
+        font-size: 14px;
+      }
+
+      .quantity {
+        @include flexSpaceBetweenCenter;
+        width: 100px;
+        padding: 0 5px;
+
+        .countButton {
+          display: flex;
+          padding: 1px 6px;
+          font-size: 20px;
+          font-weight: $weight-thin;
+
+          .minusButton {
+            font-size: 16px;
+          }
+        }
+
+        .countButton:disabled {
+          cursor: default;
+        }
+
+        .countInput {
+          width: 22px;
+          height: 22px;
+          background-color: $color-black;
+          border-radius: 50%;
+          color: $color-white;
+          text-align: center;
+          font-weight: $weight-thin;
+          font-size: $font-micro;
+        }
+      }
+    }
+
+    .dimensions {
+      font-size: 10px;
+      color: $color-gray;
+    }
+  }
+}

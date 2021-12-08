@@ -2,9 +2,13 @@
 @import '../../styles/mixin.scss';
 
 .footer {
+<<<<<<< HEAD
   z-index: -1;
   position: absolute;
   bottom: 0;
+=======
+  position: relative;
+>>>>>>> master
   width: 100%;
   border-top: 1px solid #ddd;
 
@@ -15,22 +19,45 @@
 
     .asideBox {
       display: flex;
-      align-items: center;
-      margin-top: 10px;
+      padding: 8px 0;
+
+      .asideTitle {
+        font-size: $font-regular;
+      }
 
       .asideContent {
-        font-size: 12px;
+        display: inline-block;
+        font-size: $font-regular;
         margin-left: 10px;
+
+        &:hover {
+          opacity: 0.6;
+        }
       }
     }
 
     .snsArea {
       margin-top: 10px;
+      text-align: center;
+
+      .snsDesc {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: $font-regular;
+      }
 
       .snsBox {
-        img {
-          width: 30px;
-          margin-left: 10px;
+        display: flex;
+        align-items: center;
+
+        .snsIcon {
+          width: 28px;
+          height: 28px;
+          margin: 0 8px;
+
+          &:hover {
+            opacity: 0.6;
+          }
         }
       }
     }

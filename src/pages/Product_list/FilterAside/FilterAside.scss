@@ -1,0 +1,61 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.filterAside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 23%;
+  height: 100vh;
+  background-color: white;
+  color: $color-black;
+  transform: translateX(1000px);
+  transition: all 300ms ease-in-out;
+  border-left: 1px solid #ddd;
+  z-index: 999;
+
+  &.active {
+    transform: translateX(0px);
+  }
+
+  .buttonContainer {
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+
+    .titlename {
+      padding: 12px 20px;
+    }
+
+    .closeButton {
+      display: flex;
+      padding: 12px 20px;
+
+      .closeIcon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .buttonContainer {
+    .topPriceButton,
+    .lowerPriceButton {
+      width: 100%;
+      padding: 10px 20px;
+      border: 1px solid $color-black;
+      margin-bottom: 12px;
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-black;
+      }
+    }
+  }
+}

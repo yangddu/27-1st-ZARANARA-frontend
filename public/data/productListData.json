@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "벨벳 크리오스 이불세트",
+    "price": 119000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "벨벳 크리오스 이불세트 이미지"
+  },
+  {
+    "id": 1,
+    "name": "키즈 니트 top",
+    "price": 58000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+  {
+    "id": 2,
+    "name": "키즈 니트 top",
+    "price": 48000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+  {
+    "id": 3,
+    "name": "키즈 니트 top",
+    "price": 78000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 4,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 5,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 6,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 7,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 8,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  },
+
+  {
+    "id": 9,
+    "name": "키즈 니트 top",
+    "price": 8000,
+    "image": "/images/listpage/velvet.jpg",
+    "alt": "키즈 니트 상의 이미지"
+  }
+]

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../LoginModal/Button';
+import Button from '../../components/Button/Button';
 import Userinput from '../LoginModal/Userinput';
+import UserImformation from '../LoginModal/UserImformation';
 import { API } from '../../config';
 import './JoinModal.scss';
 
