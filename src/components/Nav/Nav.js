@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { API } from '../../config';
-
-import { NAV_DATA } from './NavData';
 import { IoIosMenu } from 'react-icons/io';
 import { CgProfile } from 'react-icons/cg';
 import { BsCart3 } from 'react-icons/bs';
 import { ReactComponent as Logo } from '../../assets/logo-white.svg';
-
+import { API } from '../../config';
+import { NAV_DATA } from './NavData';
 import './Nav.scss';
 
 const MOCK_API = '/data/cartMockData.json';
 
 const Nav = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
