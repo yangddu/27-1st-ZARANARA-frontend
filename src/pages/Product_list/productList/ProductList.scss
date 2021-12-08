@@ -1,0 +1,28 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.productList {
+  margin-top: 20%;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 140px 40px;
+  background: white;
+
+  .filterContainer {
+    display: flex;
+    margin-left: 90%;
+
+    .filterWrapper {
+      display: flex;
+      align-items: center;
+
+      .productCount,
+      .productFilter {
+        margin-left: 8px;
+        font-size: $font-micro;
+        font-weight: $weight-bold;
+      }
+    }
+  }
+}
