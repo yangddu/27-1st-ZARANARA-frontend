@@ -52,7 +52,6 @@ const Nav = () => {
   };
 
   const handleLogoutClick = () => {
-    console.log('handleLogOutClick');
     setIsUserLogin(false);
     localStorage.clear();
   };

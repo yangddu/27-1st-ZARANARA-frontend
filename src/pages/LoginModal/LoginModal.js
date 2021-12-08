@@ -21,9 +21,6 @@ function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
     const { name, value } = e.target;
     setUserInput(prev => ({ ...prev, [name]: value }));
   };
-
-  console.log(userInput);
-
   const goMain = () => {
     const { email, password } = userInput;
 
@@ -36,7 +33,6 @@ function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if ('SUCCESS' === data.MESSAGE) {
           localStorage.setItem('token', data.ACCESS_TOKEN);
           navigate('/');

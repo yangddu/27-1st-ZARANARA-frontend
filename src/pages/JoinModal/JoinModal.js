@@ -22,8 +22,6 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
     setUserInput(prev => ({ ...prev, [name]: value }));
   };
 
-  console.log(userInput);
-
   const goMain = () => {
     const { name, email, password } = userInput;
 
@@ -37,7 +35,6 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if ('SUCCESS' === data.MESSAGE) {
           navigate('/');
           setIsSignup(false);

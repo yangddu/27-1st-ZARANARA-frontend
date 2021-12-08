@@ -5,7 +5,7 @@ import './Gift.scss';
 const Gift = () => {
   const [detailContents, setDetailContents] = useState([]);
   const [number, setNumber] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false); //모달 상태 관리 : 기본값 - 닫힘
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dimmerRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentSlideWrap, setCurrentSlideWrap] = useState(0);
@@ -14,20 +14,7 @@ const Gift = () => {
   const slideRef = useRef();
   const slideWrapRef = useRef();
 
-  // useEffect(() => {
-  //   fetch('http://10.58.5.235:8000/products/detail/1')
-  //     .then(response => response.json())
-  //     .then(result => setDetailContents(result));
-  //   //변수를 만들어서 result를 담아줌
-  //   //그 담은 변수에다가 map을 돌려야 함.
-  //   //
-  // }, []);
-  // console.log(detailContents);
-
-  useEffect(() => {
-    // dimmerRef.current.style;
-    // dimmerRef.current.style.display = 'block';
-  }, [isModalOpen]); // 의존, 뭘 의존하냐? 예슬님이 주는 커피 / 조건 /
+  useEffect(() => {}, [isModalOpen]);
 
   const increaseAmount = () => {
     setNumber(number + 1);
@@ -39,12 +26,10 @@ const Gift = () => {
   };
 
   const openModal = () => {
-    setIsModalOpen(true); //true
-    // 열림 닫힘 반복할 수 있음
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    // setIsModalOpen(false); //false
     if (isModalOpen === true) return setIsModalOpen(false);
   };
 
