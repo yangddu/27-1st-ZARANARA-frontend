@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import Search from './pages/Search/Search';
 import Cart from './pages/Cart/Cart';
 
 const Router = () => (
@@ -10,9 +11,10 @@ const Router = () => (
     <Nav />
     <Routes>
       <Route path="/" element={<Main />} />
+      <Route path="/search" element={<Search />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
-    {/* <Footer /> */}
+    <Footer />
   </BrowserRouter>
 );
 
