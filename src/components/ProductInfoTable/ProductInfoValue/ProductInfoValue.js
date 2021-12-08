@@ -7,13 +7,13 @@ const ProductInfoValue = ({
   increaseAmount,
   decreaseAmount,
   productAmount,
-  detailContents,
+  productOptions,
 }) => {
   return (
     <li className="productInfoValueLi">
-      {detailContents?.map((el, index) => (
+      {productOptions?.map((el, index) => (
         <span key={index} className="productInfoValue">
-          {el}
+          {el.size}
         </span>
       ))}
       <span className="productInfoLikes">

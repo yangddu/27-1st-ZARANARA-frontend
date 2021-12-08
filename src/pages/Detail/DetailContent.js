@@ -1,8 +1,8 @@
 import React from 'react';
 
-const DetailContent = ({ detailContents }) => (
+const DetailContent = ({ images }) => (
   <div className="leftContainer">
-    {detailContents.detail_image?.map(imgItem => (
+    {images?.map(imgItem => (
       <img src={imgItem.url} alt={imgItem.alt} />
     ))}
   </div>

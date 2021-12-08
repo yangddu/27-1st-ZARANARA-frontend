@@ -3,12 +3,12 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import './ProductRelatedItems.scss';
 
 const ProductRelatedItmes = ({
+  relatedProducts,
   slideWrapRef,
   handleNextSlide,
   slideRef,
   prevSlideWrap,
   handleNextSlideWrap,
-  detailContents,
 }) => (
   <>
     <div className="productRelatedItems">
@@ -41,12 +41,12 @@ const ProductRelatedItmes = ({
             <div className="productRelatedSlideWrap" ref={slideRef}>
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[0].image_url?.[0]}
+                src={relatedProducts?.[0].image_urls?.[0]}
                 alt="귀여운 원숭이 인형"
               />
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[0].image_url?.[1]}
+                src={relatedProducts?.[0].image_urls?.[1]}
                 alt="귀여운 원숭이 인형"
               />
             </div>
@@ -67,12 +67,12 @@ const ProductRelatedItmes = ({
             <div className="productRelatedSlideWrap" ref={slideRef}>
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[1].image_url?.[0]}
+                src={relatedProducts?.[1].image_urls?.[0]}
                 alt="크리스마스"
               />
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[1].image_url?.[1]}
+                src={relatedProducts?.[1].image_urls?.[1]}
                 alt="크리스마스"
               />
             </div>
@@ -93,12 +93,12 @@ const ProductRelatedItmes = ({
             <div className="productRelatedSlideWrap" ref={slideRef}>
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[2].image_url?.[0]}
+                src={relatedProducts?.[2].image_urls?.[0]}
                 alt="쿠키아가"
               />
               <img
                 className="productRelatedSlider"
-                src={detailContents?.[2].image_url?.[1]}
+                src={relatedProducts?.[2].image_urls?.[1]}
                 alt="쿠키아가"
               />
             </div>

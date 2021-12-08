@@ -1,64 +1,62 @@
 {
-  "result": [
-    {
-      "category": "가구",
-      "detail_image": [
-        {
-          "alt": "가구 이미지1",
-          "src": "https://static.zarahome.net/8/photos4/2022/V/4/1/p/1635/080/914/1635080914_2_7_2.jpg?t=1636452659902"
-        },
-        {
-          "alt": "가구 이미지2",
-          "src": "https://static.zarahome.net/8/photos4/2022/V/4/1/p/1635/080/914/1635080914_1_1_2.jpg?t=1636452659902"
-        }
-      ],
-      "id": 1,
-      "information": "금속과 목재로 제조된 벽 선반. 컬러 디테일이 매치된 심플한 디자인. 벽에 고정하는 디자인.",
-      "keyword": "금속 가구",
-      "material_caution": [
-        "미지근한 물에서 세탁하는 것을 권장합니다",
-        "찬물에서 세탁하는 것을 권장합니다."
-      ],
-      "material_name": ["면", "폴리에스터"],
-      "name": "글리터 베어 프린트",
-      "price": "49000.00",
-      "product_option": [
-        {
-          "color": "레드레드",
-          "size": "2-4 세",
-          "stock": 200
-        }
-      ],
-      "theme_products": [
-        {
-          "id": 1,
-          "image_url": [
-            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0699/073/500/0699073500_2_7_2.jpg?t=1633087481049",
-            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0699/073/500/0699073500_1_1_2.jpg?t=1632994898566"
-          ],
-          "name": "깅엄 체크 시트 키즈용 체어",
-          "price": "169000.00"
-        },
-        {
-          "id": 2,
-          "image_url": [
-            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0660/080/500/0660080500_2_7_2.jpg?t=1633446910285",
-            "https://static.zarahome.net/8/photos4/2022/V/4/1/p/0660/080/500/0660080500_1_1_2.jpg?t=1633425968144"
-          ],
-          "name": "메탈릭 스쿨 락커",
-          "price": "179000.00"
-        },
-        {
-          "id": 3,
-          "image_url": [
-            "https://static.zarahome.net/8/photos4/2021/I/4/1/p/4670/080/745/4670080745_2_7_2.jpg?t=1630483219381",
-            "https://static.zarahome.net/8/photos4/2021/I/4/1/p/4670/080/745/4670080745_1_1_2.jpg?t=1621850137886"
-          ],
-          "name": "메탈릭 벽 선반",
-          "price": "55000.00"
-        }
-      ],
-      "users_like": true
-    }
-  ]
+  "result": {
+    "category": "가구&데코&침실",
+    "id": 1,
+    "images": [
+      {
+        "alt": "베어 프린트 이불커버 이미지 01",
+        "url": "https://images.unsplash.com/photo-1607110217074-f70b1947a9e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+      },
+      {
+        "alt": "베어 프린트 이불커버 이미지 02",
+        "url": "https://images.unsplash.com/photo-1543346242-2b8e41fb91ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+      }
+    ],
+    "information": "곰 프린트와 글리터 별 디테일이 매치된 180TC 퍼케일 면 소재 이불 커버.",
+    "is_liked": false,
+    "keyword": "따뜻한 이불",
+    "material_cautions": [
+      "미지근한 물에서 세탁하는 것을 권장합니다. 오염에 약한 소재이니 오염되면 즉시 물로 오염을 지워주세요.",
+      "찬물에서 세탁하는 것을 권장합니다. 오염에 강한 소재이니 티슈로 오염을 닦아내고 나중에 세탁하셔도 됩니다."
+    ],
+    "material_names": ["면", "폴리에스터"],
+    "name": "글리터 베어 프린트 이불커버",
+    "price": "69000.00",
+    "product_options": [
+      {
+        "color": "엘리스블루",
+        "size": "1-2 세",
+        "stock": 190
+      }
+    ],
+    "related_products": [
+      {
+        "id": 1,
+        "image_urls": [
+          "https://images.unsplash.com/photo-1607110217074-f70b1947a9e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+          "https://images.unsplash.com/photo-1543346242-2b8e41fb91ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+        ],
+        "name": "글리터 베어 프린트 이불커버",
+        "price": "69000.00"
+      },
+      {
+        "id": 2,
+        "image_urls": [
+          "https://images.unsplash.com/photo-1608959202013-2627dfa2ebd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+          "https://images.unsplash.com/photo-1512475190635-3b6f26557377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+        ],
+        "name": "엘리펀트 자수 후드 타월",
+        "price": "49000.00"
+      },
+      {
+        "id": 4,
+        "image_urls": [
+          "https://images.unsplash.com/photo-1607877342097-d5431c3542fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+          "https://images.unsplash.com/photo-1607877742574-a483ae272995?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2475&q=80"
+        ],
+        "name": "강아지 쉐이프 실리콘 머그",
+        "price": "9000.00"
+      }
+    ]
+  }
 }

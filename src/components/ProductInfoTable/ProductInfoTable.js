@@ -6,7 +6,7 @@ const ProductInfoTable = ({
   increaseAmount,
   decreaseAmount,
   productAmount,
-  detailContents,
+  productOptions,
 }) => (
   <div className="productInfoTable">
     <div className="productInfoHeader">
@@ -17,7 +17,7 @@ const ProductInfoTable = ({
     </div>
     <ul className="productInfoCons">
       <ProductInfoValue
-        detailContents={detailContents}
+        productOptions={productOptions}
         increaseAmount={increaseAmount}
         decreaseAmount={decreaseAmount}
         productAmount={productAmount}

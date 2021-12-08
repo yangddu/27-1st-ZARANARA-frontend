@@ -8,7 +8,7 @@ import DetailContent from './DetailContent';
 import './Detail.scss';
 
 const Detail = () => {
-  const [detailContents, setDetailContents] = useState([]);
+  const [detailContents, setDetailContents] = useState({});
   const [productAmount, setProductAmount] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideWrap, setCurrentSlideWrap] = useState(0);
@@ -21,32 +21,32 @@ const Detail = () => {
 
   const TOTAL_SLIDES = 1;
   const TOTAL_SLIDES_WRAP = 2;
-  const PRODUCT_INFO_TABLE = detailContents.product_option?.[0].size.split(',');
-  const PRODUCT_RELATED_IMG = detailContents.theme_products;
-  const PRODUCT_MATERIAL_CAUTION = detailContents.material_caution;
-  const PRODUCT_MATERIAL_NAME = detailContents.material_name;
+  const PRODUCT_INFO_TABLE = detailContents.product_options;
+  const PRODUCT_RELATED_IMG = detailContents.related_products;
+  const PRODUCT_MATERIAL_CAUTION = detailContents.material_cautions;
+  const PRODUCT_MATERIAL_NAME = detailContents.material_names;
 
-  const clickOrder = () => {
-    // fetch('/data/mock.json')
-    //   .then(response => response.json())
-    //   .then(result => setDetailContents(result.result[0]));
+  // const clickOrder = () => {
+  //   // fetch('/data/mock.json')
+  //   //   .then(response => response.json())
+  //   //   .then(result => setDetailContents(result.result[0]));
 
-    fetch('/data/mock.json', {
-      method: 'POST',
-      body: JSON.stringify({
-        price: detailContents.price?.split('.')[0],
-        number: productAmount,
-        //producTid, price, 갯수, 사이즈, 컬러
-      }),
-    })
-      .then(response => response.json())
-      .then(result => console.log('결과: ', result));
-  };
+  //   fetch('/data/mock.json', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       price: detailContents.price?.split('.')[0],
+  //       number: productAmount,
+  //       //producTid, price, 갯수, 사이즈, 컬러
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => console.log('결과: ', result));
+  // };
 
   useEffect(() => {
-    fetch('/data/mock.json')
+    fetch('/data/mockDataDetail.json')
       .then(response => response.json())
-      .then(result => setDetailContents(result.result[0]));
+      .then(result => setDetailContents(result.result));
   }, []);
 
   const increaseAmount = () => {
@@ -98,6 +98,19 @@ const Detail = () => {
     }
   };
 
+  const {
+    images,
+    information,
+    is_liked,
+    keyword,
+    material_cautions,
+    material_names,
+    name,
+    price,
+    product_options,
+    related_products,
+  } = detailContents;
+
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide * 2}00px)`;
@@ -112,17 +125,17 @@ const Detail = () => {
 
   return (
     <div className="detail" onClick={closeModal}>
-      {/* {isModalOpen && <div className="dimmer" ref={dimmerRef} />} */}
-      <DetailContent detailContents={detailContents} />
+      {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
+      <DetailContent images={images} />
       <div className="rightContainer">
         <div className="rightContainerInner">
-          <div className="productTitle">{detailContents.name}</div>
+          <div className="productTitle">{name}</div>
           <div className="productPrice">
-            {Number(detailContents.price?.split('.')[0]).toLocaleString()}원
+            {Number(price?.split('.')[0]).toLocaleString()}원
           </div>
-          <div className="productText">{detailContents.information}</div>
+          <div className="productText">{information}</div>
           <ProductInfoTable
-            detailContents={PRODUCT_INFO_TABLE}
+            productOptions={product_options}
             increaseAmount={increaseAmount}
             decreaseAmount={decreaseAmount}
             productAmount={productAmount}
@@ -130,8 +143,8 @@ const Detail = () => {
           />
           {isModalOpen && (
             <DetailModal
-              productMaterialCaution={PRODUCT_MATERIAL_CAUTION}
-              productMaterialName={PRODUCT_MATERIAL_NAME}
+              productMaterialCaution={material_cautions}
+              productMaterialName={material_names}
               openModal={openModal}
               className="modal"
             />
@@ -141,11 +154,11 @@ const Detail = () => {
               배송 및 반품
             </div> */}
             <Button
-              handleClick={clickOrder}
+              // handleClick={clickOrder}
               format="bigger"
               type="button"
               title={`장바구니에 담기 (${Number(
-                productAmount * detailContents.price?.split('.')[0]
+                productAmount * price?.split('.')[0]
               ).toLocaleString()} 원)`}
             />
             {isModalOpen && <div className="dimmer" ref={dimmerRef} />}
@@ -154,7 +167,7 @@ const Detail = () => {
             </div>
           </div>
           <ProductRelatedItmes
-            detailContents={PRODUCT_RELATED_IMG}
+            relatedProducts={related_products}
             slideWrapRef={slideWrapRef}
             handleNextSlide={handleNextSlide}
             slideRef={slideRef}
