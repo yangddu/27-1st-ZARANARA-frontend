@@ -1,0 +1,40 @@
+.productRelatedItems {
+  width: 100%;
+  margin: 0 auto;
+
+  .productRelatedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .productRelatedTxt {
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .productRelatedArrow {
+      button {
+        width: 30px;
+        height: 24px;
+        margin-left: 5px;
+        background: #1e1e1e;
+        color: #fff;
+      }
+    }
+  }
+
+  .productRelatedSlideWrap {
+    display: flex;
+    margin: 0 auto;
+    width: 220px;
+    // position: relative;
+
+    // .productRelatedSlider {
+    //   // position: absolute;
+    //   width: 220px;
+    //   height: 220px;
+    //   background: skyblue;
+    // }
+  }
+}

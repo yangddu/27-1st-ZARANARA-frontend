@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.detailModal {
+  @include flexCenter;
+  position: relative;
+
+  .modalContainer {
+    position: absolute;
+    width: 300px;
+    height: 320px;
+    left: 20%;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 30px solid #fff;
+    overflow-y: auto;
+    z-index: 300;
+
+    .wrapper {
+      position: relative;
+      padding: 20px;
+
+      .modalButton {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        padding: 5px;
+
+        .modalCloseButton {
+          position: fixed;
+        }
+      }
+
+      .modalCon {
+        .modalConHeader {
+          margin: 20px 0 15px 0;
+          padding: 10px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .modalContents {
+          font-size: 14px;
+          margin-bottom: 10px;
+
+          .modalProductMaterialName {
+            display: block;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+}
