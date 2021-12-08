@@ -2,16 +2,9 @@
 @import '../../../styles/mixin.scss';
 
 .productItem {
-  display: inline-block;
-  vertical-align: top;
-  padding: 5px;
-  width: 49%;
+  margin-bottom: 24px;
 
-  .link {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-
+  .wrapper {
     .imgBox {
       position: relative;
       width: 100%;
@@ -21,12 +14,13 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        padding: 8px 0;
-        font-size: $font-micro;
+        padding: 16px 0;
+        font-size: $font-small;
         background-color: $color-white;
         opacity: 0.7;
-        transform: translateY(32px);
+        transform: translateY(48px);
         transition: all 300ms ease-in-out;
+        z-index: 1;
 
         &:hover {
           background-color: #1e1e1e;
@@ -36,20 +30,24 @@
       }
     }
 
-    .productinfo {
-      .title,
-      .price {
-        display: block;
-        font-size: 12px;
-        font-weight: $weight-semi-bold;
-        text-align: center;
-        padding-top: 10px;
-        color: black;
-      }
+    &:hover .imgBox .cartButton {
+      transform: translateY(0px);
     }
   }
 
-  &:hover .imgBox .cartButton {
-    transform: translateY(0px);
+  .productinfo {
+    .title,
+    .price {
+      display: block;
+      font-size: $font-regular;
+      font-weight: $weight-regular;
+      text-align: center;
+      padding-top: 16px;
+      color: $color-black;
+    }
+
+    .title {
+      font-weight: $weight-semi-bold;
+    }
   }
 }
