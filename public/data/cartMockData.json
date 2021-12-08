@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "글라스 잔",
+    "price": 12000.0,
+    "size": "180ml",
+    "amount": 1,
+    "isHeart": true,
+    "url": "/images/cart/cart_item_cup.png"
+  },
+  {
+    "id": 2,
+    "name": "트리 장식볼",
+    "price": 8000.0,
+    "size": "5 x 5 x 5 cm",
+    "amount": 1,
+    "isHeart": true,
+    "url": "/images/cart/cart_item_tree-ball.png"
+  },
+  {
+    "id": 3,
+    "name": "트리 장식별",
+    "price": 10000.0,
+    "size": "10 x 10 x 7 cm",
+    "amount": 2,
+    "isHeart": false,
+    "url": "/images/cart/cart_item_tree-star.png"
+  },
+  {
+    "id": 4,
+    "name": "캔들 스틱",
+    "price": 21000.0,
+    "size": "7 x 6.9 x 7 cm",
+    "amount": 1,
+    "isHeart": true,
+    "url": "/images/cart/cart_item_table-candle.png"
+  }
+]

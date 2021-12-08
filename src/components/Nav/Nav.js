@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { API } from '../../config';
+
 import { NAV_DATA } from './NavData';
+import { IoIosMenu } from 'react-icons/io';
+import { CgProfile } from 'react-icons/cg';
+import { BsCart3 } from 'react-icons/bs';
+import { ReactComponent as Logo } from '../../assets/logo-white.svg';
+
 import './Nav.scss';
 import { useState } from 'react/cjs/react.development';
 
+const MOCK_API = '/data/cartMockData.json';
+
 const Nav = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    fetch(MOCK_API, {
+      method: 'get',
+      headers: {
+        Authorization: 'Bearer token',
+      },
+    })
+      .then(res => res.json())
+      .then(result => setCartItems(result));
+  }, []);
 
   return (
     <nav className="nav">
       <div className="navLeftContainer">
         <div className="gnbMenuWrap">
-          <img
-            className="menuBar"
-            src="/images/icon/hamberger.svg"
-            alt="hamburgerMenuBar"
-          />
-          <img className="logo" src="/images/icon/logo1.svg" alt="logo" />
+          <div className="gnbAndLogo">
+            <IoIosMenu className="menuBarIcon" alt="메뉴버튼" />
+            <Link to="/">
+              <Logo className="zaranaraLogo" alt="자라나라 로고" />
+            </Link>
+          </div>
           <ul className="gnbMenuBar">
             {NAV_DATA.map(el => (
               <li key={el.id} className="gnbMenuLi">
-                {el.title}
+                <Link to="">{el.title}</Link>
               </li>
             ))}
           </ul>
@@ -28,7 +49,7 @@ const Nav = () => {
       </div>
       <div className="navCenterContainer">
         <div className="searchLink">
-          <Link to="/">
+          <Link to="/search">
             검색
             <span className="line" />
           </Link>
@@ -37,16 +58,12 @@ const Nav = () => {
       <div className="navRightContainer">
         <div className="loginContainer">
           <div className="loginLink">
-            <img
-              className="loginIcon"
-              src="/images/icon/profile.svg"
-              alt="profile"
-            />
+            <CgProfile className="loginIcon" alt="profile" />
             <div className="loginTxt">로그인</div>
           </div>
           <div className="cartLink">
-            <img className="cartIcon" src="/images/icon/cart.svg" alt="cart" />
-            <div className="carTxt">0</div>
+            <BsCart3 className="cartIcon" alt="cart" />
+            <div className="carTxt">{cartItems.length}</div>
           </div>
         </div>
       </div>

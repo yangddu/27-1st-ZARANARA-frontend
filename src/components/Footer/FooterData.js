@@ -1,19 +1,40 @@
+import {
+  RiKakaoTalkFill,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiPinterestLine,
+  RiYoutubeLine,
+  RiTwitterFill,
+  RiSpotifyFill,
+} from 'react-icons/ri';
+
 export const ASIDE_DATA = [
   { id: 1, title: '공지사항' },
-  { id: 2, title: 'Developers', content: ['Team ZARANARA'] },
+  { id: 2, title: 'Developers', content: [{ role: 'Team ZARANARA' }] },
   {
     id: 3,
-    title: 'Tel',
-    content: ['연락처', 'GUEST PURCHASE', '매장찾기', '010-2727-0505'],
+    title: 'Contact',
+    content: [
+      {
+        id: 1,
+        role: '백엔드',
+        href: 'https://github.com/wecode-bootcamp-korea/27-1st-ZARANARA-backend',
+      },
+      {
+        id: 2,
+        role: '프론트',
+        href: 'https://github.com/wecode-bootcamp-korea/27-1st-ZARANARA-frontend',
+      },
+    ],
   },
 ];
 
 export const FOOTER_IMG = [
-  { id: 1, src: '/images/icon/kakao.svg' },
-  { id: 2, src: '/images/icon/facebook.svg' },
-  { id: 3, src: '/images/icon/instagram.svg' },
-  { id: 4, src: '/images/icon/pinterest.svg' },
-  { id: 5, src: '/images/icon/youtube.svg' },
-  { id: 6, src: '/images/icon/twitter.svg' },
-  { id: 7, src: '/images/icon/spotify.svg' },
+  { id: 1, icon: <RiKakaoTalkFill className="snsIcon" /> },
+  { id: 2, icon: <RiFacebookFill className="snsIcon" /> },
+  { id: 3, icon: <RiInstagramLine className="snsIcon" /> },
+  { id: 4, icon: <RiPinterestLine className="snsIcon" /> },
+  { id: 5, icon: <RiYoutubeLine className="snsIcon" /> },
+  { id: 6, icon: <RiTwitterFill className="snsIcon" /> },
+  { id: 7, icon: <RiSpotifyFill className="snsIcon" /> },
 ];

@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.button {
+  @include flexCenter;
+  width: 360px;
+  height: 30px;
+  border: 1px solid #1e1e1e;
+  background-color: white;
+
+  .buttonChange {
+    width: 100px;
+  }
+
+  &:hover {
+    background-color: #1e1e1e;
+    color: white;
+  }
+
+  &.small {
+    width: 250px;
+  }
+
+  &.medium {
+    width: 350px;
+  }
+
+  &.big {
+    width: 460px;
+  }
+}

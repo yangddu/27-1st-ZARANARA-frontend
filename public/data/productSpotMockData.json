@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "new": true,
+    "title": "별모양 쿠키틀",
+    "description": "베이킹 도구",
+    "price": "12,000원",
+    "url": "http://",
+    "alt": "별모양 쿠키틀 이동버튼"
+  },
+  {
+    "id": 2,
+    "new": false,
+    "title": "트리장식 볼",
+    "description": "줄무늬 빨간색볼",
+    "price": "3,000원",
+    "url": "http://",
+    "alt": "줄무느 빨간색볼 이동버튼"
+  }
+]
