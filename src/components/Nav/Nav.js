@@ -8,11 +8,9 @@ import './Nav.scss';
 const Nav = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  const [isUserLogin, setIsUserLogin] = useState(false); // 로그인 했는지 안했는지 상태 여부 확인 (안함)
-  console.log('isUserLogin', isUserLogin);
+  const [isUserLogin, setIsUserLogin] = useState(false);
 
   const handleLoginModal = () => {
-    console.log('handleLoginModal');
     setIsLogin(!isLogin);
   };
 
@@ -24,6 +22,7 @@ const Nav = () => {
   const handleJoinClick = () => {
     setIsSignup(false);
   };
+  ㄴ;
 
   const handleLogoutClick = () => {
     console.log('handleLogOutClick');
