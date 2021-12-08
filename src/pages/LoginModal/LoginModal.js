@@ -12,7 +12,6 @@ function LoginModal() {
     setInputUserEmail(e.target.value);
     console.log(e.target.value);
   };
-
   return (
     <div className="loginAndjoin">
       <div className="login">
