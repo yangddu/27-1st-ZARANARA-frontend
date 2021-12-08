@@ -20,28 +20,24 @@ function FilterAside({
         <form className="buttonContainer">
           <div>
             <input
-              onClick={() => {
-                handleFilterTopPrice();
-              }}
+              onClick={handleFilterTopPrice}
               type="radio"
               id="topPrice"
               name="priceFilter"
               value="topPrice"
               checked
             />
-            <label for="huey">높은 순</label>
+            <label htmlFor="huey">높은 순</label>
           </div>
           <div>
             <input
-              onClick={() => {
-                handleFilterLowerPrice();
-              }}
+              onClick={handleFilterLowerPrice}
               type="radio"
               id="lowerPrice"
               name="priceFilter"
               value="lowerPrice"
             />
-            <label for="dewey">낮은 순</label>
+            <label htmlFor="dewey">낮은 순</label>
           </div>
         </form>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UserImformation from './UserImformation';
 import Userinput from './Userinput';
-import Button from './Button';
+import Button from '../../components/Button/Button';
 import './LoginModal.scss';
 
 function LoginModal() {
@@ -12,6 +12,7 @@ function LoginModal() {
     setInputUserEmail(e.target.value);
     console.log(e.target.value);
   };
+
   return (
     <div className="loginAndjoin">
       <div className="login">

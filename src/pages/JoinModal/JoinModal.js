@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Button from '../LoginModal/Button';
+import Button from '../../components/Button/Button';
 import UserImformation from '../LoginModal/UserImformation';
-import './JoinModal.scss';
 import Userinput from '../LoginModal/Userinput';
+import './JoinModal.scss';
 
 function JoinModal() {
   // const checkbox = ([checkbox, setCheckbox] = useState([]);

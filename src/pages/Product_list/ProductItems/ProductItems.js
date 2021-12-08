@@ -7,7 +7,7 @@ function ProductItems({ productList }) {
     <div className="productItemsContainer">
       <ul className="productItems">
         {productList.map(product => (
-          <Product productInfo={product} />
+          <Product key={product.id} productInfo={product} />
         ))}
       </ul>
     </div>
