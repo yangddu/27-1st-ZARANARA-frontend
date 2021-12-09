@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from '../CartItem/CartItem';
-
+import { API } from '../../../config';
 import './CartItems.scss';
 
 const CartItems = ({
@@ -9,10 +9,9 @@ const CartItems = ({
   onResetItem,
   onIncreaseCartItem,
   onDecreaseCartItem,
-  api,
 }) => {
   const handleResetItem = () => {
-    fetch(`${api.USER}/cart`, {
+    fetch(`${API.USER}/cart`, {
       method: 'DELETE',
       headers: {
         Authorization:
@@ -38,7 +37,6 @@ const CartItems = ({
             onDeleteItem={onDeleteItem}
             onIncreaseCartItem={onIncreaseCartItem}
             onDecreaseCartItem={onDecreaseCartItem}
-            api={api}
           />
         ))}
       </ul>

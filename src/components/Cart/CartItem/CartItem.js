@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GoPlusSmall } from 'react-icons/go';
 import { BiMinus } from 'react-icons/bi';
 import { IoCloseSharp } from 'react-icons/io5';
+import { API } from '../../../config';
 import './CartItem.scss';
 
 const CartItem = ({
@@ -10,10 +11,9 @@ const CartItem = ({
   onDeleteItem,
   onIncreaseCartItem,
   onDecreaseCartItem,
-  api,
 }) => {
   const handleDeleteItem = itemInfo => {
-    fetch(`${api.USER}/cart\?cartId\=${itemInfo.cart_id}`, {
+    fetch(`${API.USER}/cart\?cartId\=${itemInfo.cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization:
@@ -28,7 +28,7 @@ const CartItem = ({
   };
 
   const handleIncreaseCartItem = itemInfo => {
-    fetch(`${api.USER}/cart`, {
+    fetch(`${API.USER}/cart`, {
       method: 'PATCH',
       headers: {
         Authorization:
@@ -47,7 +47,7 @@ const CartItem = ({
   };
 
   const handleDecreaseCartItem = itemInfo => {
-    fetch(`${api.USER}/cart`, {
+    fetch(`${API.USER}/cart`, {
       method: 'PATCH',
       headers: {
         Authorization:

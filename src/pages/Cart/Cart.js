@@ -11,8 +11,11 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [empty, setEmpty] = useState(true);
 
-  const totalCount = cartItems.reduce((a, c) => (a += c.quantity), 0);
-  const totalPrice = cartItems.reduce((a, c) => (a += c.price * c.quantity), 0);
+  const totalCount = cartItems.reduce((acc, cur) => (acc += cur.quantity), 0);
+  const totalPrice = cartItems.reduce(
+    (acc, cur) => (acc += cur.price * cur.quantity),
+    0
+  );
 
   // 백엔드용
   useEffect(() => {
@@ -94,7 +97,7 @@ const Cart = () => {
   return (
     <main className="mainContainer">
       <section className="tabContainer">
-        <div className={selectCart ? 'tabs cart' : 'tabs latershop'}>
+        <div className={`tabs ${selectCart ? 'cart' : 'latershop'}`}>
           <div className="transBox" />
           <button
             className="transButton cartButton"
@@ -120,7 +123,6 @@ const Cart = () => {
               onResetItem={handleResetItem}
               onIncreaseCartItem={handleIncreaseCartItem}
               onDecreaseCartItem={handleDecreaseCartItem}
-              api={API}
               totalCount={totalCount}
               totalPrice={totalPrice}
             />
