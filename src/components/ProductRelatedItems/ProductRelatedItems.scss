@@ -10,7 +10,7 @@
     align-items: baseline;
 
     .productRelatedTxt {
-      font-weight: 500;
+      font-weight: $weight-regular;
       font-size: 16px;
       margin-bottom: 20px;
     }
@@ -21,78 +21,17 @@
         height: 24px;
         margin-left: 5px;
         background: #1e1e1e;
-        color: #fff;
+        color: $color-white;
       }
     }
   }
 }
 
 .slideWrapper {
-  // display: flex;
   overflow: hidden;
   width: 100%;
 
   .slideConWrap {
     display: flex;
-
-    .slideContainer {
-      flex-shrink: 0;
-      width: 220px;
-      height: 300px;
-      margin-right: 20px;
-      overflow: hidden;
-
-      .productRelatedImg {
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 220px;
-        margin-right: 10px;
-        background: blue;
-
-        .productRelatedInsideArrow {
-          display: flex;
-          justify-content: space-between;
-          position: absolute;
-          top: 20px;
-          width: 220px;
-
-          padding: 0 16px;
-          z-index: 20;
-
-          button {
-            font-size: 30px;
-            color: #fff;
-          }
-        }
-      }
-
-      .slideWrapperTest {
-        display: flex;
-
-        .productRelatedSlideWrap {
-          display: flex;
-          position: relative;
-
-          .productRelatedSlideConWrap {
-            font-size: $font-regular;
-
-            .title {
-              margin: 10px 0;
-            }
-
-            .productRelatedSliderWrapper {
-              width: 100%;
-              height: 240px;
-              overflow: hidden;
-              display: flex;
-
-              .productRelatedSlider {
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }

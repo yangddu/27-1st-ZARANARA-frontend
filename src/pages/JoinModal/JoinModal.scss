@@ -14,12 +14,12 @@
   margin: 0px;
   transform: translate(-50%, -50%);
   border: 1px solid #1e1e1e;
-  background-color: white;
-  z-index: 9999;
+  background-color: $color-white;
+  z-index: 99999;
 
   .zaranaraCreateAccount {
     padding-bottom: 20px;
-    background-color: white;
+    background-color: $color-white;
 
     .createAccountContainer {
       @include flexCenter;
@@ -35,7 +35,7 @@
     .userPrivacyInput {
       width: 325px;
       height: 90px;
-      background-color: white;
+      background-color: $color-white;
 
       .userName {
         width: 320px;
@@ -120,7 +120,7 @@
         }
         button:hover {
           background-color: #1e1e1e;
-          color: white;
+          color: $color-white;
         }
       }
     }

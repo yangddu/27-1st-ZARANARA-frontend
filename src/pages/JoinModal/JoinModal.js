@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Userinput from '../LoginModal/Userinput';
-import UserImformation from '../LoginModal/UserImformation';
 
 import { IoCloseSharp } from 'react-icons/io5';
 
@@ -20,8 +19,6 @@ function JoinModal({ handleJoinClick, setIsSignup, handleCloseJoin }) {
 
   const handleInput = e => {
     const { name, value } = e.target;
-    // const newInput = { ...userInput, [name]: value };
-    // setUserInput(newInput);
     setUserInput(prev => ({ ...prev, [name]: value }));
   };
 
@@ -39,9 +36,10 @@ function JoinModal({ handleJoinClick, setIsSignup, handleCloseJoin }) {
       .then(res => res.json())
       .then(data => {
         if ('SUCCESS' === data.MESSAGE) {
+          alert('회원가입 성공했습니다.');
           navigate('/');
           setIsSignup(false);
-        } else if ('EMAIL_ALLEADY_EXIST' === data.MESSAGE) {
+        } else if ('EMAIL_ALREADY_EXIST' === data.MESSAGE) {
           alert('동일한 이메일이 이미 존재합니다.');
         } else if ('KEY_ERROR' === data.MESSAGE) {
           alert('모든 입력값이 형식에 올바르지 않습니다.');

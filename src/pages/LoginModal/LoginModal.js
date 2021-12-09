@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import UserImformation from './UserImformation';
 import { useNavigate } from 'react-router-dom';
 import Userinput from './Userinput';
 import Button from '../../components/Button/Button';
@@ -35,6 +34,7 @@ function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
       .then(data => {
         if ('SUCCESS' === data.MESSAGE) {
           localStorage.setItem('token', data.ACCESS_TOKEN);
+          alert('환영합니다!');
           navigate('/');
           handleLoginModal(false);
           setIsUserLogin(true);
