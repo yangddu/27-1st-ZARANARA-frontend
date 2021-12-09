@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from './ProductList/ProductList';
-import { GET_PRODUCT_API } from '../../config';
+import { API } from '../../config';
 import './Product.scss';
 
 const Product = () => {
@@ -8,7 +8,7 @@ const Product = () => {
 
   // 백엔드 데이터 통신용
   // useEffect(() => {
-  //   fetch(`${GET_PRODUCT_API}setlist\?offset\=0\&limit\=2`)
+  //   fetch(`${API.PRODUCT}/set\?offset\=0\&limit\=2`)
   //     .then(res => res.json())
   //     .then(data => setProductImages(data.list_item));
   // }, []);

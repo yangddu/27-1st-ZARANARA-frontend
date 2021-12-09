@@ -1,0 +1,50 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.navCartItem {
+  display: flex;
+  width: 100%;
+  padding: 10px 6px;
+  margin-top: 8px;
+
+  .photoWrapper {
+    position: relative;
+    width: 120px;
+    margin-bottom: 8px;
+    margin-right: 12px;
+    overflow: hidden;
+
+    .photo {
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+
+    .name {
+      margin-bottom: 12px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .priceQuantity {
+      display: flex;
+      justify-content: space-between;
+
+      .totalPrice {
+        font-size: 14px;
+        font-weight: $weight-bold;
+        margin-bottom: 8px;
+      }
+    }
+
+    .dimensions {
+      font-size: 10px;
+      color: $color-gray;
+    }
+  }
+}

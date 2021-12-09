@@ -3,7 +3,7 @@ import Arrows from './Arrows/Arrows';
 import Dots from './Dots/Dots';
 import SliderContent from './SliderContent/SliderContent';
 import './Slider.scss';
-import { GET_PRODUCT_API } from '../../config';
+import { API } from '../../config';
 
 const Slider = () => {
   const [sliderImagesData, setSliderImagesData] = useState([]);
@@ -11,18 +11,18 @@ const Slider = () => {
   const sliderRef = useRef();
 
   // 백엔드 데이터용
-  // useEffect(() => {
-  //   fetch(`${GET_PRODUCT_API}slide\?offset\=0\&limit\=5`)
-  //     .then(res => res.json())
-  //     .then(data => setSliderImagesData(data.slide_item));
-  // }, []);
+  useEffect(() => {
+    fetch(`${API.PRODUCT}\?offset\=0\&limit\=6`)
+      .then(res => res.json())
+      .then(data => setSliderImagesData(data.results));
+  }, []);
 
   // mock 데이터용
-  useEffect(() => {
-    fetch('/data/sliderMockData.json')
-      .then(res => res.json())
-      .then(data => setSliderImagesData(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('/data/sliderMockData.json')
+  //     .then(res => res.json())
+  //     .then(data => setSliderImagesData(data));
+  // }, []);
 
   const INDEX_LENGTH = sliderImagesData.length - 1;
 

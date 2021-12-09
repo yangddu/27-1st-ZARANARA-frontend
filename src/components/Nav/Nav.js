@@ -14,6 +14,7 @@ import { BsCart3 } from 'react-icons/bs';
 import { ReactComponent as Logo } from '../../assets/logo-white.svg';
 
 import './Nav.scss';
+import NavCartItem from '../Cart/CartItem/NavCartItem';
 
 const MOCK_API = '/data/cartMockData.json';
 
@@ -30,13 +31,22 @@ const Nav = () => {
 
   const navClassName = `nav ${pathname === '/' ? 'white' : ''}`;
 
+  // 백엔드용
+  // useEffect(() => {
+  //   fetch(`${API.USER}/cart`, {
+  //     method: 'GET',
+  //     headers: {
+  //       Authorization:
+  //         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => setCartItems(result));
+  // }, []);
+
+  // // mockdata 용
   useEffect(() => {
-    fetch(MOCK_API, {
-      method: 'get',
-      headers: {
-        Authorization: 'Bearer token',
-      },
-    })
+    fetch(MOCK_API)
       .then(res => res.json())
       .then(result => setCartItems(result));
   }, []);
@@ -114,12 +124,27 @@ const Nav = () => {
                 {isUserLogin ? '로그아웃' : '로그인'}
               </div>
             </div>
-            <Link to="/cart">
-              <div className="cartLink">
-                <BsCart3 className="cartIcon" alt="cart" />
-                <div className="carTxt">{cartItems.length}</div>
-              </div>
-            </Link>
+            <div className="cartLink">
+              <BsCart3 className="cartIcon" alt="cart" />
+              <div className="carTxt">{cartItems.length}</div>
+              <aside className="cartPreView">
+                <div className="content">
+                  <span className="productCountText">
+                    {cartItems.length} 제품
+                  </span>
+                  <ul className="cartItems">
+                    {cartItems.map(item => (
+                      <NavCartItem key={item.cart_id} itemInfo={item} />
+                    ))}
+                  </ul>
+                </div>
+                <div className="buttonWrapper">
+                  <Link to="/cart" className="goToCartButton">
+                    장바구니 가기
+                  </Link>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </nav>

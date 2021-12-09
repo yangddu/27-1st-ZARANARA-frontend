@@ -150,6 +150,63 @@
           font-weight: 500;
           line-height: 30px;
         }
+
+        &:hover {
+          .cartPreView {
+            transform: translateX(0);
+          }
+        }
+
+        .cartPreView {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 400px;
+          height: 100vh;
+          border-left: 1px solid $color-black;
+          background-color: $color-white;
+          color: $color-black;
+          transform: translateX(1000px);
+          transition: all 500ms ease-in-out;
+
+          .content {
+            padding: 24px;
+            height: 100%;
+            overflow-y: scroll;
+
+            .productCountText {
+              font-size: $font-medium;
+            }
+
+            .cartItems {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          .buttonWrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 24px;
+            border-top: 1px solid #ddd;
+            background-color: $color-white;
+
+            .goToCartButton {
+              display: block;
+              width: 100%;
+              font-size: $font-small;
+              line-height: 2.8;
+              text-align: center;
+              color: $color-white;
+              background-color: $color-black;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
       }
     }
   }

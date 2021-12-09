@@ -4,10 +4,10 @@ import './SliderContent.scss';
 const SliderContent = ({ sliderImagesData }) => {
   return sliderImagesData.map(slide => (
     <div
-      key={slide.slide_id}
+      key={slide.id}
       className="slideImage"
-      style={{ backgroundImage: `url(${slide.slide_image})` }}
-      alt={slide.slide_alt}
+      style={{ backgroundImage: `url(${slide.image})` }}
+      alt={slide.alt}
     />
   ));
 };

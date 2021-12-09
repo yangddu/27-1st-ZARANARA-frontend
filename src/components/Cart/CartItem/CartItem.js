@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GoPlusSmall } from 'react-icons/go';
 import { BiMinus } from 'react-icons/bi';
 import { IoCloseSharp } from 'react-icons/io5';
+import { API } from '../../../config';
 import './CartItem.scss';
 
 const CartItem = ({
@@ -10,55 +11,56 @@ const CartItem = ({
   onDeleteItem,
   onIncreaseCartItem,
   onDecreaseCartItem,
-  API,
 }) => {
   const handleDeleteItem = itemInfo => {
-    fetch(`${API}`, {
-      method: 'delete',
+    fetch(`${API.USER}/cart\?cartId\=${itemInfo.cart_id}`, {
+      method: 'DELETE',
       headers: {
-        Authorization: 'Bearer token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
       },
     })
       .then(res => res.json())
       .then(
-        result =>
-          (result.MESSAGE = 'DELETED' ? onDeleteItem(itemInfo.id) : null)
+        result => result.MESSAGE === 'ITEM_DELETED' && onDeleteItem(itemInfo)
       )
       .catch(error => alert(error));
   };
 
-  const handleIncreaseCartItem = () => {
-    fetch(`${API}`, {
-      method: 'patch',
+  const handleIncreaseCartItem = itemInfo => {
+    fetch(`${API.USER}/cart`, {
+      method: 'PATCH',
       headers: {
-        Authorization: 'Bearer token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
       },
       body: JSON.stringify({
-        amount: itemInfo.amount + 1,
+        cart_id: itemInfo.cart_id,
+        quantity: itemInfo.quantity + 1,
       }),
     })
       .then(res => res.json())
-      .then(
-        result =>
-          (result.MESSAGE = 'SUCCESS' ? onIncreaseCartItem(itemInfo.id) : null)
-      )
+      .then(result => {
+        result.MESSAGE === 'SUCCESS' && onIncreaseCartItem(itemInfo);
+      })
       .catch(error => alert(error));
   };
 
-  const handleDecreaseCartItem = () => {
-    fetch(`${API}`, {
-      method: 'patch',
+  const handleDecreaseCartItem = itemInfo => {
+    fetch(`${API.USER}/cart`, {
+      method: 'PATCH',
       headers: {
-        Authorization: 'Bearer token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.yl6fSLkA5B_Kni5GMCwe_Y5zgTo2Knf8x8ObpniI-KI',
       },
       body: JSON.stringify({
-        amount: itemInfo.amount - 1,
+        cart_id: itemInfo.cart_id,
+        quantity: itemInfo.quantity - 1,
       }),
     })
       .then(res => res.json())
       .then(
-        result =>
-          (result.MESSAGE = 'SUCCESS' ? onDecreaseCartItem(itemInfo.id) : null)
+        result => result.MESSAGE === 'SUCCESS' && onDecreaseCartItem(itemInfo)
       )
       .catch(error => alert(error));
   };
@@ -67,7 +69,7 @@ const CartItem = ({
     <li className="cartItem">
       <div className="photoWrapper">
         <Link to="/item/" className="photo">
-          <img alt={itemInfo.name} src={itemInfo.url} />
+          <img alt={itemInfo.name} src={itemInfo.image} />
         </Link>
         <div className="itemAction">
           <span className="actionText">나중에 쇼핑하기</span>
@@ -87,13 +89,13 @@ const CartItem = ({
         </Link>
         <div className="priceQuantity">
           <span className="totalPrice">
-            {(itemInfo.price * itemInfo.amount).toLocaleString()}원
+            {(itemInfo.price * itemInfo.quantity).toLocaleString()}원
           </span>
           <div className="quantity">
             <button
               className="countButton decrease"
-              onClick={handleDecreaseCartItem}
-              disabled={!(itemInfo.amount > 1)}
+              onClick={() => handleDecreaseCartItem(itemInfo)}
+              disabled={!(itemInfo.quantity > 1)}
             >
               <BiMinus className="minusButton" />
             </button>
@@ -101,11 +103,11 @@ const CartItem = ({
               className="countInput"
               type="text"
               name="amount"
-              value={itemInfo.amount}
+              value={itemInfo.quantity}
             />
             <button
               className="countButton increase"
-              onClick={handleIncreaseCartItem}
+              onClick={() => handleIncreaseCartItem(itemInfo)}
             >
               <GoPlusSmall className="plusButton" />
             </button>
