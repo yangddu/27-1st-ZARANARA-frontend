@@ -50,6 +50,10 @@ const Nav = () => {
     setIsLogin(false);
   };
 
+  const handleCloseJoin = () => {
+    setIsSignup(false);
+  };
+
   const handleJoinClick = () => {
     setIsSignup(false);
   };
@@ -129,6 +133,7 @@ const Nav = () => {
       {isSignup && (
         <JoinModal
           handleJoinClick={handleJoinClick}
+          handleCloseJoin={handleCloseJoin}
           setIsSignup={setIsSignup}
         />
       )}

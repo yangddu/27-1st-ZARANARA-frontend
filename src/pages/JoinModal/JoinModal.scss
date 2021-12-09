@@ -3,37 +3,28 @@
 
 .zarnaraCreateContainer {
   @include flexCenter;
-  // width: 650px;
-  // height: 450px;
-  background-color: white;
-  border: 1px solid #1e1e1e;
-  z-index: 9999;
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   display: flex;
+  align-items: flex-start;
   height: 500px;
   width: 780px;
   padding: 8px;
   margin: 0px;
+  transform: translate(-50%, -50%);
   border: 1px solid #1e1e1e;
-  // justify-content: space-between;
   background-color: white;
+  z-index: 9999;
 
   .zaranaraCreateAccount {
-    // width: 350px;
-    // height: 440px;
     padding-bottom: 20px;
     background-color: white;
 
     .createAccountContainer {
       @include flexCenter;
       padding-top: 10px;
+
       span {
         height: 30px;
         font-size: 12px;
@@ -133,5 +124,12 @@
         }
       }
     }
+  }
+  .closeButton {
+    position: absolute;
+    right: 20px;
+    height: 48px;
+    margin: 4px;
+    font-size: 32px;
   }
 }

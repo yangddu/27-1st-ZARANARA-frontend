@@ -116,17 +116,14 @@
 
   .navRightContainer {
     @include flexSpaceBetweenCenter;
-    padding: 0 38px 0 4.05%;
+    margin-right: 20px;
 
     .loginContainer {
       display: flex;
 
-      > div {
-        margin-left: 28px;
-      }
-
       .loginLink {
         @include flexCenter;
+        margin-right: 20px;
 
         .loginIcon {
           font-size: 24px;
@@ -226,7 +223,6 @@
     }
 
     .navRightContainer {
-      padding: 0 42px 0 4.05%;
       .loginContainer {
         .loginLink {
           .loginIcon {

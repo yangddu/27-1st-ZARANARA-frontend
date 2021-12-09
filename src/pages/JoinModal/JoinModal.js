@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Userinput from '../LoginModal/Userinput';
 import UserImformation from '../LoginModal/UserImformation';
+
+import { IoCloseSharp } from 'react-icons/io5';
+
 import { API } from '../../config';
 import './JoinModal.scss';
 
-function JoinModal({ handleJoinClick, setIsSignup }) {
+function JoinModal({ handleJoinClick, setIsSignup, handleCloseJoin }) {
   const [userInput, setUserInput] = useState({
     name: '',
     email: '',
@@ -56,7 +59,6 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
         </div>
         <div className="choiceKindOfAccount" />
         <Userinput signup handleInput={handleInput} />
-
         <form className="userPrivacyCheckBox">
           <div className="checkContainer">
             <input type="checkbox" name="agree" value="box1" />
@@ -80,6 +82,9 @@ function JoinModal({ handleJoinClick, setIsSignup }) {
           <Button title="계정만들기" format="signup" handleClick={goMain} />
         </form>
       </div>
+      <button className="closeButton" onClick={() => handleCloseJoin()}>
+        <IoCloseSharp />
+      </button>
     </div>
   );
 }

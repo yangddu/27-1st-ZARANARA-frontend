@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import Userinput from './Userinput';
 import Button from '../../components/Button/Button';
 import { API } from '../../config';
+
+import { IoCloseSharp } from 'react-icons/io5';
+
 import './LoginModal.scss';
 
 function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
-  const [inputUserEmail, setInputUserEmail] = useState('');
-  const [inputUserPassword, setInputUserPassword] = useState('');
-
   const [userInput, setUserInput] = useState({
     email: '',
     password: '',
@@ -81,6 +81,9 @@ function LoginModal({ handleSignupModal, handleLoginModal, setIsUserLogin }) {
           format="small"
         />
       </div>
+      <button className="closeButton" onClick={() => handleLoginModal()}>
+        <IoCloseSharp />
+      </button>
     </div>
   );
 }

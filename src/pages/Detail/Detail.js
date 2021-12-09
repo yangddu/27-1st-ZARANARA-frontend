@@ -14,7 +14,6 @@ const Detail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideWrap, setCurrentSlideWrap] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [likes, setLikes] = useState();
   const dimmerRef = useRef();
   const slideRef = useRef();
   const slideWrapRef = useRef();
@@ -123,17 +122,19 @@ const Detail = () => {
     related_products,
   } = detailContents;
 
-  useEffect(() => {
-    slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentSlide * 2}00px)`;
-  }, [currentSlide]);
+  // useEffect(() => {
+  //   slideRef.current.style.transition = 'all 0.5s ease-in-out';
+  //   slideRef.current.style.transform = `translateX(-${currentSlide * 2}00px)`;
+  // }, [currentSlide]);
 
-  useEffect(() => {
-    slideWrapRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideWrapRef.current.style.transform = `translateX(-${
-      currentSlideWrap * 2
-    }00px)`;
-  }, [currentSlideWrap]);
+  // useEffect(() => {
+  //   slideWrapRef.current.style.transition = 'all 0.5s ease-in-out';
+  //   slideWrapRef.current.style.transform = `translateX(-${
+  //     currentSlideWrap * 2
+  //   }00px)`;
+  // }, [currentSlideWrap]);
+
+  console.log('ref', slideRef.current);
 
   return (
     <div className="detail" onClick={closeModal}>
@@ -151,7 +152,6 @@ const Detail = () => {
             increaseAmount={increaseAmount}
             decreaseAmount={decreaseAmount}
             productAmount={productAmount}
-            // likesClick={likesClick}
           />
           {isModalOpen && (
             <DetailModal
@@ -162,9 +162,6 @@ const Detail = () => {
             />
           )}
           <div className="productDetailInfo">
-            {/* <div className="productDetailContents" onClick={openModal}>
-              배송 및 반품
-            </div> */}
             <Button
               // handleClick={clickOrder}
               format="bigger"
@@ -184,7 +181,6 @@ const Detail = () => {
             handleNextSlide={handleNextSlide}
             slideRef={slideRef}
             prevSlideWrap={prevSlideWrap}
-            handleNextSlide={handleNextSlide}
             handleNextSlideWrap={handleNextSlideWrap}
           />
         </div>
