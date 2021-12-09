@@ -8,7 +8,8 @@ import DetailContent from './DetailContent';
 import './Detail.scss';
 
 const Detail = () => {
-  const [detailContents, setDetailContents] = useState({});
+  const [detail, setDetail] = useState(); // 얘랑
+  const [detailContents, setDetailContents] = useState({}); // 얘랑
   const [productAmount, setProductAmount] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideWrap, setCurrentSlideWrap] = useState(0);
@@ -25,6 +26,13 @@ const Detail = () => {
   const PRODUCT_RELATED_IMG = detailContents.related_products;
   const PRODUCT_MATERIAL_CAUTION = detailContents.material_cautions;
   const PRODUCT_MATERIAL_NAME = detailContents.material_names;
+
+  useEffect(() => {
+    const productId = params.id;
+    fetch(`/products/${productId}`)
+      .then(res => res.json())
+      .then(res => setDetailContents(res));
+  }, []);
 
   const clickOrder = () => {
     // fetch('/data/mock.json')

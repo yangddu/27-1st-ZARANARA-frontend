@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Product.scss';
 
 function Product({ productInfo }) {
+  const navigate = useNavigate();
+  const goToProductDetail = () => {
+    navigate(`card/detail/${id}`);
+  };
+
   return (
-    <li className="productItem">
+    <li className="productItem" onClick={goToProductDetail}>
       <Link to="/" className="link">
         <div className="imgBox">
           <button className="cartButton">
